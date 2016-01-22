@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/ta
+END
+HibernateExpectationAssessmentDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/ta/HibernateExpectationAssessmentDAO.java
+END
+StudentTranscriptDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/ta/StudentTranscriptDAO.java
+END
+HibernateStudentTranscriptDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/ta/HibernateStudentTranscriptDAO.java
+END
+KnowledgeAssessmentDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/ta/KnowledgeAssessmentDAO.java
+END
+HibernateKnowledgeAssessmentDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/ta/HibernateKnowledgeAssessmentDAO.java
+END
+ExpectationAssessmentDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/ta/ExpectationAssessmentDAO.java
+END

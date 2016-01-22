@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/eis/entity
+END
+TestTree.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/eis/entity/TestTree.java
+END
+GenericTreeNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/eis/entity/GenericTreeNode.java
+END
+TestPersistenceTree1.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/eis/entity/TestPersistenceTree1.java
+END
+TestPersistenceTree2.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/eis/entity/TestPersistenceTree2.java
+END
+MonkeyTreeBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/eis/entity/MonkeyTreeBean.java
+END
+NestedBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/eis/entity/NestedBean.java
+END
+SuiteSAEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/eis/entity/SuiteSAEntity.java
+END
+TestBinarySearchTree.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/eis/entity/TestBinarySearchTree.java
+END

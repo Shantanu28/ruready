@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user
+END
+TestUserSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user/TestUserSession.java
+END
+TestUserRoles.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user/TestUserRoles.java
+END
+TestSearchUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user/TestSearchUser.java
+END
+SuiteUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user/SuiteUser.java
+END
+TestStudentRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user/TestStudentRole.java
+END
+TestUserGroupModerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user/TestUserGroupModerator.java
+END
+TestUserGroupMemberships.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user/TestUserGroupMemberships.java
+END
+TestTeacherRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user/TestTeacherRole.java
+END
+TestUserGroups.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/user/TestUserGroups.java
+END

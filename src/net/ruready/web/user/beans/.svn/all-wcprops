@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans
+END
+GroupsViewBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/GroupsViewBean.java
+END
+SchoolFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/SchoolFormBean.java
+END
+GroupManagementFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/GroupManagementFormBean.java
+END
+TeacherSchoolMembershipsViewBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/TeacherSchoolMembershipsViewBean.java
+END
+SearchCriteriaOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/SearchCriteriaOptions.java
+END
+SimpleUserSearchBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/SimpleUserSearchBean.java
+END
+UserAccountFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/UserAccountFormBean.java
+END
+ModeratorFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/ModeratorFormBean.java
+END
+AccountFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/AccountFormBean.java
+END
+TeacherSchoolMembershipFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/TeacherSchoolMembershipFormBean.java
+END
+ModeratorManagementViewBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/ModeratorManagementViewBean.java
+END
+SearchCriterionBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/SearchCriterionBean.java
+END
+GroupSubscriptionFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/GroupSubscriptionFormBean.java
+END
+ResultsPagingBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/ResultsPagingBean.java
+END
+SearchCriteriaBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/SearchCriteriaBean.java
+END
+TeacherRegistrationFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/TeacherRegistrationFormBean.java
+END
+SchoolMembersViewBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/SchoolMembersViewBean.java
+END
+NewSchoolRequestFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/NewSchoolRequestFormBean.java
+END
+ModeratedGroupsViewBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/ModeratedGroupsViewBean.java
+END
+UserManagementFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/UserManagementFormBean.java
+END
+SchoolSearchFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/SchoolSearchFormBean.java
+END
+SimpleUserRoleListViewBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/SimpleUserRoleListViewBean.java
+END
+SchoolsViewBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/SchoolsViewBean.java
+END
+StudentRegistrationFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/StudentRegistrationFormBean.java
+END
+GroupSearchFormBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/GroupSearchFormBean.java
+END
+UserDemographicOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/user/beans/UserDemographicOptions.java
+END

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta
+END
+TestIntegrationStudentGroupTranscript.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestIntegrationStudentGroupTranscript.java
+END
+TestStudentCourseTranscript.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestStudentCourseTranscript.java
+END
+TAUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TAUtil.java
+END
+TestDefaultKnowledgeAssessmentFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestDefaultKnowledgeAssessmentFactory.java
+END
+TestIntegrationStudentTranscript.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestIntegrationStudentTranscript.java
+END
+TestKnowledgeAssessmentItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestKnowledgeAssessmentItem.java
+END
+TestIntegrationStudentCourseTranscript.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestIntegrationStudentCourseTranscript.java
+END
+TestKnowledgeAssessment.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestKnowledgeAssessment.java
+END
+TestExpectationAssessmentItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestExpectationAssessmentItem.java
+END
+TestExpectationAssessment.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestExpectationAssessment.java
+END
+TestIntegrationKnowledgeAssessment.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestIntegrationKnowledgeAssessment.java
+END
+TestIntegrationExpectationAssessment.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestIntegrationExpectationAssessment.java
+END
+TestStudentGroupTranscript.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/TestStudentGroupTranscript.java
+END
+SuiteTA.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/test/ruready/business/ta/SuiteTA.java
+END

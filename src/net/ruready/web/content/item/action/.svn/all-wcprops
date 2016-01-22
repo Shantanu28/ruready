@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/content/item/action
+END
+DeleteItemAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/content/item/action/DeleteItemAction.java
+END
+TransferItemAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/content/item/action/TransferItemAction.java
+END
+SearchItemAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/content/item/action/SearchItemAction.java
+END
+EditItemFullAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/content/item/action/EditItemFullAction.java
+END
+OldViewItemAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/content/item/action/OldViewItemAction.java
+END
+ViewItemAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/content/item/action/ViewItemAction.java
+END
+ViewRevisionsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/content/item/action/ViewRevisionsAction.java
+END
+TreeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/content/item/action/TreeAction.java
+END

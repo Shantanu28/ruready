@@ -1,0 +1,73 @@
+8
+
+dir
+70
+https://rudev.sci.utah.edu/svn/ruready/app/ru1.5/ru2/src/net/ruready/web/chain/command
+https://rudev.sci.utah.edu/svn/ruready
+
+
+
+2009-06-13T16:10:49.404916Z
+2
+oren
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0982ac0d-1d7e-4f6a-b8c2-e86608e68db5
+
+NamedCommand.java
+file
+
+
+
+
+2011-04-10T17:50:44.000000Z
+2548e9ef1cd4ae3443da195523c6094a
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+VerboseCommand.java
+file
+
+
+
+
+2011-04-10T17:50:44.000000Z
+7d3fb6931beacd736f68adef724fba5f
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+normal
+dir
+
+BaseCommand.java
+file
+
+
+
+
+2011-04-10T17:50:44.000000Z
+013097357fc02f084931567f4c0873aa
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+safe
+dir
+

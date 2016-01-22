@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/select/entity
+END
+SimpleOptionListSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/select/entity/SimpleOptionListSource.java
+END
+PropertiesOptionListSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/select/entity/PropertiesOptionListSource.java
+END
+ListsOptionListSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/select/entity/ListsOptionListSource.java
+END
+EnumListOptionListSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/select/entity/EnumListOptionListSource.java
+END
+ArraysOptionListSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/select/entity/ArraysOptionListSource.java
+END
+EnumMapOptionListSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/select/entity/EnumMapOptionListSource.java
+END
+DefaultOptionListSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/select/entity/DefaultOptionListSource.java
+END
+EnumOptionListSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/web/select/entity/EnumOptionListSource.java
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/content/item
+END
+ItemDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/content/item/ItemDAO.java
+END
+HibernateItemDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/content/item/HibernateItemDAO.java
+END
+HibernateItemAssociationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/content/item/HibernateItemAssociationManager.java
+END
+ItemReadDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/eis/content/item/ItemReadDAO.java
+END

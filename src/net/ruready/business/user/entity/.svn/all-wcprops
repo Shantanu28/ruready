@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity
+END
+TeacherSchoolMembership.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/TeacherSchoolMembership.java
+END
+UserRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/UserRole.java
+END
+AdministratorRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/AdministratorRole.java
+END
+GlobalProperty.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/GlobalProperty.java
+END
+UserSearchTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/UserSearchTO.java
+END
+UserGroupMembership.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/UserGroupMembership.java
+END
+UserGroupModerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/UserGroupModerator.java
+END
+StudentRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/StudentRole.java
+END
+EditorRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/EditorRole.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/User.java
+END
+Counter.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/Counter.java
+END
+ActiveStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/ActiveStatus.java
+END
+Name.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/Name.java
+END
+UserTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/UserTO.java
+END
+UserGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/UserGroup.java
+END
+TeacherRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/user/entity/TeacherRole.java
+END

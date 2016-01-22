@@ -1,0 +1,88 @@
+8
+
+dir
+70
+https://rudev.sci.utah.edu/svn/ruready/app/ru1.5/ru2/src/test/ruready
+https://rudev.sci.utah.edu/svn/ruready
+
+
+
+2009-06-13T16:10:49.404916Z
+2
+oren
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0982ac0d-1d7e-4f6a-b8c2-e86608e68db5
+
+eis
+dir
+
+OverallRUReady.java
+file
+
+
+
+
+2011-04-10T17:50:43.000000Z
+7567c87b4fc32b8e3ef57c46dd855a3a
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+port
+dir
+
+jwebunit
+dir
+
+OverallRUReadyStandAlone.java
+file
+
+
+
+
+2011-04-10T17:50:43.000000Z
+b4dea60042d4e2bbcbaddb79797cd0db
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+business
+dir
+
+imports
+dir
+
+rl
+dir
+
+web
+dir
+
+OverallRUReadyWeb.java
+file
+
+
+
+
+2011-04-10T17:50:43.000000Z
+d3f6e8f736b00d40817f5e4e360376db
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
