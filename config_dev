@@ -1,0 +1,23 @@
+#!/bin/bash
+##############################################################################
+# config_windows
+#
+# Configure everything (Hibernate, ddl schema, etc.) for the development server.
+# Wipes off databases.
+# 
+# Author: Oren E. Livne
+# Date: 26-SEP-07
+##############################################################################
+source ~/.rureadyrc
+cp config/dev/build.properties .
+ant config -Dconfig.name=dev
+./config_hibernate dev
+ant ddl
+create2
+create2_test
+rm sql/*
+svn update sql
+rm src/hibernate_Test.cfg.xml
+svn update src/hibernate_Test.cfg.xml
+
+

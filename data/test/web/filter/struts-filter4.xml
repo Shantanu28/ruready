@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--
+	###################################################################################
+	RUReady Application:
+	Struts Filter framework deployment descriptor
+	===================================================================================
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c) 2006-07 Continuing Education , University of Utah.
+	All copyrights reserved. U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	###################################################################################
+-->
+
+<web-app>
+	<!--
+		========================================================
+		Filter Definitions
+		========================================================
+	-->
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+		Common component 
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-->
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+		Content component
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+	-->
+
+	<!--
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+		Catalog sub-component 
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+	-->
+
+	<!-- Looks for an item ID request parameter and attaches item object to request -->
+	<filter>
+		<filter-name>findItemFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.FindItemFilter
+		</filter-class>
+	</filter>
+
+	<!-- 
+		Looks for an item ID request parameter and attaches item object to request;
+		if not found, creates a new item object and attaches it to the request.
+	-->
+	<filter>
+		<filter-name>findOrCreateItemFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.FindOrCreateItemFilter
+		</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>findTrashFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.FindItemFilter
+		</filter-class>
+		<init-param>
+			<param-name>itemType</param-name>
+			<param-value>DEFAULT_TRASH</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>addChildFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.AddChildFilter
+		</filter-class>
+	</filter>
+
+	<!-- 
+		Adds a search-question-system-compliant result set of questions (children of
+		a topic) for the custom topic view pages.
+	-->
+	<filter>
+		<filter-name>addQuestionResultSetFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.AddQuestionResultSetFilter
+		</filter-class>
+	</filter>
+
+	<!-- Load parent item and its children (as a question result set) into the request -->
+	<filter>
+		<filter-name>loadParentItemFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.LoadParentItemFilter
+		</filter-class>
+		<init-param>
+			<param-name>paramName</param-name>
+			<param-value>parentId</param-value>
+		</init-param>
+	</filter>
+
+	<!-- Places source and destination items for item transfer actions in the request scope -->
+	<filter>
+		<filter-name>transferItemFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.TransferItemFilter
+		</filter-class>
+	</filter>
+
+	<!-- Ensure correct custom item type editing page access -->
+	<filter>
+		<filter-name>editItemCustomTypeFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.CustomTypeFilter
+		</filter-class>
+		<init-param>
+			<param-name>prefix</param-name>
+			<param-value>WEB-INF/content/jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>postfix</param-name>
+			<param-value>editItem.jsp</param-value>
+		</init-param>
+	</filter>
+
+	<!-- Prepares neccessary data for an item view -->
+	<filter>
+		<filter-name>prepareViewItemFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.PrepareViewItemFilter
+		</filter-class>
+	</filter>
+
+	<!-- Adds dynamic tag drop-down menu data to an item editing form -->
+	<filter>
+		<filter-name>addTagDynamicMenusFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.tag.filter.AddTagDynamicMenusFilter
+		</filter-class>
+	</filter>
+
+	<!-- Adds drop-down menu data for school editing forms -->
+	<filter>
+		<filter-name>addSchoolMenusFilter</filter-name>
+		<filter-class>
+			net.ruready.web.content.item.filter.AddSchoolMenusFilter
+		</filter-class>
+	</filter>
+
+	<!--
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+		Question sub-component 
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+	-->
+
+	<!-- Adds static drop-down menu data for question editing forms -->
+	<filter>
+		<filter-name>
+			addQuestionStaticMenusFilter_searchQuestion
+		</filter-name>
+		<filter-class>
+			net.ruready.web.content.question.filter.AddQuestionStaticMenusFilter
+		</filter-class>
+		<init-param>
+			<param-name>attribute</param-name>
+			<param-value>searchQuestionForm</param-value>
+		</init-param>
+		<init-param>
+			<param-name>scope</param-name>
+			<param-value>session</param-value>
+		</init-param>
+	</filter>
+
+	<!-- Adds static drop-down menu data for question editing forms -->
+	<filter>
+		<filter-name>
+			addQuestionStaticMenusFilter_searchQuestion
+		</filter-name>
+		<filter-class>
+			net.ruready.web.content.question.filter.AddQuestionStaticMenusFilter
+		</filter-class>
+		<init-param>
+			<param-name>attribute</param-name>
+			<param-value>searchQuestionForm</param-value>
+		</init-param>
+		<init-param>
+			<param-name>scope</param-name>
+			<param-value>session</param-value>
+		</init-param>
+	</filter>
+
+	<!-- Adds static drop-down menu data for question editing forms -->
+	<filter>
+		<filter-name>
+			addQuestionStaticMenusFilter_editQuestion
+		</filter-name>
+		<filter-class>
+			net.ruready.web.content.question.filter.AddQuestionStaticMenusFilter
+		</filter-class>
+		<init-param>
+			<param-name>attribute</param-name>
+			<param-value>editQuestionFullForm</param-value>
+		</init-param>
+		<init-param>
+			<param-name>scope</param-name>
+			<param-value>request</param-value>
+		</init-param>
+	</filter>
+
+	<!-- Adds tag collection option lists required for question editing -->
+	<filter>
+		<filter-name>
+			addQuestionTagFilter
+		</filter-name>
+		<filter-class>
+			net.ruready.web.content.question.filter.AddQuestionTagFilter
+		</filter-class>
+		<init-param>
+			<param-name>attribute</param-name>
+			<param-value>editQuestionFullForm</param-value>
+		</init-param>
+		<init-param>
+			<param-name>scope</param-name>
+			<param-value>request</param-value>
+		</init-param>
+	</filter>
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+		User component 
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+	-->
+
+	<!-- Increments hit counter -->
+	<filter>
+		<filter-name>hitCounterFilter</filter-name>
+		<filter-class>
+			net.ruready.web.user.filter.HitCounterFilter
+		</filter-class>
+		<init-param>
+			<param-name>saveHits</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<!-- 
+		Authenticate a demo user. This authentication always succeeds. 
+		Other authentications may fail and forward to the referenced access
+		denied error page. 
+	-->
+	<filter>
+		<filter-name>authenticateDemoUserFilter</filter-name>
+		<filter-class>
+			net.ruready.web.user.filter.AuthenticateDemoUserFilter
+		</filter-class>
+	</filter>
+
+	<!-- Authorization filters (user+role-based) -->
+	<filter>
+		<filter-name>authorizationFilterAll</filter-name>
+		<filter-class>
+			net.ruready.web.user.filter.AuthorizationFilter
+		</filter-class>
+		<init-param>
+			<param-name>roles</param-name>
+			<param-value>ALL</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>authorizationFilterStudent</filter-name>
+		<filter-class>
+			net.ruready.web.user.filter.AuthorizationFilter
+		</filter-class>
+		<init-param>
+			<param-name>roles</param-name>
+			<param-value>STUDENT</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>authorizationFilterTeacher</filter-name>
+		<filter-class>
+			net.ruready.web.user.filter.AuthorizationFilter
+		</filter-class>
+		<init-param>
+			<param-name>roles</param-name>
+			<param-value>TEACHER</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>authorizationFilterAdmin</filter-name>
+		<filter-class>
+			net.ruready.web.user.filter.AuthorizationFilter
+		</filter-class>
+		<init-param>
+			<param-name>roles</param-name>
+			<param-value>ADMIN</param-value>
+		</init-param>
+	</filter>
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+		Parser component 
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+	-->
+
+	<!-- Adds drop-down menu data for parser demo pages and actions -->
+	<filter>
+		<filter-name>addParserDemoMenusFilter</filter-name>
+		<filter-class>
+			net.ruready.web.parser.filter.AddParserDemoMenusFilter
+		</filter-class>
+	</filter>
+
+	<!--
+		========================================================
+		Filter Mappings: Authorization & Authentication
+		========================================================
+	-->
+	<!--
+		<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
+		Important note: Filters are applied to patterns in their order of appearance below.
+		Each component contains a disjoint set of URLs, so we are free to order components
+		as we like; however, the order of filters within a component does matter. Filters
+		are sorted by groups of common functionality (e.g. authentication).
+		<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
+		
+		ru2 uri conventions help define SSL config, page authorization, module definitions.
+		
+		For actions: 
+		/ru2/[module-name]/[security-constraint]/[role]/[action].do
+		
+		For views:
+		/WEB-INF/[module-name]/jsp/[security-constraint]/[role]/[pagename].jsp
+		
+		////////////////////////////////////////////\////////////////////////////////////////	
+		
+		module-name: 
+		current modules: catalog, common, user, error, question
+		
+		security-constraint:
+		current modes: open, secure
+		
+		role:
+		roles are disjoint, not inclusive. 
+		current roles: TEACHER, STUDENT, ADMIN, ALL, FRONT (front is the same as no ATZ required)
+		
+	-->
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+		Common component
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+	-->
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+		User component
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+	-->
+
+	<!-- %%%%%%%% Front pages, don't require a user %%%%%%%%%%%% -->
+
+	<!-- %%%%%%%% Pages accessible to ALL users %%%%%%%%%%%%%%%% -->
+	<filter-mapping>
+		<filter-name>authorizationFilterAll</filter-name>
+		<url-pattern>/user/open/ALL/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>authorizationFilterAll</filter-name>
+		<url-pattern>/user/secure/ALL/*</url-pattern>
+	</filter-mapping>
+
+	<!-- %%%%%%%% Pages accessible by to STUDENT users %%%%%%%%%% -->
+
+	<filter-mapping>
+		<filter-name>authorizationFilterStudent</filter-name>
+		<url-pattern>/user/open/STUDENT/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>authorizationFilterStudent</filter-name>
+		<url-pattern>/user/secure/STUDENT/*</url-pattern>
+	</filter-mapping>
+
+	<!-- %%%%%%%% Pages accessible by to TEACHER users %%%%%%%%%% -->
+
+	<filter-mapping>
+		<filter-name>authorizationFilterTeacher</filter-name>
+		<url-pattern>/user/open/TEACHER/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>authorizationFilterTeacher</filter-name>
+		<url-pattern>/user/secure/TEACHER/*</url-pattern>
+	</filter-mapping>
+
+	<!-- %%%%%%%% Pages accessible by to ADMIN users %%%%%%%%%% -->
+
+	<filter-mapping>
+		<filter-name>authorizationFilterAdmin</filter-name>
+		<url-pattern>/user/open/ADMIN/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>authorizationFilterAdmin</filter-name>
+		<url-pattern>/user/secure/ADMIN/*</url-pattern>
+	</filter-mapping>
+
+	<!-- %%%%%%%% Pages accessible by to SYSTEM users %%%%%%%%%% -->
+
+	<!-- Such users cannot log in or have access only to demo pages. For now,
+		allow no access to internal pages. -->
+
+	<!-- ########################### Gathering statistics ################## -->
+
+	<!-- Hit counter filter applies to front page only -->
+	<filter-mapping>
+		<filter-name>hitCounterFilter</filter-name>
+		<url-pattern>/user/secure/FRONT/home.do</url-pattern>
+	</filter-mapping>
+
+	<!-- %%%%%%%% Pages accessible by to STUDENT users %%%%%%%%%% -->
+
+	<!-- %%%%%%%% Pages accessible by to TEACHER users %%%%%%%%%% -->
+
+	<!-- %%%%%%%% Pages accessible by to ADMIN users %%%%%%%%%% -->
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		Test administration component
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-->
+	<filter-mapping>
+		<filter-name>authorizationFilterStudent</filter-name>
+		<url-pattern>/ta/open/STUDENT/*</url-pattern>
+	</filter-mapping>
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		Content component
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-->
+
+	<!--
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+		Catalog sub-component
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+	-->
+
+	<!-- 
+		Apply demo user authentication to all catalog pages so that a demo user
+		can play with the CMS. WARNING: use in testing only. 
+	-->
+	<!-- 
+		<filter-mapping>
+		<filter-name>authenticateDemoUserFilter</filter-name>
+		<url-pattern>/content/*</url-pattern>
+		</filter-mapping>
+	-->
+
+	<!-- Apply to the entire content component -->
+	<filter-mapping>
+		<filter-name>authorizationFilterAdmin</filter-name>
+		<url-pattern>/content/*</url-pattern>
+	</filter-mapping>
+
+	<!--
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+		Question sub-component
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+	-->
+
+	<!-- Apply to the entire question component -->
+	<filter-mapping>
+		<filter-name>authorizationFilterAdmin</filter-name>
+		<url-pattern>/question/open/ADMIN/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Apply to the entire question component -->
+	<filter-mapping>
+		<filter-name>authorizationFilterAdmin</filter-name>
+		<url-pattern>/question/secure/ADMIN/*</url-pattern>
+	</filter-mapping>
+
+	<!--
+		========================================================
+		Filter URL mappings: component-specific functionality
+		========================================================
+	-->
+
+	<!--
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+		Catalog sub-component
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+	-->
+
+	<!-- Apply item finding filter to all item views and edit pages. -->
+	<filter-mapping>
+		<filter-name>findItemFilter</filter-name>
+		<url-pattern>/content/open/home.do</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>findItemFilter</filter-name>
+		<url-pattern>/content/open/viewItemFull/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>findItemFilter</filter-name>
+		<url-pattern>/content/open/viewInterest.do</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>findOrCreateItemFilter</filter-name>
+		<url-pattern>/content/open/editItemFull/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Delete action in the trash can view -->
+	<!--
+		<filter-mapping>
+		<filter-name>findTrashFilter</filter-name>
+		<url-pattern>/content/open/deleteItem.do</url-pattern>
+		</filter-mapping>
+	-->
+
+	<!-- Apply an additional filter to populate school properties drop-down menus -->
+	<filter-mapping>
+		<filter-name>addSchoolMenusFilter</filter-name>
+		<url-pattern>/content/open/viewItemFull/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Apply an additional filter to place a question list for custom topic view pages -->
+	<filter-mapping>
+		<filter-name>addQuestionResultSetFilter</filter-name>
+		<url-pattern>
+			/content/open/viewItemFull/SUB_TOPIC.do
+		</url-pattern>
+	</filter-mapping>
+
+	<!-- Item edit pages allow custom pages for some type ==> custom item filter should be applied -->
+	<filter-mapping>
+		<filter-name>editItemCustomTypeFilter</filter-name>
+		<url-pattern>/content/open/editItemFull/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Apply child addition filter to item edit pages -->
+	<filter-mapping>
+		<filter-name>addChildFilter</filter-name>
+		<url-pattern>/content/open/editItemFull/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Item revision history requires an item -->
+	<filter-mapping>
+		<filter-name>findItemFilter</filter-name>
+		<url-pattern>/content/open/viewRevisions.do</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>transferItemFilter</filter-name>
+		<url-pattern>/content/open/transferItem.do</url-pattern>
+	</filter-mapping>
+
+	<!-- Apply child addition filter to item edit pages -->
+	<filter-mapping>
+		<filter-name>addChildFilter</filter-name>
+		<url-pattern>/content/open/editItemFull/*</url-pattern>
+	</filter-mapping>
+
+	<!--
+		Apply an additional filter to add tag drop down menu data in
+		custom subject view pages
+	-->
+	<filter-mapping>
+		<filter-name>addTagDynamicMenusFilter</filter-name>
+		<url-pattern>/content/open/editItemFull/SUBJECT.do</url-pattern>
+	</filter-mapping>
+
+	<!-- Apply an additional filter to populate school properties drop-down menus -->
+	<filter-mapping>
+		<filter-name>addSchoolMenusFilter</filter-name>
+		<url-pattern>/content/open/editItemFull/SCHOOL.do</url-pattern>
+	</filter-mapping>
+
+	<!--
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+		Question sub-component
+		%%%%%%%%%%%%%%%%%%%%%%%% 
+	-->
+
+	<!--
+		Add Question static drop-down menus filter to question search and editing pages
+		and all their action forward URLs and "sub-actions".
+	-->
+	<filter-mapping>
+		<filter-name>
+			addQuestionStaticMenusFilter_searchQuestion
+		</filter-name>
+		<url-pattern>/content/open/searchQuestion.do</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>
+			addQuestionStaticMenusFilter_editQuestion
+		</filter-name>
+		<url-pattern>
+			/content/open/editItemFull/QUESTION.do
+		</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>
+			addQuestionStaticMenusFilter_editQuestion
+		</filter-name>
+		<url-pattern>/content/open/editItemFull/QUESTION/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Adds tag collection option lists required for question editing -->
+	<filter-mapping>
+		<filter-name>
+			addQuestionTagFilter
+		</filter-name>
+		<url-pattern>
+			/content/open/editItemFull/QUESTION.do
+		</url-pattern>
+	</filter-mapping>
+
+	<!-- Apply an additional filter to place a question list for custom topic view pages -->
+	<filter-mapping>
+		<filter-name>loadParentItemFilter</filter-name>
+		<url-pattern>/content/open/browseQuestion.do</url-pattern>
+	</filter-mapping>
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+		Parser component
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		
+		@TODO: adhere to secure/open URL standards in the parser component.
+		For now, everything is open and no authentication filters are applied.
+	-->
+
+	<!-- Add parser demo drop-down menus filter to parser demo pages -->
+	<filter-mapping>
+		<filter-name>addParserDemoMenusFilter</filter-name>
+		<url-pattern>/parser/open/demo.do</url-pattern>
+	</filter-mapping>
+
+</web-app>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+    
+    <start-actions>
+    	<set attribute="flowKeyPrefix" value="'user.moderatedGroups.create'" scope="flow"/>
+    </start-actions>
+    
+	<start-state idref="initialize" />
+	
+	<action-state id="initialize">
+		<action bean="groupRegistration" method="getNewFormObject"/>
+		<transition on="success" to="entryForm"/>
+	</action-state>
+	
+	<!-- Display the first input form view -->
+	<view-state id="entryForm" view=".createGroup.entryForm">
+		<render-actions>
+			<action bean="groupRegistration" method="setupForm" />
+		</render-actions>
+		<transition on="submit" to="saveGroup">
+			<action bean="groupRegistration" method="bindAndValidate">
+				<attribute name="validatorMethod" value="validateCreateGroupForm"/>
+			</action>
+			<action bean="groupRegistration" method="setGroupProperties"/>
+		</transition>
+		<transition on="cancel" to="cancel"/>
+	</view-state>
+	
+	<action-state id="saveGroup">
+		<action bean="groupRegistration" method="saveGroup"/>
+		<transition on="success" to="finished"/>
+		<transition on="error" to="entryForm">
+			<action bean="groupRegistration" method="addConstraintErrorMessage"/>
+		</transition>
+	</action-state>
+	
+	<end-state id="finished" view="externalRedirect:/user/open/TEACHER/groups/view.do"/>
+	<end-state id="cancel" view="externalRedirect:/user/open/TEACHER/groups/view.do">
+		<entry-actions>
+			<action bean="groupRegistration" method="doCancel"/>
+		</entry-actions>
+	</end-state>
+</flow>

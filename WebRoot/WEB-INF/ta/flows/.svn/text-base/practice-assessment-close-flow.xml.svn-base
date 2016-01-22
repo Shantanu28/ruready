@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+
+	<start-actions>
+		<set attribute="flowKeyPrefix" value="'ta.practiceAssessment'" scope="flow"/>
+	</start-actions>
+	
+	<start-state idref="initialize" />
+
+	<action-state id="initialize">
+		<action bean="practiceAssessment" method="assertFormInitialized"/>
+		<transition on="yes" to="assertCanTakeAssessment"/>
+		<transition on="no" to="error"/>
+	</action-state>
+	
+	<action-state id="assertCanTakeAssessment">
+		<action bean="practiceAssessment" method="assertCanTakeAssessment"/>
+		<transition on="yes" to="scoreAndSaveAssessment"/>
+		<transition on="no" to="error"/>
+	</action-state>
+	
+	<action-state id="scoreAndSaveAssessment">
+		<entry-actions>
+			<action bean="practiceAssessment" method="closeAssessment"/>
+			<action bean="practiceAssessment" method="scoreAssessment"/>
+			<action bean="practiceAssessment" method="determineRecommendedLevel"/>
+		</entry-actions>
+		<action bean="practiceAssessment" method="saveAssessment"/>
+		<transition on="success" to="resultsForm"/>
+	</action-state>
+	
+	<view-state id="resultsForm" view=".practiceAssessment.resultsForm">
+		<transition on="submit" to="finished"/>
+	</view-state>
+	
+	<end-state id="finished"/>	
+	<end-state id="cancel"/>
+	<end-state id="error">
+		<entry-actions>
+			<action bean="practiceAssessment" method="exposeErrors"/>
+		</entry-actions>
+	</end-state>
+	
+	<global-transitions>
+		<!-- TODO add other toolbar transitions -->
+		<transition on="stop" to="cancel"/>
+	</global-transitions>
+</flow>

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src
+END
+quartz.properties
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/quartz.properties
+END
+chain-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/chain-config.xml
+END
+struts-filter.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/struts-filter.xml
+END
+ols.properties
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/ols.properties
+END
+ApplicationResources.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/ApplicationResources.properties
+END
+hibernate_WebApp.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/hibernate_WebApp.cfg.xml
+END
+hibernate_Test.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/hibernate_Test.cfg.xml
+END
+ResourceLocator_WebApp.properties
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/ResourceLocator_WebApp.properties
+END
+ResourceLocator_Test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/ResourceLocator_Test.properties
+END
+hibernate_StandAlone.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/hibernate_StandAlone.cfg.xml
+END
+log4j_WebApp.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/log4j_WebApp.properties
+END
+log4j_Test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/log4j_Test.properties
+END
+.properties
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/.properties
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/log4j.properties
+END
+ols_states.properties
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/ols_states.properties
+END
+ResourceLocator_Minimal.properties
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/ResourceLocator_Minimal.properties
+END
+ResourceLocator_StandAlone.properties
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/ResourceLocator_StandAlone.properties
+END

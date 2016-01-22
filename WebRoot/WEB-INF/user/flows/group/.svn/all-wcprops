@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group
+END
+group-subscribe-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-subscribe-flow.xml
+END
+group-delete-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-delete-flow.xml
+END
+group-moderator-add-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-moderator-add-flow.xml
+END
+group-create-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-create-flow.xml
+END
+group-unsubscribe-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-unsubscribe-flow.xml
+END
+group-edit-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-edit-flow.xml
+END
+group-search-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-search-flow.xml
+END
+group-moderator-delete-internal-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-moderator-delete-internal-flow.xml
+END
+group-admin-subscribe-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-admin-subscribe-flow.xml
+END
+group-admin-create-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-admin-create-flow.xml
+END
+group-delete-internal-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-delete-internal-flow.xml
+END
+group-moderator-add-internal-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-moderator-add-internal-flow.xml
+END
+group-moderator-delete-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-moderator-delete-flow.xml
+END
+group-edit-internal-flow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/user/flows/group/group-edit-internal-flow.xml
+END

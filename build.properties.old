@@ -1,0 +1,44 @@
+###################################################################################
+# ru2 Application: ant build file, includes library paths and other properties
+# Configuration: home_oren - Oren Livne's home desktop, bought June 2007
+###################################################################################
+
+#-----------------------------------------------
+# Configuration name
+#-----------------------------------------------
+config.name=windows
+
+#-----------------------------------------------
+# Resources and configuration files
+#-----------------------------------------------
+
+#-----------------------------------------------
+# Libraries
+#-----------------------------------------------
+# Base path to libraries
+main.lib=/ruready/Tools/lib
+
+# Standard J2EE libraries. Required to compile any web app. Containers may
+# have different implementations of some APIs, hence this library set is NOT
+# any specific container's (e.g. tomcat's) library set.
+j2ee.lib=${main.lib}/j2ee1.4
+
+# Shared libaries that should be copied into the container's lib directory
+# Includes JDBC drivers
+shared.lib=${main.lib}/shared
+
+#-----------------------------------------------
+# Container (assumes it is Tomcat 6+)
+#-----------------------------------------------
+# Container base directory
+main.container=/web/tomcat/Tomcat\ 6.0
+
+#-----------------------------------------------
+# Subversion (SVN) properties & control dirs
+#-----------------------------------------------
+svn.pattern=**/_svn*/**,**/.svn*/**
+
+# Checkout parameters
+svn.repository.url=https://dev.ruready.utah.edu/svn/ruready/trunk/applications/ru2
+svn.repository.user=livne
+svn.repository.passwd=""

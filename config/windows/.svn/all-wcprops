@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/config/windows
+END
+context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/config/windows/context.xml
+END
+hibernate_Test.config
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/config/windows/hibernate_Test.config
+END
+hibernate_StandAlone.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/config/windows/hibernate_StandAlone.cfg.xml
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/config/windows/build.properties
+END
+hibernate_StandAlone.config
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/config/windows/hibernate_StandAlone.config
+END
+hibernate_Test.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/config/windows/hibernate_Test.cfg.xml
+END

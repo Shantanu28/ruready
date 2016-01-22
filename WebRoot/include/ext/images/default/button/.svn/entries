@@ -1,0 +1,54 @@
+8
+
+dir
+70
+https://rudev.sci.utah.edu/svn/ruready/app/ru1.5/ru2/WebRoot/include/ext/images/default/button
+https://rudev.sci.utah.edu/svn/ruready
+
+
+
+2009-06-13T16:10:49.404916Z
+2
+oren
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0982ac0d-1d7e-4f6a-b8c2-e86608e68db5
+
+btn-arrow.gif
+file
+
+
+
+
+2011-04-10T17:50:39.000000Z
+9e2365ef98c6096f6b5f411ab618bb4e
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+btn-sprite.gif
+file
+
+
+
+
+2011-04-10T17:50:39.000000Z
+47cd75b517cc956b9fdca302a12ba9f2
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+

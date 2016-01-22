@@ -1,0 +1,1406 @@
+<!DOCTYPE form-validation PUBLIC
+"-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+"http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<!--
+	###################################################################################
+	Content component
+	Struts Validator Framework - Validation rules
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c) 2006-07 Continuing Education , University of Utah .  
+	All copyrights reserved. U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	###################################################################################
+-->
+
+<!-- TODO: add vulgarity checks to all applicable fields -->
+
+<form-validation>
+	<!--
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		Default resource bundle (language)
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	-->
+	<formset>
+
+		<!--
+			===============================================
+			Generic item data edit form
+			===============================================
+		-->
+		<form name="/open/editItemFull/default">
+
+			<!-- Item's name -->
+			<field property="itemForm.name"
+				depends="required,minlength,maxlength,mask">
+				<msg name="required" key="error.field.null" />
+				<msg name="minlength" key="error.field.minlength" />
+				<msg name="maxlength" key="error.field.maxlength" />
+				<msg name="mask" key="error.field.namechars" />
+
+				<arg position="0" name="required"
+					key="content.Item.name.label" />
+
+				<arg position="0" name="minlength"
+					key="content.Item.name.label" />
+				<arg position="1" name="minlength"
+					key="${var:minlength}" resource="false" />
+
+				<arg position="0" name="maxlength"
+					key="content.Item.name.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.Item.name.label" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>40</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9\s\-\:\#\/\[\]]*$</var-value>
+				</var>
+			</field>
+
+			<!-- Item's comment -->
+			<field property="itemForm.comment" depends="maxlength">
+				<msg name="required" key="error.field.null" />
+				<msg name="maxlength" key="error.field.maxlength" />
+
+				<arg position="0" name="required"
+					key="content.Item.comment.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.Item.comment.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>80</var-value>
+				</var>
+			</field>
+
+			<!-- Children items' names -->
+			<field property="name"
+				depends="required,minlength,maxlength,mask"
+				indexedListProperty="childrenForms">
+
+				<msg name="required" key="error.collection.null" />
+				<msg name="minlength" key="error.collection.minlength" />
+				<msg name="maxlength" key="error.collection.maxlength" />
+				<msg name="mask" key="error.field.namechars" />
+
+				<arg position="0" name="required"
+					key="content.Item.name.label" />
+				<arg position="1" name="required"
+					key="content.editItemFull.children.label" />
+
+				<arg position="0" name="minlength"
+					key="content.Item.name.label" />
+				<arg position="1" name="minlength"
+					key="content.editItemFull.children.label" />
+				<arg position="2" name="minlength"
+					key="${var:minlength}" resource="false" />
+
+				<arg position="0" name="maxlength"
+					key="content.Item.name.label" />
+				<arg position="1" name="maxlength"
+					key="content.editItemFull.children.label" />
+				<arg position="2" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.Item.name.label" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>30</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9\s\-\:\#\/\[\]]*$</var-value>
+				</var>
+			</field>
+
+			<!-- Children items' comments -->
+			<field property="comment" depends="maxlength"
+				indexedListProperty="childrenForms">
+
+				<msg name="required" key="error.collection.null" />
+				<msg name="minlength" key="error.collection.minlength" />
+				<msg name="maxlength" key="error.collection.maxlength" />
+
+				<arg position="0" name="required"
+					key="content.Item.comment.label" />
+				<arg position="1" name="required"
+					key="content.editItemFull.children.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.Item.comment.label" />
+				<arg position="1" name="maxlength"
+					key="content.editItemFull.children.label" />
+				<arg position="2" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>80</var-value>
+				</var>
+			</field>
+
+			<!-- New child's type -->
+			<!-- TODO: add OLS validation here if possible -->
+			<field property="childType" depends="validwhen">
+				<msg name="validwhen" key="error.field.nullselect" />
+
+				<arg position="0" name="validwhen"
+					key="content.editItemFull.childType.label" />
+
+				<!--
+					If the new child's name is non-null, its type must be selected.
+				-->
+				<var>
+					<var-name>test</var-name>
+					<var-value>
+						((*this* != null) or (newChildForm.name ==
+						null))
+					</var-value>
+				</var>
+			</field>
+
+			<!-- New child's name -->
+			<field property="newChildForm.name"
+				depends="minlength,maxlength,validwhen,mask">
+				<msg name="minlength" key="error.field.minlength" />
+				<msg name="maxlength" key="error.field.maxlength" />
+				<msg name="validwhen" key="error.field.null" />
+				<msg name="mask" key="error.field.namechars" />
+
+				<arg position="0" name="minlength"
+					key="content.editItemFull.newChild.name.label" />
+				<arg position="1" name="minlength"
+					key="${var:minlength}" resource="false" />
+
+				<arg position="0" name="maxlength"
+					key="content.editItemFull.newChild.name.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="validwhen"
+					key="content.editItemFull.newChild.name.label" />
+
+				<arg position="0" name="mask"
+					key="content.Item.name.label" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>40</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9\s\-\:\#\/\[\]]*$</var-value>
+				</var>
+				<!--
+					If the new child's comment is non-null, its name must be entered.
+				-->
+				<var>
+					<var-name>test</var-name>
+					<var-value>
+						((*this* != null) or (newChildForm.comment ==
+						null))
+					</var-value>
+				</var>
+			</field>
+
+			<!-- New child's comment -->
+			<field property="newChildForm.comment"
+				depends="maxlength">
+				<msg name="maxlength" key="error.field.maxlength" />
+
+				<arg position="0" name="maxlength"
+					key="content.editItemFull.newChild.comment.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>80</var-value>
+				</var>
+			</field>
+
+			<!-- Child movement in the children list (optional) -->
+			<field property="moveFrom" depends="integer">
+				<msg name="integer" key="error.field.integer" />
+
+				<arg position="0" name="integer"
+					key="content.editItemFull.moveFrom.label" />
+
+			</field>
+
+			<field property="moveTo" depends="integer">
+
+				<arg position="0" name="integer"
+					key="content.editItemFull.moveTo.label" />
+
+			</field>
+
+		</form>
+
+		<!--
+			===============================================
+			Course-type item data edit form
+			===============================================
+		-->
+		<form name="/open/editItemFull/COURSE"
+			extends="/open/editItemFull/default">
+
+			<!-- Item's University catalog number. Must be alphanumeric+space. -->
+			<field property="itemForm.univCatalogNumber"
+				depends="required,maxlength,mask">
+				<msg name="required" key="error.field.null" />
+				<msg name="maxlength" key="error.field.maxlength" />
+				<msg name="mask" key="error.field.alphanumericspace" />
+
+				<arg position="0" name="required"
+					key="content.COURSE.univCatalogNumber.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.COURSE.univCatalogNumber.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.COURSE.univCatalogNumber.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9\s]*$</var-value>
+				</var>
+			</field>
+
+			<!-- Item's URL to University syllabus. Must be a URL. -->
+			<field property="itemForm.syllabusUrl"
+				depends="required,url">
+				<msg name="required" key="error.field.null" />
+				<msg name="url" key="error.field.url" />
+
+				<arg position="0" name="required"
+					key="content.COURSE.syllabusUrl.label" />
+
+				<arg position="0" name="url"
+					key="content.COURSE.syllabusUrl.label" />
+
+			</field>
+
+		</form>
+
+		<!--
+			===============================================
+			Subject-type item data edit form
+			===============================================
+		-->
+		<form name="/open/editItemFull/SUBJECT"
+			extends="/open/editItemFull/default">
+
+			<!-- Item's University catalog number. Must be alphanumeric + space. -->
+			<field property="itemForm.abbreviation"
+				depends="required,maxlength,mask">
+				<msg name="required" key="error.field.null" />
+				<msg name="mask" key="error.field.alphanumericspace" />
+
+				<arg position="0" name="required"
+					key="content.SUBJECT.abbreviation.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.SUBJECT.abbreviation.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.SUBJECT.abbreviation.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9\s]*$</var-value>
+				</var>
+			</field>
+
+			<!-- Interest collection ID is required and must be positive to be a valid entity identifier -->
+			<field
+				property="itemForm.tagCollectionMenuForm.interestCollectionId"
+				depends="required, intRange">
+
+				<msg name="required" key="error.field.nullselect" />
+				<arg position="0" name="required"
+					key="content.INTEREST_COLLECTION.label" />
+
+				<msg name="intRange" key="error.badselection" />
+				<arg position="0" name="intRange"
+					key="content.INTEREST_COLLECTION.label" />
+
+				<!-- Max is dummy, set to Integer.MAX_VALUE. -->
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>2147483647</var-value>
+				</var>
+
+			</field>
+
+			<!-- Concept collection ID is required and must be positive to be a valid entity identifier -->
+			<field
+				property="itemForm.tagCollectionMenuForm.conceptCollectionId"
+				depends="required, intRange">
+
+				<msg name="required" key="error.field.nullselect" />
+				<arg position="0" name="required"
+					key="content.CONCEPT_COLLECTION.label" />
+
+				<msg name="intRange" key="error.badselection" />
+				<arg position="0" name="intRange"
+					key="content.CONCEPT_COLLECTION.label" />
+
+				<!-- Max is dummy, set to Integer.MAX_VALUE. -->
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>2147483647</var-value>
+				</var>
+
+			</field>
+
+			<!-- Concept collection ID is required and must be positive to be a valid entity identifier -->
+			<field
+				property="itemForm.tagCollectionMenuForm.skillCollectionId"
+				depends="required, intRange">
+
+				<msg name="required" key="error.field.nullselect" />
+				<arg position="0" name="required"
+					key="content.SKILL_COLLECTION.label" />
+
+				<msg name="intRange" key="error.badselection" />
+				<arg position="0" name="intRange"
+					key="content.SKILL_COLLECTION.label" />
+
+				<!-- Max is dummy, set to Integer.MAX_VALUE. -->
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>2147483647</var-value>
+				</var>
+
+			</field>
+
+		</form>
+
+		<!--
+			===============================================
+			Subject-type item data edit form
+			===============================================
+		-->
+		<form name="/open/editItemFull/STATE"
+			extends="/open/editItemFull/default">
+
+			<!-- Item's University catalog number. Must be alphanumeric. -->
+			<field property="itemForm.abbreviation"
+				depends="required,maxlength,mask">
+				<msg name="required" key="error.field.null" />
+				<msg name="mask" key="error.field.abbrv" />
+
+				<arg position="0" name="required"
+					key="content.STATE.abbreviation.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.STATE.abbreviation.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.STATE.abbreviation.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9\-\.]*$</var-value>
+				</var>
+			</field>
+		</form>
+
+		<!--
+			===============================================
+			Question edit form
+			===============================================
+		-->
+
+		<form name="/open/editItemFull/QUESTION"
+			extends="/open/editItemFull/default">
+
+			<!-- A level must be an integer between 1 and 4 only. -->
+			<field property="itemForm.level"
+				depends="required, integer, intRange">
+
+				<msg name="required" key="error.field.null" />
+				<arg position="0" name="required"
+					key="question.level.label" />
+
+				<msg name="integer" key="error.field.integer" />
+				<arg position="0" name="integer"
+					key="question.level.label" />
+
+				<msg name="intRange" key="error.field.range" />
+				<arg position="0" name="intRange"
+					key="question.level.label" />
+				<arg position="1" name="intRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="intRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<!-- Must match ContentNames.QUESTION.HIGHEST_LEVEL -->
+					<var-value>4</var-value>
+				</var>
+
+			</field>
+
+			<field property="itemForm.chapter" depends="maxlength">
+
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.chapter.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>50</var-value>
+				</var>
+
+			</field>
+
+			<field property="itemForm.formulation"
+				depends="required, maxlength, paramString">
+
+				<msg name="required" key="error.field.null" />
+				<arg position="0" name="required"
+					key="question.formulation.label" />
+
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.formulation.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<msg name="paramString" key="error.paramString" />
+				<arg position="0" name="paramString"
+					key="question.formulation.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>1000</var-value>
+				</var>
+
+			</field>
+
+			<field property="itemForm.number"
+				depends="maxlength, integer">
+
+				<msg name="integer" key="error.field.integer" />
+				<arg position="0" name="integer"
+					key="question.number.label" />
+
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.number.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+			</field>
+
+			<field property="itemForm.numberOfChoices"
+				depends="integer, intRange">
+
+				<msg name="integer" key="error.field.integer" />
+				<arg position="0" name="integer"
+					key="question.numberOfChoices.label" />
+
+				<msg name="intRange" key="error.field.range" />
+				<arg position="0" name="intRange"
+					key="question.numberOfChoices.label" />
+				<arg position="1" name="intRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="intRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>2</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>10</var-value>
+				</var>
+
+			</field>
+
+			<field property="itemForm.questionPage"
+				depends="maxlength">
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.questionPage.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>50</var-value>
+				</var>
+
+			</field>
+
+			<field property="itemForm.parameters"
+				depends="maxlength,parameters">
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.parameters.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<msg name="parameters" key="error.parameters" />
+				<arg position="0" name="parameters"
+					key="question.parameters.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+
+			</field>
+			<!--
+				<field property="questionPrecision" depends="integer, maxlength, intRange">
+				
+				<msg name="integer" key="error.field.integer" />
+				<arg position="0" name="integer" key="question.questionPrecision.label" />
+				
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength" key="question.questionPrecision.label" />
+				<arg position="1" name="maxlength" key="${var:maxlength}" resource="false" />
+				
+				<var>
+				<var-name>maxlength</var-name>
+				<var-value>2</var-value>
+				</var>
+				
+				<msg name="intRange" key="error.field.range" />
+				<arg position="0" name="intRange" key="question.questionPrecision.label" />
+				<arg position="1" name="intRange" key="${var:min}" resource="false" />
+				<arg position="2" name="intRange" key="${var:max}" resource="false" />
+				
+				<var>
+				<var-name>min</var-name>
+				<var-value>0</var-value>
+				</var>
+				<var>
+				<var-name>max</var-name>
+				<var-value>10</var-value>
+				</var>
+				</field>
+			-->
+
+			<field property="itemForm.questionPrecision"
+				depends="integer, intRange">
+
+				<msg name="required" key="error.field.null" />
+				<arg position="0" name="required"
+					key="question.questionPrecision.label" />
+
+				<msg name="integer" key="error.field.integer" />
+				<arg position="0" name="integer"
+					key="question.questionPrecision.label" />
+
+				<msg name="intRange" key="error.field.range" />
+				<arg position="0" name="intRange"
+					key="question.questionPrecision.label" />
+				<arg position="1" name="intRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="intRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>10</var-value>
+				</var>
+			</field>
+
+			<field property="itemForm.textbook" depends="maxlength">
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.textbook.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>50</var-value>
+				</var>
+
+			</field>
+
+			<!-- Sub-topic ID is required and must be positive to be a valid entity identifier -->
+			<field property="itemForm.subTopicMenuGroupForm.subTopicId"
+				depends="required, integer, intRange">
+
+				<msg name="required" key="error.field.nullselect" />
+				<arg position="0" name="required"
+					key="question.subTopic.label" />
+
+				<msg name="integer" key="error.badselection" />
+				<arg position="0" name="integer"
+					key="question.subTopic.label" />
+
+				<msg name="intRange" key="error.badselection" />
+				<arg position="0" name="intRange"
+					key="question.subTopic.label" />
+
+				<!-- Max is dummy, set to Integer.MAX_VALUE. -->
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>2147483647</var-value>
+				</var>
+			</field>
+
+			<field property="itemForm.variables"
+				depends="maxlength,variables">
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.variables.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<msg name="variables" key="error.variables" />
+				<arg position="0" name="variables"
+					key="question.variables.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+
+				<!-- Assuming a symbolic variable list (no values) -->
+				<var>
+					<var-name>valuesPresent</var-name>
+					<var-value>false</var-value>
+				</var>
+
+			</field>
+
+			<!-- note that required validation is implemented custom inside the validate() method for these DTOs. -->
+			<field property="choiceText"
+				indexedListProperty="itemForm.choiceDTOs"
+				depends="maxlength,paramString">
+				<msg name="maxlength" key="error.collection.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.choice.label" />
+				<arg position="1" name="maxlength"
+					key="question.choice.label" />
+				<arg position="2" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<msg name="paramString" key="error.paramString.choices" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+
+			<!-- Note that required validation is implemented custom inside the validate() method for these DTOs. -->
+			<field property="answerText"
+				indexedListProperty="itemForm.answerDTOs"
+				depends="maxlength,paramString">
+				<msg name="maxlength" key="error.collection.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.choice.label" />
+				<arg position="1" name="maxlength"
+					key="question.choice.label" />
+				<arg position="2" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<msg name="paramString" key="error.paramString.answers" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+
+			<!-- note that required validation is implemented custom inside the validate() method for these DTOs. -->
+			<field property="hint1Text"
+				indexedListProperty="itemForm.hintDTOs"
+				depends="maxlength, paramString">
+				<msg name="maxlength" key="error.collection.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.choice.label" />
+				<arg position="1" name="maxlength"
+					key="question.choice.label" />
+				<arg position="2" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<msg name="paramString"
+					key="error.paramString.hint1Text" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+
+			<!-- note that required validation is implemented custom inside the validate() method for these DTOs. -->
+			<field property="hint2Text"
+				indexedListProperty="itemForm.hintDTOs"
+				depends="maxlength, paramString">
+				<msg name="maxlength" key="error.collection.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.choice.label" />
+				<arg position="1" name="maxlength"
+					key="question.choice.label" />
+				<arg position="2" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<msg name="paramString"
+					key="error.paramString.hint2Text" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+
+			<!-- note that required validation is implemented custom inside the validate() method for these DTOs. -->
+			<field property="keyword1Text"
+				indexedListProperty="itemForm.hintDTOs"
+				depends="maxlength, paramString">
+				<msg name="maxlength" key="error.collection.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.choice.label" />
+				<arg position="1" name="maxlength"
+					key="question.choice.label" />
+				<arg position="2" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<msg name="paramString"
+					key="error.paramString.keyword1Text" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+
+			<!-- note that required validation is implemented custom inside the validate() method for these DTOs. -->
+			<field property="keyword2Text"
+				indexedListProperty="itemForm.hintDTOs"
+				depends="maxlength, paramString">
+				<msg name="maxlength" key="error.collection.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.choice.label" />
+				<arg position="1" name="maxlength"
+					key="question.choice.label" />
+				<arg position="2" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<msg name="paramString"
+					key="error.paramString.keyword2Text" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+		</form>
+
+		<!--
+			===============================================
+			Country-type item data edit form
+			===============================================
+		-->
+		<form name="/open/editItemFull/COUNTRY"
+			extends="/open/editItemFull/default">
+
+			<!-- Country phone code. Alphanumeric. -->
+			<field property="itemForm.phoneCode"
+				depends="required,maxlength,mask">
+				<msg name="required" key="error.field.null" />
+				<msg name="maxlength" key="error.field.maxlength" />
+				<msg name="mask" key="error.field.alphanumeric" />
+
+				<arg position="0" name="required"
+					key="content.COUNTRY.phoneCode.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.COUNTRY.phoneCode.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.COUNTRY.phoneCode.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>5</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9]*$</var-value>
+				</var>
+			</field>
+		</form>
+
+		<!--
+			===============================================
+			City-type item data edit form
+			===============================================
+		-->
+		<form name="/open/editItemFull/CITY"
+			extends="/open/editItemFull/default">
+
+			<!-- School county -->
+			<field property="itemForm.county" depends="maxlength">
+				<msg name="maxlength" key="error.field.maxlength" />
+
+				<arg position="0" name="maxlength"
+					key="content.CITY.county.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>50</var-value>
+				</var>
+			</field>
+		</form>
+
+		<!--
+			===============================================
+			School-type item data edit form
+			===============================================
+		-->
+		<form name="/open/editItemFull/SCHOOL"
+			extends="/open/editItemFull/default">
+
+			<!-- School address (Line 1) -->
+			<field property="itemForm.address1"
+				depends="required,maxlength">
+				<msg name="required" key="error.field.null" />
+				<msg name="maxlength" key="error.field.maxlength" />
+
+				<arg position="0" name="required"
+					key="content.SCHOOL.address1.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.SCHOOL.address1.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+
+			<!-- School address (Line 2) -->
+			<field property="itemForm.address2" depends="maxlength">
+				<msg name="maxlength" key="error.field.maxlength" />
+
+				<arg position="0" name="maxlength"
+					key="content.SCHOOL.address2.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+
+			<!-- School zipCode. Alphanumeric + dashes + spaces. -->
+			<field property="itemForm.zipCode"
+				depends="required,maxlength,mask">
+				<msg name="required" key="error.field.null" />
+				<msg name="maxlength" key="error.field.maxlength" />
+				<msg name="mask" key="error.field.zipCode" />
+
+				<arg position="0" name="required"
+					key="content.SCHOOL.zipCode.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.SCHOOL.zipCode.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.SCHOOL.zipCode.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9\-\s]*$</var-value>
+				</var>
+			</field>
+
+			<!-- School district -->
+			<field property="itemForm.district" depends="maxlength">
+				<msg name="maxlength" key="error.field.maxlength" />
+
+				<arg position="0" name="maxlength"
+					key="content.SCHOOL.district.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>50</var-value>
+				</var>
+			</field>
+
+			<!-- School primary phone. Alphanumeric + dashes. -->
+			<field property="itemForm.phone1"
+				depends="required,maxlength,mask">
+				<msg name="required" key="error.field.null" />
+				<msg name="maxlength" key="error.field.maxlength" />
+				<msg name="mask" key="error.field.phone" />
+
+				<arg position="0" name="required"
+					key="content.SCHOOL.phone1.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.SCHOOL.phone1.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.SCHOOL.phone1.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9\-\+]*$</var-value>
+				</var>
+			</field>
+
+			<!-- School secondary phone. Alphanumeric + dashes. -->
+			<field property="itemForm.phone2"
+				depends="maxlength,mask">
+				<msg name="maxlength" key="error.field.maxlength" />
+				<msg name="mask" key="error.field.phone" />
+
+				<arg position="0" name="maxlength"
+					key="content.SCHOOL.phone2.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.SCHOOL.phone2.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9\-\+]*$</var-value>
+				</var>
+			</field>
+
+			<!-- School fax number. Alphanumeric + dashes. -->
+			<field property="itemForm.fax" depends="maxlength,mask">
+				<msg name="maxlength" key="error.field.maxlength" />
+				<msg name="mask" key="error.field.phone" />
+
+				<arg position="0" name="maxlength"
+					key="content.SCHOOL.fax.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<arg position="0" name="mask"
+					key="content.SCHOOL.fax.label" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9\-\+]*$</var-value>
+				</var>
+			</field>
+
+			<!-- Optional school web site URL. -->
+			<field property="itemForm.url" depends="url">
+				<msg name="url" key="error.field.url" />
+
+				<arg position="0" name="required"
+					key="content.SCHOOL.url.label" />
+
+				<arg position="0" name="url"
+					key="content.SCHOOL.url.label" />
+
+			</field>
+
+		</form>
+
+		<!--
+			===============================================
+			Item transfer form
+			===============================================
+		-->
+		<form name="/open/transferItem">
+
+		</form>
+
+		<!--
+			===============================================
+			Item search form
+			===============================================
+		-->
+		<form name="/open/searchItem">
+
+			<!-- Name field -->
+			<!--  <field property="name" depends="required,maxlength"> -->
+			<field property="name" depends="maxlength">
+				<msg name="required" key="error.field.null" />
+				<msg name="maxlength" key="error.field.maxlength" />
+
+				<arg position="0" name="required"
+					key="content.Item.name.label" />
+
+				<arg position="0" name="maxlength"
+					key="content.Item.name.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>80</var-value>
+				</var>
+			</field>
+		</form>
+
+		<!--
+			===============================================
+			Question editing "sub-action":
+			update the number of multiple choice. 
+			===============================================
+		-->
+
+		<form
+			name="/open/editItemFull/QUESTION/updateNumberOfChoices">
+
+			<!-- Number of choices must be an integer between 2 and 10. -->
+			<field property="itemForm.numberOfChoices"
+				depends="required, integer, intRange">
+
+				<msg name="required" key="error.field.null" />
+				<arg position="0" name="required"
+					key="question.numberOfChoices.label" />
+
+				<msg name="integer" key="error.field.integer" />
+				<arg position="0" name="integer"
+					key="question.numberOfChoices.label" />
+
+				<msg name="intRange" key="error.field.range" />
+				<arg position="0" name="intRange"
+					key="question.numberOfChoices.label" />
+				<arg position="1" name="intRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="intRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>2</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>10</var-value>
+				</var>
+			</field>
+
+		</form>
+
+		<!--
+			===============================================
+			Question editing "sub-action":
+			add a new topic. 
+			===============================================
+		-->
+
+		<form name="/open/editItemFull/QUESTION/addTopic">
+
+			<!-- New topic's name -->
+			<field property="itemForm.addTopic"
+				depends="required,minlength,maxlength">
+
+				<msg name="required" key="error.field.null" />
+				<arg position="0" name="required"
+					key="question.addTopic.label" />
+
+				<msg name="minlength" key="error.field.minlength" />
+				<arg position="0" name="minlength"
+					key="question.addTopic.label" />
+				<arg position="1" name="minlength"
+					key="${var:minlength}" resource="false" />
+
+				<msg name="maxlength" key="error.field.maxlength" />
+
+				<arg position="0" name="maxlength"
+					key="question.addTopic.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>30</var-value>
+				</var>
+			</field>
+
+		</form>
+
+		<!--
+			===============================================
+			Question editing "sub-action":
+			add a new sub-topic. 
+			===============================================
+		-->
+
+		<form name="/open/editItemFull/QUESTION/addSubTopic">
+
+			<!-- New topic's name -->
+			<field property="itemForm.addSubTopic"
+				depends="required,minlength,maxlength">
+
+				<msg name="required" key="error.field.null" />
+				<arg position="0" name="required"
+					key="question.addSubTopic.label" />
+
+				<msg name="minlength" key="error.field.minlength" />
+				<arg position="0" name="minlength"
+					key="question.addSubTopic.label" />
+				<arg position="1" name="minlength"
+					key="${var:minlength}" resource="false" />
+
+				<msg name="maxlength" key="error.field.maxlength" />
+
+				<arg position="0" name="maxlength"
+					key="question.addSubTopic.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>30</var-value>
+				</var>
+			</field>
+
+		</form>
+
+		<!--
+			===============================================
+			Question search form
+			===============================================
+		-->
+
+		<form name="/open/searchQuestion">
+
+			<!-- Subject ID is required and must be positive to be a valid entity identifier -->
+			<field property="subTopicMenuGroupForm.subjectId"
+				depends="required, intRange">
+
+				<msg name="required" key="error.field.nullselect" />
+				<arg position="0" name="required"
+					key="content.SUBJECT.label" />
+
+				<msg name="intRange" key="error.badselection" />
+				<arg position="0" name="intRange"
+					key="content.SUBJECT.label" />
+
+				<!-- Max is dummy, set to Integer.MAX_VALUE. -->
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>2147483647</var-value>
+				</var>
+			</field>
+			
+			<!-- A level must be an integer between 1 and 4 only. -->
+			<field property="level"
+				depends="integer, intRange">
+
+				<arg position="0" name="required"
+					key="question.level.label" />
+
+				<msg name="integer" key="error.field.integer" />
+				<arg position="0" name="integer"
+					key="question.level.label" />
+
+				<msg name="intRange" key="error.field.range" />
+				<arg position="0" name="intRange"
+					key="question.level.label" />
+				<arg position="1" name="intRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="intRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<!-- Must match ContentNames.QUESTION.HIGHEST_LEVEL -->
+					<var-value>4</var-value>
+				</var>
+
+			</field>
+
+			<field property="formulation" depends="maxlength">
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.formulation.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>50</var-value>
+				</var>
+			</field>
+
+			<field property="id" depends="maxlength, integer">
+
+				<msg name="maxlength" key="error.field.maxlength" />
+				<arg position="0" name="maxlength"
+					key="question.formulation.label" />
+				<arg position="1" name="maxlength"
+					key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+
+				<msg name="integer" key="error.field.integer" />
+				<arg position="0" name="integer"
+					key="question.id.label" />
+			</field>
+
+			<!-- Disabled so that we don't get weird results after updating
+			the result set with a big result/per number. The setter may truncate
+			big/small values instead. -->
+			<!--
+			<field property="resultsPerPage"
+				depends="integer, intRange">
+
+				<msg name="integer" key="error.field.integer" />
+				<arg position="0" name="integer"
+					key="question.resultsPerPage.label" />
+
+				<msg name="intRange" key="error.field.range" />
+				<arg position="0" name="intRange"
+					key="question.resultsPerPage.label" />
+				<arg position="1" name="intRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="intRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			-->
+		</form>
+
+	</formset>
+
+</form-validation>

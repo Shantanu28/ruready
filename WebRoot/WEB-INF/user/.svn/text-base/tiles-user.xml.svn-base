@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+	"http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+<!--
+	Note: recently updated the DOCTYPE element above to match a more recent Tiles version.
+	@see http://www.jguru.com/forums/view.jsp?EID=1216177
+-->
+
+<!--
+	###################################################################################
+	User module
+	Tiles layout definitions
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c)  2006-07 Continuing Education , University of Utah .  All copyrights reserved. U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	###################################################################################
+-->
+
+<tiles-definitions>
+	<!--
+		==========================================
+		Base layout of all components
+		==========================================
+	-->
+
+	<!-- Base layout of all pages -->
+	<!--
+		Note 1: the "title" and "header" fields are keys used by <bean:message>, not literal strings.
+	-->
+	<definition name=".baseDef"
+		path="/WEB-INF/common/tiles/template.jsp">
+		<put name="title" value="A key into Application.resources" />
+		<put name="header" value="app.header" />
+		<put name="logoClass" value="logo_ruready" />
+		<put name="toolbar" value="/WEB-INF/common/tiles/toolbar.jsp" />
+		<put name="content" value="/WEB-INF/common/tiles/content.jsp" />
+		<put name="links" value="/WEB-INF/common/tiles/links.jsp" />
+		<put name="footer" value="/WEB-INF/common/tiles/footer.jsp" />
+	</definition>
+
+	<!-- Base layout of all user component pages -->
+	<definition name=".userBaseDef" extends=".baseDef">
+		<put name="toolbar" value="/WEB-INF/user/tiles/toolbar.jsp" />
+	</definition>
+
+	<!-- Base layout of all external (front)  pages -->
+	<definition name=".frontDef" extends=".baseDef"></definition>
+
+	<!--
+		==========================================
+		User Module
+		==========================================
+	-->
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		Pages that don't require authentication
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-->
+
+	<!-- Application home page -->
+	<definition name=".frontHome" extends=".frontDef">
+		<put name="title" value="user.home.title" />
+		<put name="content" value="/WEB-INF/user/jsp/FRONT/home.jsp" />
+	</definition>
+
+	<!-- Authentication page (dummy; see the JSP for an explanation) -->
+	<definition name=".frontAuthentication"
+		path="/WEB-INF/user/jsp/FRONT/authentication.jsp" />
+
+	<!-- About the program -->
+	<definition name=".frontAbout" extends=".frontDef">
+		<put name="title" value="user.about.title" />
+		<put name="content" value="/WEB-INF/user/jsp/FRONT/about.jsp" />
+	</definition>
+
+	<!-- Sponsors list -->
+	<definition name=".frontSponsors" extends=".frontDef">
+		<put name="title" value="user.sponsors.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/FRONT/sponsors.jsp" />
+	</definition>
+
+	<!-- FLOW:createStudent -->
+	<!-- Registration page -->
+	<definition name=".createStudent.entryForm" extends=".frontDef">
+		<put name="title" value="user.createStudent.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/FRONT/createAccount.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/FRONT/createStudent.entryForm.jsp" />
+	</definition>
+
+	<!-- Could not find a matching school during enrollment - search screen -->
+	<definition name=".createStudent.schoolSearchForm"
+		extends=".frontDef">
+		<put name="title"
+			value="user.createStudent.schoolSearchForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/FRONT/createAccount.schoolSearchForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/FRONT/createAccount.schoolSearchForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/FRONT/createAccount.schoolSearchResults.jsp" />
+	</definition>
+
+	<!-- Registration successful - information page -->
+	<definition name=".createStudent.done" extends=".frontDef">
+		<put name="title" value="user.createStudent.done.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/FRONT/createAccount.done.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/FRONT/createAccount.done.jsp" />
+	</definition>
+
+	<!-- end FLOW:createStudent -->
+
+	<!-- FLOW:createTeacher -->
+	<definition name=".createTeacher.entryForm"
+		extends=".createStudent.entryForm">
+		<put name="title" value="user.createTeacher.entryForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/FRONT/createTeacher.entryForm.jsp" />
+	</definition>
+
+	<!-- Could not find a matching school during enrollment - search screen -->
+	<definition name=".createTeacher.schoolSearchForm"
+		extends=".createStudent.schoolSearchForm">
+		<put name="title"
+			value="user.createTeacher.schoolSearchForm.title" />
+	</definition>
+
+	<!-- Registration successful - information page -->
+	<definition name=".createTeacher.done"
+		extends=".createStudent.done">
+		<put name="title" value="user.createTeacher.done.title" />
+	</definition>
+	<!-- end FLOW:createTeacher -->
+
+	<!-- Password reminder page -->
+	<definition name=".frontForgotPassword" extends=".frontDef">
+		<put name="title" value="user.forgotPassword.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/FRONT/forgotPassword.jsp" />
+	</definition>
+
+	<!-- Password reminder successful - information page -->
+	<definition name=".frontForgotPasswordDone" extends=".frontDef">
+		<put name="title" value="user.forgotPasswordDone.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/FRONT/forgotPasswordDone.jsp" />
+	</definition>
+
+	<definition name=".schoolRequest.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.schoolMemberships.request.entryForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/FRONT/schoolRequest.entryForm.jsp" />
+	</definition>
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		Pages accessible to all roles
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-->
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		STUDENT role pages
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-->
+
+	<!-- Application main (internal) page of student users -->
+	<definition name=".studentMain" extends=".userBaseDef">
+		<put name="title" value="user.studentMain.title" />
+		<put name="content" value="/WEB-INF/user/jsp/STUDENT/main.jsp" />
+	</definition>
+
+	<!-- Update personal details page -->
+	<definition name=".manageSelfEdit.entryForm"
+		extends=".userBaseDef">
+		<put name="title" value="user.manageSelf.edit.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/STUDENT/manageSelf.edit.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/manageSelf.edit.entryForm.jsp" />
+	</definition>
+
+	<definition name=".manageSelfEdit.anonymousEntryForm"
+		extends=".userBaseDef">
+		<put name="title" value="user.manageSelf.edit.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/STUDENT/manageSelf.edit.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/manageSelf.edit.anonymousEntryForm.jsp" />
+	</definition>
+
+	<definition name=".manageSelfEdit.conflictDialog"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.manageSelf.edit.conflictDialog.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/manageSelf.dialogForm.jsp" />
+	</definition>
+
+	<definition name=".studentViewSchoolMemberships"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.studentSchoolMemberships.view.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/viewSchools.jsp" />
+	</definition>
+
+	<definition name=".studentAddSchool.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.studentSchoolMemberships.add.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/STUDENT/schoolAdd.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/schoolAdd.entryForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/STUDENT/schoolAdd.searchResults.jsp" />
+	</definition>
+
+	<definition name=".studentDeleteSchool.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.studentSchoolMemberships.delete.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/schoolDelete.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".studentViewGroups" extends=".userBaseDef">
+		<put name="title" value="user.groupMemberships.view.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/viewGroups.jsp" />
+	</definition>
+
+	<definition name=".groupSubscribe.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.groupMemberships.subscribe.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/STUDENT/groupSubscribe.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/groupSubscribe.entryForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/STUDENT/groupSubscribe.searchResults.jsp" />
+	</definition>
+
+	<definition name=".groupSubscribe.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.groupMemberships.subscribe.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/groupSubscribe.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".groupUnsubscribe.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.groupMemberships.unsubscribe.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/STUDENT/groupUnsubscribe.confirmForm.jsp" />
+	</definition>
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		TEACHER role pages
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-->
+
+	<!-- Application main (internal) page of system users -->
+	<definition name=".teacherMain" extends=".userBaseDef">
+		<put name="title" value="user.teacherMain.title" />
+		<put name="content" value="/WEB-INF/user/jsp/TEACHER/main.jsp" />
+	</definition>
+
+	<definition name=".teacherViewSchoolMemberships"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.teacherSchoolMemberships.view.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/viewSchools.jsp" />
+	</definition>
+
+	<definition name=".teacherAddSchool.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.teacherSchoolMemberships.add.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/TEACHER/schoolAdd.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/schoolAdd.entryForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/TEACHER/schoolAdd.searchResults.jsp" />
+	</definition>
+
+	<definition name=".teacherDeleteSchool.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.teacherSchoolMemberships.delete.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/schoolDelete.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".teacherViewGroups" extends=".userBaseDef">
+		<put name="title" value="user.moderatedGroups.view.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/viewGroups.jsp" />
+	</definition>
+
+	<definition name=".createGroup.entryForm" extends=".userBaseDef">
+		<put name="title"
+			value="user.moderatedGroups.create.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/TEACHER/groupForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/groupAdd.entryForm.jsp" />
+	</definition>
+
+	<definition name=".editGroup.entryForm" extends=".userBaseDef">
+		<put name="title"
+			value="user.moderatedGroups.edit.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/TEACHER/groupForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/groupEdit.entryForm.jsp" />
+	</definition>
+
+	<definition name=".editGroup.conflictDialog"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.moderatedGroups.edit.conflictDialog.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/manageGroup.dialogForm.jsp" />
+	</definition>
+
+	<definition name=".deleteGroup.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.moderatedGroups.delete.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/groupDelete.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".teacherViewModerators" extends=".userBaseDef">
+		<put name="title" value="user.groupModerators.view.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/viewModerators.jsp" />
+	</definition>
+
+	<definition name=".teacherViewMembers" extends=".userBaseDef">
+		<put name="title" value="user.groupMembers.view.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/viewMembers.jsp" />
+	</definition>
+
+	<definition name=".addModerator.entryForm" extends=".userBaseDef">
+		<put name="title"
+			value="user.groupModerators.add.entryForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/moderatorAdd.entryForm.jsp" />
+	</definition>
+
+	<definition name=".deleteModerator.transferForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.groupModerators.delete.transferForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/moderatorDelete.transferForm.jsp" />
+	</definition>
+
+	<definition name=".deleteModerator.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.groupModerators.delete.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/moderatorDelete.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".deleteModeratorSelf.transferForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.groupModerators.delete.selfTransferForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/moderatorDeleteSelf.transferForm.jsp" />
+	</definition>
+
+	<definition name=".deleteModeratorSelf.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.groupModerators.delete.selfConfirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/TEACHER/moderatorDeleteSelf.confirmForm.jsp" />
+	</definition>
+
+	<!--
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		ADMIN role pages
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-->
+
+	<!-- Application main (internal) page of system users -->
+	<definition name=".adminMain" extends=".userBaseDef">
+		<put name="title" value="user.adminMain.title" />
+		<put name="content" value="/WEB-INF/user/jsp/ADMIN/main.jsp" />
+	</definition>
+
+	<!-- User search page -->
+	<definition name=".adminSearchUser" extends=".userBaseDef">
+		<put name="title" value="user.adminSearchUser.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/searchUser.jsp" />
+	</definition>
+
+	<definition name=".userSearch.entryForm" extends=".userBaseDef">
+		<put name="title" value="user.userSearch.view.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/userSearch.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/userSearch.entryForm.jsp" />
+	</definition>
+
+	<definition name=".userSearch.criteriaForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.userSearch.view.criteriaForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/userSearch.criteriaForm.jsp" />
+	</definition>
+
+	<definition name=".userSearch.columnsForm" extends=".userBaseDef">
+		<put name="title"
+			value="user.userSearch.view.columnsForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/userSearch.columnsForm.jsp" />
+	</definition>
+
+	<definition name=".userSearch.searchResults"
+		extends=".userSearch.entryForm">
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/ADMIN/userSearch.searchResults.jsp" />
+	</definition>
+
+	<definition name=".manageUserCreate.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.manageUser.create.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.edit.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.edit.entryForm.jsp" />
+	</definition>
+
+	<definition name=".manageUserEdit.entryForm"
+		extends=".userBaseDef">
+		<put name="title" value="user.manageUser.edit.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.edit.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.edit.entryForm.jsp" />
+	</definition>
+
+	<definition name=".manageUserEdit.anonymousEntryForm"
+		extends=".userBaseDef">
+		<put name="title" value="user.manageUser.edit.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.edit.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.edit.anonymousEntryForm.jsp" />
+	</definition>
+
+	<definition name=".manageUserEdit.conflictDialog"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.manageUser.edit.conflictDialog.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.dialogForm.jsp" />
+	</definition>
+
+	<definition name=".manageUserDelete.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.manageUser.delete.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".manageUserLock.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.manageUser.lock.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".manageUserUnlock.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.manageUser.unlock.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".manageUserReset.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.manageUser.reset.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/manageUser.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".adminViewPendingMemberships"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.pendingTeacherSchoolMemberships.view.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/viewPendingTeacherSchoolMemberships.jsp" />
+	</definition>
+
+	<definition name=".reviewMembership.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.pendingTeacherSchoolMemberships.review.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/reviewTeacherSchoolMembership.jsp" />
+	</definition>
+
+	<definition name=".adminGroup.search.entryForm"
+		extends=".userBaseDef">
+		<put name="title" value="user.adminGroups.view.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/groupSearch.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/groupSearch.entryForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/ADMIN/groupSearch.searchResults.jsp" />
+	</definition>
+
+	<definition name=".adminGroup.create.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminGroups.create.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/groupAdd.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/groupAdd.entryForm.jsp" />
+	</definition>
+
+	<definition name=".adminGroup.create.moderatorSelectForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminGroups.create.moderatorSelectForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/groupAdd.moderatorSelectForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/groupAdd.moderatorSelectForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/ADMIN/groupAdd.moderatorSelectResults.jsp" />
+	</definition>
+
+	<definition name=".adminGroup.moderators.view"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminGroups.view.viewModerators.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/viewModerators.jsp" />
+	</definition>
+
+	<definition name=".adminGroup.members.view"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminGroups.view.viewMembers.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/viewMembers.jsp" />
+	</definition>
+
+	<definition name=".adminGroupSubscribe.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminGroups.subscribe.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/groupSubscribe.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/groupSubscribe.entryForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/ADMIN/groupSubscribe.searchResults.jsp" />
+	</definition>
+
+	<definition name=".adminSchools.search.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminSchools.view.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/schoolSearch.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/schoolSearch.entryForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/ADMIN/schoolSearch.searchResults.jsp" />
+	</definition>
+
+	<definition name=".adminSchools.students.view"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminSchools.view.viewStudents.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/viewSchoolMembers.jsp" />
+	</definition>
+
+	<definition name=".adminSchools.teachers.view"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminSchools.view.viewTeachers.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/viewSchoolMembers.jsp" />
+	</definition>
+
+	<definition name=".adminSchools.students.add.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminSchools.addStudent.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/schoolMembershipAdd.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/schoolMembershipAdd.entryForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/ADMIN/schoolMembershipAdd.searchResults.jsp" />
+	</definition>
+
+	<definition name=".adminSchools.students.delete.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminSchools.deleteStudent.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/schoolMembershipDelete.confirmForm.jsp" />
+	</definition>
+
+	<definition name=".adminSchools.teachers.add.entryForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminSchools.addTeacher.entryForm.title" />
+		<put name="head"
+			value="/WEB-INF/user/jsp/ADMIN/schoolMembershipAdd.entryForm.head.jsp" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/schoolMembershipAdd.entryForm.jsp" />
+		<put name="secondContent"
+			value="/WEB-INF/user/jsp/ADMIN/schoolMembershipAdd.searchResults.jsp" />
+	</definition>
+
+	<definition name=".adminSchools.teachers.delete.confirmForm"
+		extends=".userBaseDef">
+		<put name="title"
+			value="user.adminSchools.deleteTeacher.confirmForm.title" />
+		<put name="content"
+			value="/WEB-INF/user/jsp/ADMIN/schoolMembershipDelete.confirmForm.jsp" />
+	</definition>
+</tiles-definitions>

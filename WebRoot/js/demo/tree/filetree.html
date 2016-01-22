@@ -1,0 +1,443 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="ext-strict">
+	<head>
+		<!-- $Id: filetree.html 65 2007-07-26 09:24:36Z jozo $ -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<link rel="stylesheet" type="text/css"
+			href="filetree_files/ext-all.css">
+		<link rel="stylesheet" type="text/css"
+			href="filetree_files/accordion.css">
+		<link rel="stylesheet" type="text/css"
+			href="filetree_files/uploadform.css">
+		<link rel="stylesheet" type="text/css"
+			href="filetree_files/filetree.css">
+		<link id="theme" rel="stylesheet" type="text/css"
+			href="filetree_files/xtheme-default.htm">
+		<link rel="shortcut icon" href="filetree_files/page_white_stack.png"
+			type="image/png">
+		<script type="text/javascript" src="/ru2/include/ext/yui-utilities.js"></script>
+		<script type="text/javascript"
+			src="/ru2/include/ext/ext-yui-adapter.js"></script>
+		<script type="text/javascript" src="/ru2/include/ext/ext-all-debug.js"></script>
+		<script type="text/javascript" src="filetree_files/Ext_003.js"></script>
+		<script type="text/javascript" src="filetree_files/Ext_002.js"></script>
+		<script type="text/javascript" src="filetree_files/Ext_004.js"></script>
+		<script type="text/javascript" src="filetree_files/Ext.js"></script>
+		<script type="text/javascript" src="filetree_files/filetree.js"></script>
+
+		<style type="text/css">
+#acc-ct {
+	width: 240px;
+	position: relative;
+}
+
+#acc-wrap {
+	border: 1px solid silver;
+	background-color: white;
+}
+
+.x-dock-panel .x-dock-panel-body {
+	background-color: #ffffc8;
+}
+
+#middle-col {
+	margin-left: 250px;
+	margin-right: 250px;
+}
+
+#left-col {
+	position: absolute;
+	min-width: 250px;
+	top: 10px;
+	left: 100px;
+}
+
+#info-column {
+	border: 1px dotted silver;
+	background-color: #efefef;
+	margin: 4px;
+	padding: 8px;
+	font-size: 8pt;
+}
+
+#info-column ul {
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+#acc-ct {
+	margin: 4px;
+}
+
+#middle-content {
+	font-family: verdana, arial, tahoma;
+	font-size: 9pt;
+	margin-left: 8px;
+	margin-right: 8px;
+	min-width: 300px;
+}
+
+body {
+	min-width: 600px;
+}
+
+h1 {
+	font-size: 140%;
+	margin-top: 8px;
+	margin-bottom: 1.5em;
+}
+
+h2 {
+	font-size: 120%;
+	/*	margin-bottom: 1.5em;*/
+}
+
+h3 {
+	font-size: 110%;
+	margin-bottom: 1.5em;
+}
+
+h4 {
+	font-size: 90%;
+	margin-top: 1.5em;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+pre {
+	border: 1px solid silver;
+	border-left-width: 10px;
+	padding: 8px;
+	background-color: #efefef;
+	overflow: auto;
+	font-size: 8pt;
+	margin-bottom: 1em;
+}
+
+code {
+	font-weight: bold;
+}
+</style>
+
+		<div id="container">
+
+			<!-- left col -->
+			<!--{{{-->
+			<div id="left-col">
+				<div style="position: relative;" class="x-resizable-pinned"
+					id="acc-ct">
+					<div id="ext-gen24" class="x-box">
+						<div class="x-box-tl">
+							<div class="x-box-tr">
+								<div class="x-box-tc"></div>
+							</div>
+						</div>
+						<div class="x-box-ml">
+							<div class="x-box-mr">
+								<div id="ext-gen25" class="x-box-mc">
+									<div id="acc-wrap">
+										<div style="overflow: hidden; height: 300px;"
+											class="x-dock-body" id="acc-body">
+
+											<div style="z-index: 10000;" class="x-dock-panel"
+												id="panel-tree">
+												<div id="ext-gen38" unselectable="on"
+													class="x-unselectable x-layout-panel-hd x-dock-panel-title x-window-header-text x-dock-panel-title-expanded">
+													<table cellspacing="0">
+														<tbody>
+															<tr>
+																<td class="x-dock-panel-title-icon-ct">
+																	<img src="filetree_files/page_white_stack.png" alt=""
+																		class="x-dock-panel-title-icon">
+																</td>
+																<td width="100%">
+																	<div id="ext-gen41"
+																		class="x-dock-panel x-layout-panel-hd-text x-dock-panel-title-text">
+																		File tree
+																	</div>
+																</td>
+																<td>
+																	<div id="ext-gen42"
+																		class="x-dock-panel x-dock-panel-tools">
+																		<div id="ext-gen44" class="x-layout-tools-button">
+																			<div
+																				class="x-layout-tools-button-inner x-layout-collapse-south">
+																				&nbsp;
+																			</div>
+																		</div>
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<div style="overflow: auto; height: 278px;"
+													class="x-dock-panel-body x-dock-panel-body-expanded x-dock-panel-body-docked x-tree"
+													id="ext-gen37">
+													<div id="tree"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="x-box-bl">
+							<div class="x-box-br">
+								<div class="x-box-bc"></div>
+							</div>
+						</div>
+					</div>
+					<div style="-moz-user-select: none; opacity: 0;" id="ext-gen28"
+						class="x-resizable-handle x-resizable-handle-south x-unselectable"></div>
+					<div style="-moz-user-select: none; opacity: 0;" id="ext-gen31"
+						class="x-resizable-handle x-resizable-handle-east x-unselectable"></div>
+					<div style="-moz-user-select: none; opacity: 0;" id="ext-gen34"
+						class="x-resizable-handle x-resizable-handle-southeast x-unselectable"></div>
+				</div>
+			</div>
+			<!--}}}-->
+
+		</div>
+
+		<div
+			style="position: absolute; z-index: 20000; visibility: hidden; left: -10000px; top: -10000px;"
+			id="ext-gen8" class="x-layer x-tip">
+			<div class="x-tip-top-left">
+				<div class="x-tip-top-right">
+					<div class="x-tip-top"></div>
+				</div>
+			</div>
+			<div id="ext-gen12" class="x-tip-bd-left">
+				<div id="ext-gen13" class="x-tip-bd-right">
+					<div id="ext-gen10" class="x-tip-bd">
+						<div id="ext-gen14" class="x-tip-close"></div>
+						<h3 id="ext-gen9"></h3>
+						<div id="ext-gen11" class="x-tip-bd-inner"></div>
+						<div class="x-clear"></div>
+					</div>
+				</div>
+			</div>
+			<div class="x-tip-ft-left">
+				<div class="x-tip-ft-right">
+					<div class="x-tip-ft"></div>
+				</div>
+			</div>
+		</div>
+		<div style="-moz-user-select: none;"
+			class="x-resizable-proxy x-unselectable" id="acc-ct-rzproxy"></div>
+		<div
+			style="position: absolute; left: -1000px; top: -1000px; visibility: hidden; font-size: 11px; font-style: normal; font-weight: 400; font-family: tahoma, verdana, helvetica; line-height: normal;"
+			id="ext-gen43"></div>
+		<div
+			style="position: absolute; z-index: 15000; visibility: hidden; left: 127px; top: 323px;"
+			id="ext-gen57" class="x-dd-drag-proxy x-dd-drop-nodrop">
+			<div class="x-dd-drop-icon"></div>
+			<div id="ext-gen59" class="x-dd-drag-ghost"></div>
+		</div>
+		<div
+			style="z-index: 14999; left: 14px; top: 241px; width: 207px; height: 278px; display: none;"
+			id="ext-gen52" class="x-shadow">
+			<div class="xst">
+				<div class="xstl"></div>
+				<div style="width: 195px;" class="xstc"></div>
+				<div class="xstr"></div>
+			</div>
+			<div style="height: 266px;" class="xsc">
+				<div class="xsml"></div>
+				<div style="width: 195px;" class="xsmc"></div>
+				<div class="xsmr"></div>
+			</div>
+			<div class="xsb">
+				<div class="xsbl"></div>
+				<div style="width: 195px;" class="xsbc"></div>
+				<div class="xsbr"></div>
+			</div>
+		</div>
+		<div
+			style="position: absolute; z-index: 15000; visibility: hidden; left: -10000px; top: -10000px;"
+			id="ext-gen165" class="x-layer x-menu">
+			<a id="ext-gen168" class="x-menu-focus" href="#"
+				onclick="return false;" tabindex="-1"></a>
+			<ul id="ext-gen169" class="x-menu-list">
+				<li style="opacity: 1;" id="ext-gen173"
+					class="x-menu-list-item x-item-disabled">
+					<a id="ext-gen174" class="x-menu-item x-filetree-nodename" href="#"><img
+							src="filetree_files/s.gif" class="x-menu-item-icon">Testing</a>
+				</li>
+				<li id="ext-gen175" class="x-menu-list-item x-item-disabled">
+					<a id="ext-gen176" class="x-menu-item x-menu-item-arrow" href="#"><img
+							src="filetree_files/application_go.png" class="x-menu-item-icon">Open
+						(Enter)</a>
+				</li>
+				<li id="ext-gen177" class="x-menu-list-item x-menu-sep-li">
+					<span id="ext-gen178" class="x-menu-sep">&nbsp;</span>
+				</li>
+				<li id="ext-gen179" class="x-menu-list-item">
+					<a id="ext-gen180" class="x-menu-item" href="#"><img
+							src="filetree_files/arrow_refresh.png" class="x-menu-item-icon">R<span
+						style="text-decoration: underline;">e</span>load (Ctrl+E)</a>
+				</li>
+				<li id="ext-gen181" class="x-menu-list-item">
+					<a id="ext-gen182" class="x-menu-item" href="#"><img
+							src="filetree_files/arrow_right.png" class="x-menu-item-icon">Expand
+						all (Ctrl+Right Arrow)</a>
+				</li>
+				<li id="ext-gen183" class="x-menu-list-item">
+					<a id="ext-gen184" class="x-menu-item" href="#"><img
+							src="filetree_files/arrow_left.png" class="x-menu-item-icon">Collapse
+						all (Ctrl+Left Arrow)</a>
+				</li>
+				<li id="ext-gen185" class="x-menu-list-item x-menu-sep-li">
+					<span id="ext-gen186" class="x-menu-sep">&nbsp;</span>
+				</li>
+				<li id="ext-gen187" class="x-menu-list-item">
+					<a id="ext-gen188" class="x-menu-item" href="#"><img
+							src="filetree_files/pencil.png" class="x-menu-item-icon">Rename
+						(F2)</a>
+				</li>
+				<li id="ext-gen189" class="x-menu-list-item">
+					<a id="ext-gen190" class="x-menu-item" href="#"><img
+							src="filetree_files/cross.png" class="x-menu-item-icon">Delete
+						(Delete Key)</a>
+				</li>
+				<li id="ext-gen191" class="x-menu-list-item">
+					<a id="ext-gen192" class="x-menu-item" href="#"><img
+							src="filetree_files/folder_add.png" class="x-menu-item-icon">New
+						folder... (Ctrl+N)</a>
+				</li>
+				<li id="ext-gen193" class="x-menu-list-item x-menu-sep-li">
+					<span id="ext-gen194" class="x-menu-sep">&nbsp;</span>
+				</li>
+				<li id="ext-gen195" class="x-menu-list-item">
+					<div id="uf-ct-ext-gen37"
+						style="margin-left: 30px; margin-bottom: 4px; width: 154px; position: relative;">
+						<div>
+							<span style="text-decoration: underline;">U</span>pload file
+							(Ctrl+U)
+						</div>
+						<br>
+						<form class="x-form" id="ext-gen133" enctype="multipart/form-data">
+							<input name="MAX_FILE_SIZE" value="1048575" type="hidden">
+							<input name="UPLOAD_IDENTIFIER" value="auto" type="hidden">
+							<div id="ext-gen135" class="x-uf-buttons-ct">
+								<div class="x-uf-input-ct">
+									<div class="x-uf-bbtn-ct">
+										<table style="width: 78px;" id="ext-gen136"
+											class="x-btn-wrap x-btn-text-icon x-btn" border="0"
+											cellpadding="0" cellspacing="0">
+											<tbody>
+												<tr>
+													<td class="x-btn-left">
+														<i>&nbsp;</i>
+													</td>
+													<td class="x-btn-center">
+														<em unselectable="on"><button
+																style="background-image: url(/ru2/images/icons/fam/add.png);"
+																id="ext-gen137" class="x-btn-text" type="button">
+																Add...
+															</button>
+														</em>
+													</td>
+													<td class="x-btn-right">
+														<i>&nbsp;</i>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="x-uf-input-wrap">
+										<input class="x-uf-input" size="1" id="ext-gen160"
+											name="ext-gen160" type="file">
+									</div>
+									<div style="display: none;" id="ext-gen199" class="ext-el-mask"></div>
+								</div>
+								<div class="x-uf-wait"></div>
+								<div class="x-uf-ubtn-ct">
+									<table style="width: auto;" id="ext-gen144"
+										class="x-btn-wrap x-btn-icon x-btn" border="0" cellpadding="0"
+										cellspacing="0">
+										<tbody>
+											<tr>
+												<td class="x-btn-left">
+													<i>&nbsp;</i>
+												</td>
+												<td class="x-btn-center">
+													<em unselectable="on"><button
+															style="background-image: url(/ru2/images/icons/fam/arrow_up.png);"
+															id="ext-gen145" class="x-btn-text" type="button">
+															&nbsp;
+														</button>
+													</em>
+												</td>
+												<td class="x-btn-right">
+													<i>&nbsp;</i>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div style="display: none;" id="ext-gen200" class="ext-el-mask"></div>
+								</div>
+								<div class="x-uf-cbtn-ct">
+									<table style="width: auto;" id="ext-gen152"
+										class="x-btn-wrap x-btn-icon x-btn" border="0" cellpadding="0"
+										cellspacing="0">
+										<tbody>
+											<tr>
+												<td class="x-btn-left">
+													<i>&nbsp;</i>
+												</td>
+												<td class="x-btn-center">
+													<em unselectable="on"><button
+															style="background-image: url(/ru2/images/icons/fam/cross.png);"
+															id="ext-gen153" class="x-btn-text" type="button">
+															&nbsp;
+														</button>
+													</em>
+												</td>
+												<td class="x-btn-right">
+													<i>&nbsp;</i>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div style="display: none;" id="ext-gen201" class="ext-el-mask"></div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div
+			style="z-index: 10999; left: 79px; top: 252px; width: 149px; height: 26px; display: none;"
+			id="ext-gen221" class="x-shadow">
+			<div class="xst">
+				<div class="xstl"></div>
+				<div style="width: 137px;" class="xstc"></div>
+				<div class="xstr"></div>
+			</div>
+			<div style="height: 14px;" class="xsc">
+				<div class="xsml"></div>
+				<div style="width: 137px;" class="xsmc"></div>
+				<div class="xsmr"></div>
+			</div>
+			<div class="xsb">
+				<div class="xsbl"></div>
+				<div style="width: 137px;" class="xsbc"></div>
+				<div class="xsbr"></div>
+			</div>
+		</div>
+		<div
+			style="overflow: auto; position: absolute; z-index: 11000; visibility: hidden; left: -10000px; top: -10000px;"
+			id="ext-comp-1002"
+			class="x-layer x-editor x-small-editor x-tree-editor">
+			<input style="width: 133px;" class="x-form-text x-form-field"
+				size="20" autocomplete="off" id="ext-comp-1001" name="ext-comp-1001"
+				type="text">
+		</div>
+	</head>
+</html>

@@ -1,0 +1,54 @@
+<world xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ruready.net" xsi:schemaLocation="http://ruready.net http://ruready.net/schemas/content/world_1_4.xsd">
+  <name>Institutional Hierarchy</name>
+  <country xsi:type="unified">
+    <name>Israel</name>
+    <phone-code>972</phone-code>
+    <city>
+      <name>Ariel</name>
+      <school>
+        <name>College of Judea and Smaria</name>
+        <institution-type>K_12</institution-type>
+        <phone>1-111-1111</phone>
+      </school>
+    </city>
+  </country>
+  <country xsi:type="federation">
+    <name>United States</name>
+    <phone-code>1</phone-code>
+    <state>
+      <name>Alabama</name>
+      <abbreviation>AL</abbreviation>
+      <city>
+        <name>Abbeville</name>
+        <county>Henry</county>
+        <school>
+          <name>Abbeville High School</name>
+          <comment>This is a High School.</comment>
+          <institution-type>K_12</institution-type>
+          <address>300 Trawick St</address>
+          <address>Second Address Line Goes Here.</address>
+          <address>Third Address Line Goes Here.</address>
+          <zip-code>36310</zip-code>
+          <district>My District</district>
+          <phone>(334) 585-2065</phone>
+          <phone>(123) 456-7890</phone>
+          <fax>(321) 123-4567</fax>
+          <url>http://www.vrml.k12.al.us/ahs/</url>
+        </school>
+      </city>
+      <city>
+        <name>Akron</name>
+        <county>Hale</county>
+        <school>
+          <name>Akron East High School</name>
+          <institution-type>K_12</institution-type>
+          <address>141 College S</address>
+          <zip-code>35441</zip-code>
+          <district>DISTRICT</district>
+          <phone>(205) 372-3787</phone>
+          <url>http://www.halek12.org/</url>
+        </school>
+      </city>
+    </state>
+  </country>
+</world>

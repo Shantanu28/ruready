@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/common
+END
+.struts-common.mex
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/common/.struts-common.mex
+END
+validation-rules.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/common/validation-rules.xml
+END
+tiles-common.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/common/tiles-common.xml
+END
+validation-rules-common.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/common/validation-rules-common.xml
+END
+struts-common.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/WebRoot/WEB-INF/common/struts-common.xml
+END

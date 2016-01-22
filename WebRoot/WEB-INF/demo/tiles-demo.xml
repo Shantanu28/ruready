@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+	"http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+<!--
+	Note: recently updated the DOCTYPE element above to match a more recent Tiles version.
+	@see http://www.jguru.com/forums/view.jsp?EID=1216177
+-->
+
+<!--
+	###################################################################################
+	Demo component
+	Tiles layout definitions
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c) 2006-07 Continuing Education , University of Utah.
+	All copyrights reserved. U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	###################################################################################
+-->
+
+<tiles-definitions>
+	<!--
+		==========================================
+		Base layout
+		==========================================
+	-->
+	<definition name=".baseDef"
+		path="/WEB-INF/common/tiles/trivialTemplate.jsp">
+		<put name="content" value="/WEB-INF/common/tiles/empty.jsp" />
+	</definition>
+
+	<!--
+		==========================================
+		Some JSPs in a template disguise 
+		==========================================
+	-->
+
+	<definition name=".strutsXhtml" extends=".baseDef">
+		<put name="content" value="/WEB-INF/demo/jsp/strutsXhtml.jsp" />
+	</definition>
+
+	<definition name=".addField" extends=".baseDef">
+		<put name="content" value="/WEB-INF/demo/jsp/addField.jsp" />
+	</definition>
+
+	<definition name=".viewItem" extends=".baseDef">
+		<put name="content" value="/WEB-INF/demo/jsp/viewContent.jsp" />
+	</definition>
+
+</tiles-definitions>

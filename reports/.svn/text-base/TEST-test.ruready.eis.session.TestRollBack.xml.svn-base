@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="N018561" name="test.ruready.eis.session.TestRollBack" tests="1" time="3.859" timestamp="2007-10-25T16:14:25">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.management.compiler" value="HotSpot Client Compiler" />
+    <property name="os.name" value="Windows XP" />
+    <property name="sun.boot.class.path" value="c:\web\Java\jdk1.6.0_02\jre\lib\resources.jar;c:\web\Java\jdk1.6.0_02\jre\lib\rt.jar;c:\web\Java\jdk1.6.0_02\jre\lib\sunrsasign.jar;c:\web\Java\jdk1.6.0_02\jre\lib\jsse.jar;c:\web\Java\jdk1.6.0_02\jre\lib\jce.jar;c:\web\Java\jdk1.6.0_02\jre\lib\charsets.jar;c:\web\Java\jdk1.6.0_02\jre\classes" />
+    <property name="TODAY" value="October 25 2007" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="svn.repository.user" value="livne" />
+    <property name="ant.home" value="c:/web/ant/apache-ant-1.7.0" />
+    <property name="java.runtime.version" value="1.6.0_02-b06" />
+    <property name="user.name" value="olivne" />
+    <property name="config.path" value="c:\ruready\Applications\ru2\config\windows" />
+    <property name="output" value="c:\ruready\Applications\ru2\WebRoot\WEB-INF\classes" />
+    <property name="reports" value="c:\ruready\Applications\ru2\reports" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="c:\web\Java\jdk1.6.0_02\jre\bin" />
+    <property name="svn.repository.passwd" value="&quot;&quot;" />
+    <property name="svn.repository.url" value="https://dev.ruready.utah.edu/svn/ruready/trunk/applications/ru2" />
+    <property name="ant.project.name" value="ru2" />
+    <property name="DSTAMP" value="20071025" />
+    <property name="config.name" value="windows" />
+    <property name="java.version" value="1.6.0_02" />
+    <property name="metainf" value="c:\ruready\Applications\ru2\WebRoot\META-INF" />
+    <property name="user.timezone" value="" />
+    <property name="bin" value="c:\ruready\Applications\ru2\bin" />
+    <property name="sun.arch.data.model" value="32" />
+    <property name="java.endorsed.dirs" value="c:\web\Java\jdk1.6.0_02\jre\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="50.0" />
+    <property name="src" value="c:\ruready\Applications\ru2\src" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="c:\web\Java\jdk1.6.0_02\jre" />
+    <property name="java.vm.info" value="mixed mode, sharing" />
+    <property name="ant.file" value="c:\ruready\Applications\ru2\build.xml" />
+    <property name="os.version" value="5.1" />
+    <property name="webinf" value="c:\ruready\Applications\ru2\WebRoot\WEB-INF" />
+    <property name="tools" value="c:\ruready\Applications\ru2\data\test\lib" />
+    <property name="main.container" value="/web/tomcat/Tomcat 6.0" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="1.6.0_02-b06" />
+    <property name="release" value="c:\ruready\Applications\ru2\ru2_release" />
+    <property name="user.variant" value="" />
+    <property name="j2ee.lib" value="/ruready/Tools/lib/j2ee1.4" />
+    <property name="sql" value="c:\ruready\Applications\ru2\sql" />
+    <property name="ant.library.dir" value="c:/web/ant/apache-ant-1.7.0/lib" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="main.lib" value="/ruready/Tools/lib" />
+    <property name="today" value="20071025" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="ant.file.ru2" value="c:\ruready\Applications\ru2\build.xml" />
+    <property name="user.home" value="C:\Documents and Settings\olivne" />
+    <property name="target" value="1.5" />
+    <property name="tomcat" value="catalina.sh" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="config" value="c:\ruready\Applications\ru2\config" />
+    <property name="java.library.path" value="c:\web\Java\jdk1.6.0_02\jre\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;.;C:\cygwin\home\olivne\ant\bin;c:\ruready\Tools\bin;c:\web\tomcat\Tomcat6.0\bin;C:\cygwin\usr\local\bin;C:\cygwin\bin;C:\cygwin\bin;C:\cygwin\usr\X11R6\bin;c:\program files\miktex 2.6\miktex\bin;c:\WINDOWS\system32;c:\WINDOWS;c:\WINDOWS\system32\wbem;c:\WINDOWS\system32\nls;c:\WINDOWS\system32\nls\english;c:\program files\quicktime\qtsystem\;c:\program files\novell\zenworks\;c:\web\ant\apache-ant-1.7.0\bin;c:\program files\common files\spss mr\dmom\3.5.0.0;c:\program files\spss mr\accessories\;c:\program files\mysql\mysql server 5.1\bin;c:\program files\gs\gs8.54\bin;c:\Program Files\MATLAB\R2007a\bin;c:\Program Files\MATLAB\R2007a\bin\win32;c:\Program Files\SSH Communications Security\SSH Secure Shell;Z;.;C:\cygwin\lib\lapack" />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="shared.lib" value="/ruready/Tools/lib/shared" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="java.class.path" value="c:/web/ant/apache-ant-1.7.0/lib/ant-launcher.jar;c:\ruready\Applications\ru2\.;c:\Program Files\QuickTime\QTSystem\QTJava.zip;c:\web\ant\apache-ant-1.7.0\lib\ant-antlr.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-apache-bcel.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-apache-bsf.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-apache-log4j.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-apache-oro.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-apache-regexp.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-apache-resolver.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-commons-logging.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-commons-net.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-jai.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-javamail.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-jdepend.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-jmf.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-jsch.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-junit.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-launcher.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-netrexx.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-nodeps.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-starteam.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-stylebook.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-swing.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-testutil.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-trax.jar;c:\web\ant\apache-ant-1.7.0\lib\ant-weblogic.jar;c:\web\ant\apache-ant-1.7.0\lib\ant.jar;c:\web\ant\apache-ant-1.7.0\lib\xercesImpl.jar;c:\web\ant\apache-ant-1.7.0\lib\xml-apis.jar;c:\web\Java\jdk1.6.0_02\lib\tools.jar" />
+    <property name="ant.version" value="Apache Ant version 1.7.0 compiled on December 13 2006" />
+    <property name="TSTAMP" value="1014" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.os.patch.level" value="Service Pack 2" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="debuglevel" value="source,lines,vars" />
+    <property name="java.io.tmpdir" value="c:\DOCUME~1\olivne\LOCALS~1\Temp\" />
+    <property name="cygwin.user.home" value="C:/cygwin/home/olivne" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="ru2.lib" value="c:\ruready\Applications\ru2\WebRoot\WEB-INF\lib" />
+    <property name="os.arch" value="x86" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="c:\web\Java\jdk1.6.0_02\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+    <property name="user.dir" value="c:\ruready\Applications\ru2" />
+    <property name="line.separator" value="
+" />
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
+    <property name="basedir" value="c:\ruready\Applications\ru2" />
+    <property name="svn.pattern" value="**/_svn*/**,**/.svn*/**" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="ant.core.lib" value="c:\web\ant\apache-ant-1.7.0\lib\ant.jar" />
+    <property name="source" value="1.5" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="webroot" value="c:\ruready\Applications\ru2\WebRoot" />
+    <property name="java.specification.version" value="1.6" />
+  </properties>
+  <testcase classname="test.ruready.eis.session.TestRollBack" name="testRollback1" time="3.765" />
+  <system-out><![CDATA[10:14:24,921  INFO DefaultResourceLocator   :155 - Initializing
+10:14:25,343  INFO DefaultResourceLocator   :347 - Initializing DAO factory 'hibernate'
+10:14:25,578  INFO HibernateFTFactory       :169 - Using local thread model.
+10:14:25,578  INFO DefaultResourceLocator   :169 - Initializing mail configuration 'stand_alone'
+10:14:25,593  INFO DefaultResourceLocator   :407 - Initializing encryption engine 'RSA'
+10:14:25,687 DEBUG HibernateEISManager      :292 - Initialized custom DAOs.
+10:14:25,828 DEBUG DefaultUserManager       :289 - Finding user by unique email 'system' ...
+10:14:25,984 DEBUG HibernateFTFactory       :459 - Building session factory for configuration './hibernate_StandAlone.cfg.xml'
+10:14:26,781  INFO MLog                     : 80 - MLog clients using log4j logging.
+10:14:27,078  INFO C3P0Registry             :204 - Initializing c3p0-0.9.1 [built 16-January-2007 14:46:42; debug? true; trace: 10]
+10:14:27,296  INFO AbstractPoolBackedDataSource:462 - Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@f4253016 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@abfff457 [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1747wt07p1nwzvk91no4ah0|1a9bea3, idleConnectionTestPeriod -> 300, initialPoolSize -> 20, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 100, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 10, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@f79b236c [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1747wt07p1nwzvk91no4ah0|15151aa, jdbcUrl -> jdbc:mysql://localhost:3306/ru2_test, properties -> {user=******, password=******, autocommit=false} ], preferredTestQuery -> null, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1747wt07p1nwzvk91no4ah0|17210a5, numHelperThreads -> 3 ]
+10:14:29,187  INFO HibernateFTFactory       :465 - Factory initialized successfully.
+10:14:29,234 DEBUG HibernateFTFactory       :235 - Opening new Session for this thread: @4799946
+10:14:29,375 DEBUG DefaultUserManager       :289 - Finding user by unique email 'demo' ...
+10:14:29,375 DEBUG DefaultUserManager       :289 - Finding user by unique email 'admin' ...
+10:14:29,390 DEBUG DefaultUserManager       :289 - Finding user by unique email 'test' ...
+10:14:29,390 DEBUG HibernateFTFactory       :300 - Starting new database transaction in this thread.
+10:14:29,390 DEBUG DefaultUserManager       :289 - Finding user by unique email 'system' ...
+10:14:29,421 DEBUG DefaultUserManager       :289 - Finding user by unique email 'demo' ...
+10:14:29,421 DEBUG DefaultUserManager       :289 - Finding user by unique email 'admin' ...
+10:14:29,421 DEBUG DefaultUserManager       :289 - Finding user by unique email 'test' ...
+10:14:29,421  INFO TestRollBack             :107 - =====================================================
+10:14:29,421  INFO TestRollBack             :108 - testRollback1
+10:14:29,421  INFO TestRollBack             :109 - =====================================================
+10:14:29,421 DEBUG TestRollBack             :115 - -------------- Session #1 --------------
+10:14:29,437 DEBUG HibernateFTFactory       :342 - Committing database transaction of this thread.
+10:14:29,468 DEBUG HibernateFTFactory       :270 - Closing Session of this thread: @4799946
+10:14:29,468 DEBUG TestRollBack             :121 - item SimpleItem[id=5 name=old item]
+10:14:29,468 DEBUG TestRollBack             :124 - -------------- Session #2 --------------
+10:14:29,468 DEBUG HibernateFTFactory       :235 - Opening new Session for this thread: @5689673
+10:14:29,468 DEBUG HibernateFTFactory       :300 - Starting new database transaction in this thread.
+10:14:29,468 DEBUG TestRollBack             :130 - item2 before update SimpleItem[id=5 name=new item]
+10:14:29,468 DEBUG TestRollBack             :132 - item2 before roll back SimpleItem[id=5 name=new item]
+10:14:29,468 DEBUG HibernateFTFactory       :382 - Trying to rollback database transaction of this thread.
+10:14:29,468 DEBUG HibernateFTFactory       :387 - Database transaction rolled back.
+10:14:29,468 DEBUG TestRollBack             :134 - item2 after roll back SimpleItem[id=5 name=new item]
+10:14:29,468 DEBUG HibernateFTFactory       :270 - Closing Session of this thread: @5689673
+10:14:29,500 DEBUG TestRollBack             :136 - item2 after closing session SimpleItem[id=5 name=new item]
+10:14:29,500 DEBUG TestRollBack             :140 - -------------- Session #3 --------------
+10:14:29,500 DEBUG HibernateFTFactory       :235 - Opening new Session for this thread: @24458678
+10:14:29,500 DEBUG HibernateFTFactory       :300 - Starting new database transaction in this thread.
+10:14:29,500 DEBUG TestRollBack             :145 - item3 SimpleItem[id=5 name=old item]
+10:14:29,500 DEBUG HibernateFTFactory       :342 - Committing database transaction of this thread.
+10:14:29,500 DEBUG HibernateFTFactory       :270 - Closing Session of this thread: @24458678
+10:14:29,515 DEBUG HibernateFTFactory       :235 - Opening new Session for this thread: @29120938
+10:14:29,515 DEBUG HibernateFTFactory       :270 - Closing Session of this thread: @29120938
+10:14:29,515 DEBUG HibernateFTFactory       :235 - Opening new Session for this thread: @10672647
+10:14:29,515 DEBUG HibernateFTFactory       :300 - Starting new database transaction in this thread.
+10:14:29,515 DEBUG TestRollBack             : 80 - Deleting all items
+10:14:29,515 DEBUG HibernateFTFactory       :342 - Committing database transaction of this thread.
+10:14:29,531 DEBUG HibernateFTFactory       :270 - Closing Session of this thread: @10672647
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

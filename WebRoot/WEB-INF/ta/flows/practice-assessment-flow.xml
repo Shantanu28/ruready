@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+
+	<start-actions>
+		<set attribute="flowKeyPrefix" value="'ta.practiceAssessment'" scope="flow"/>
+	</start-actions>
+	
+	<start-state idref="initialize" />
+
+	<action-state id="initialize">
+		<action bean="practiceAssessment" method="assertFormInitialized"/>
+		<transition on="yes" to="assertCanTakeAssessment"/>
+		<transition on="no" to="error"/>
+	</action-state>
+	
+	<action-state id="assertCanTakeAssessment">
+		<action bean="practiceAssessment" method="assertCanTakeAssessment"/>
+		<transition on="yes" to="showStartPage"/>
+		<transition on="no" to="error"/>
+	</action-state>
+	
+	<view-state id="showStartPage" view=".practiceAssessment.instructions">
+		<transition on="start" to="startTest"/>
+	</view-state>
+	
+	<action-state id="startTest">
+		<action bean="practiceAssessment" method="startAssessment"/>
+		<transition on="success" to="entryForm"/>
+	</action-state>
+	
+	<view-state id="entryForm" view=".practiceAssessment.entryForm">
+		<render-actions>
+			<action bean="practiceAssessment" method="setupForm"/>
+		</render-actions>
+				
+		<transition on="justATry" to="justATry">
+			<action bean="practiceAssessment" method="bindAndValidate">
+				<attribute name="validatorMethod" value="validateOpenEndedQuestion"/>
+			</action>
+		</transition>
+		
+		<transition on="finalizeAnswer" to="showFeedback">
+			<action bean="practiceAssessment" method="bindAndValidate">
+				<attribute name="validatorMethod" value="validateOpenEndedQuestion"/>
+			</action>
+			<action bean="practiceAssessment" method="scoreQuestion"/>
+		</transition>
+		
+		<transition on="showHint1" to="showHint">
+			<set scope="request" attribute="hintNumber" value="1"/>
+		</transition>
+		<transition on="showHint2" to="showHint">
+			<set scope="request" attribute="hintNumber" value="2"/>
+		</transition>
+		<transition on="showHint3" to="showHint">
+			<set scope="request" attribute="hintNumber" value="3"/>
+		</transition>
+		<transition on="showHint4" to="showHint">
+			<set scope="request" attribute="hintNumber" value="4"/>
+		</transition>
+	</view-state>
+	
+	<action-state id="showHint">
+		<action bean="practiceAssessment" method="showHint"/>
+		<transition on="success" to="entryForm"/>
+	</action-state>
+	
+	<action-state id="justATry">
+		<action bean="practiceAssessment" method="tryAnswer"/>
+		<transition on="success" to="entryForm"/>
+	</action-state>
+	
+	<view-state id="showFeedback" view=".practiceAssessment.feedback">
+		<transition on="continue" to="nextQuestion"/>
+	</view-state>
+	
+	<action-state id="nextQuestion">
+		<action bean="practiceAssessment" method="nextQuestion"/>
+		<transition on="next" to="entryForm"/>
+		<transition on="finished" to="scoreAndSaveAssessment"/>
+	</action-state>
+	
+	<action-state id="scoreAndSaveAssessment">
+		<entry-actions>
+			<action bean="practiceAssessment" method="completeAssessment"/>
+			<action bean="practiceAssessment" method="scoreAssessment"/>
+			<action bean="practiceAssessment" method="determineRecommendedLevel"/>
+		</entry-actions>
+		<action bean="practiceAssessment" method="saveAssessment"/>
+		<transition on="success" to="resultsForm"/>
+	</action-state>
+	
+	<view-state id="resultsForm" view=".practiceAssessment.resultsForm">
+		<transition on="submit" to="finished"/>
+	</view-state>
+	
+	<action-state id="stopAssessment">
+		<entry-actions>
+			<action bean="practiceAssessment" method="stopAssessment"/>
+			<action bean="practiceAssessment" method="scoreAssessment"/>
+		</entry-actions>
+		<action bean="practiceAssessment" method="saveAssessment"/>
+		<transition on="success" to="cancel"/>
+	</action-state>
+	
+	<end-state id="finished"/>	
+	<end-state id="cancel"/>
+	<end-state id="error">
+		<entry-actions>
+			<action bean="practiceAssessment" method="exposeErrors"/>
+		</entry-actions>
+	</end-state>
+	
+	<view-state id="showInstructions" view=".practiceAssessment.instructions">
+		<transition on="start" to="entryForm"/>
+	</view-state>
+	
+	<global-transitions>
+		<!-- TODO add other toolbar transitions -->
+		<transition on="stop" to="stopAssessment"/>
+		<transition on="instructions" to="showInstructions"/>
+	</global-transitions>
+</flow>

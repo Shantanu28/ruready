@@ -1,0 +1,54 @@
+		<!--
+			############################################################
+			Regression test configuration.
+			Configuration: dev - RUReady development server at AOCE
+			(dev.ruready.utah.edu)
+			############################################################
+		-->
+
+		<!--
+			================================================
+			Database connection configuration: JNDI
+			================================================
+		-->
+		
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/ru2_test
+		</property>
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="myeclipse.connection.profile">ru2</property>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+
+        <property name="connection.autocommit">false</property>
+ 
+		<!--
+			############################################################
+			C3P0 connection pool configuration
+			############################################################
+		-->
+		<!-- 
+			References for setting parameter values:
+			[1] http://www.hibernate.org/214.html
+			[2] http://forum.java.sun.com/thread.jspa?threadID=691105&tstart=0
+		-->
+		<property name="c3p0.initialPoolSize">20</property>
+		<property name="c3p0.min_size">10</property>
+		<property name="c3p0.max_size">100</property>
+		<property name="c3p0.minPoolSize">10</property>
+		<property name="c3p0.maxPoolSize">100</property>
+		<property name="c3p0.maxStatements">50</property>
+
+		<property name="c3p0.maxIdleTime">300</property>
+		<property name="c3p0.timeout">100</property><!-- seconds. [1] set it to 100, [2] to 10. -->
+		<property name="c3p0.idleConnectionTestPeriod">300</property>
+		<!-- seconds -->
+		<property name="c3p0.acquireRetryAttempts">30</property>
+		<property name="c3p0.acquireIncrement">5</property>
+
+		<!-- DEPRECATED very expensive property name="c3p0.validate>-->

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	###################################################################################
+	Test file for the FilterPacakageParser
+	###################################################################################
+-->
+
+<web-app>
+
+	<filter>
+		<filter-name>filter1</filter-name>
+		<filter-class>
+			test.ruready.web.chain.filter.Filter1
+		</filter-class>
+		<error-page>/error1</error-page>
+		<init-param>
+			<param-name>param1</param-name>
+			<param-value>value1</param-value>
+		</init-param>
+		<init-param>
+			<param-name>param2</param-name>
+			<param-value>value2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>param2</param-name>
+			<param-value>value3</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>filter2</filter-name>
+		<filter-class>
+			test.ruready.web.chain.filter.Filter2
+		</filter-class>
+		<description>Filter #2</description>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>filter1</filter-name>
+		<url-pattern>/a/b/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>filter2</filter-name>
+		<url-pattern>/a/b/c/*.do</url-pattern>
+	</filter-mapping>
+
+</web-app>

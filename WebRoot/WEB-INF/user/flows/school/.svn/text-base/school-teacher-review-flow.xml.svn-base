@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+    
+    <!-- Requires input: requestParameters.schoolId, requestParameters.userId -->
+
+	<start-actions>
+		<set attribute="flowKeyPrefix" value="'user.pendingTeacherSchoolMemberships.review'" scope="flow"/>
+	</start-actions>
+	    
+    <start-state idref="getReviewFormObject" />
+
+	<action-state id="getReviewFormObject">
+		<action bean="pendingTeacherSchoolMembership" method="getReviewFormObject"/>
+		<transition on="success" to="confirmForm"/>
+		<transition on="error" to="error"/>
+	</action-state>
+	
+	<view-state id="confirmForm" view=".reviewMembership.confirmForm">
+		<render-actions>
+			<action bean="pendingTeacherSchoolMembership" method="setupForm"/>
+		</render-actions>
+		<transition on="submit" to="processForm">
+			<action bean="pendingTeacherSchoolMembership" method="bindAndValidate"/>
+		</transition>
+		<transition on="cancel" to="cancel"/>
+	</view-state>
+	
+	<action-state id="processForm">
+		<action bean="pendingTeacherSchoolMembership" method="processForm"/>
+		<transition on="success" to="finished"/>
+		<transition on-exception="net.ruready.common.exception.EmailException" 
+					to="addMailErrorMessage"/>
+	</action-state>
+	
+	<action-state id="addMailErrorMessage">
+		<action bean="pendingTeacherSchoolMembership" method="addMailErrorMessage"/>
+		<transition on="success" to="finished"/>
+	</action-state>
+	
+	<end-state id="finished" view="externalRedirect:/user/open/ADMIN/schools/pending/view.do"/>
+	<end-state id="error" view="externalRedirect:/user/open/ADMIN/schools/pending/view.do}">
+		<entry-actions>
+			<action bean="pendingTeacherSchoolMembership" method="exposeErrors"/>
+		</entry-actions>
+	</end-state>
+	<end-state id="cancel" view="externalRedirect:/user/open/ADMIN/schools/pending/view.do">
+		<entry-actions>
+			<action bean="pendingTeacherSchoolMembership" method="doCancel"/>
+		</entry-actions>
+	</end-state>
+</flow>

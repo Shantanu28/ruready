@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="contentHome;6" location="650,50" dimension="143,87" />
+  <StrutsActivity path="userHome;6" location="0,0" dimension="159,75" />
+  <StrutsActivity path="errorAccessDenied;6" location="650,250" dimension="166,87" />
+  <StrutsActivity path="errorPathNotFound;6" location="50,650" dimension="172,87" />
+  <StrutsActivity path="errorSystem;6" location="350,650" dimension="129,87" />
+  <StrutsActivity path="errorUnsupportedOperation;6" location="650,650" dimension="223,87" />
+  <StrutsActivity path="authenticationUrl;6" location="650,450" dimension="156,87" />
+  <StrutsActivity path="/WEB-INF/common/jsp/test/strutsXHTML.jsp" location="0,457" dimension="242,49" />
+  <StrutsActivity path="/WEB-INF/common/jsp/test/addField.jsp" location="287,457" dimension="222,49" />
+  <StrutsActivity path="/js/examples/edit_grid2.html" location="50,850" dimension="166,49" />
+  <StrutsActivity path="/open/home.do" location="204,175" dimension="113,75" />
+  <StrutsActivity path="/secure/FRONT/home.do" location="0,175" dimension="159,75" />
+  <StrutsActivity path="/accessDenied.do" location="950,250" dimension="154,87" />
+  <StrutsActivity path="/pathNotFound.do" location="350,850" dimension="161,87" />
+  <StrutsActivity path="/system.do" location="650,850" dimension="116,87" />
+  <StrutsActivity path="/unsupportedOperation.do" location="950,850" dimension="211,87" />
+  <StrutsActivity path="/open/FRONT/authentication.do" location="950,450" dimension="243,87" />
+  <StrutsTransition id="errorPathNotFound;6,null,/pathNotFound.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="222,693" />
+      <AbsolutePoint location="332,693" />
+      <AbsolutePoint location="332,884" />
+      <AbsolutePoint location="350,884" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/open/test/addField.do,null,/WEB-INF/common/jsp/test/addField.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="398,357" />
+      <AbsolutePoint location="398,457" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorUnsupportedOperation;6,null,/unsupportedOperation.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="781,737" />
+      <AbsolutePoint location="781,893" />
+      <AbsolutePoint location="950,893" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/open/ext/simpleDataGrid.do,view,/js/examples/edit_grid2.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,152" />
+      <AbsolutePoint location="-75,152" />
+      <AbsolutePoint location="-75,874" />
+      <AbsolutePoint location="50,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorSystem;6,null,/system.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="414,737" />
+      <AbsolutePoint location="414,783" />
+      <AbsolutePoint location="708,783" />
+      <AbsolutePoint location="708,850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/open/test/strutsXHTML.do,null,/WEB-INF/common/jsp/test/strutsXHTML.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="121,357" />
+      <AbsolutePoint location="121,457" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="authenticationUrl;6,null,/open/FRONT/authentication.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="806,493" />
+      <AbsolutePoint location="950,493" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorAccessDenied;6,null,/accessDenied.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="816,293" />
+      <AbsolutePoint location="950,293" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="userHome;6,null,/secure/FRONT/home.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="79,75" />
+      <AbsolutePoint location="79,175" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="contentHome;6,null,/open/home.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="721,137" />
+      <AbsolutePoint location="721,212" />
+      <AbsolutePoint location="317,212" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

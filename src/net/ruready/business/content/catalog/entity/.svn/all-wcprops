@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity
+END
+ExpectationSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/ExpectationSet.java
+END
+Subject.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/Subject.java
+END
+Course.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/Course.java
+END
+ExpectationCategory.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/ExpectationCategory.java
+END
+Expectation.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/Expectation.java
+END
+SubTopic.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/SubTopic.java
+END
+Catalog.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/Catalog.java
+END
+ContentKnowledge.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/ContentKnowledge.java
+END
+ContentType.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/ContentType.java
+END
+Topic.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ruready/!svn/ver/2/app/ru1.5/ru2/src/net/ruready/business/content/catalog/entity/Topic.java
+END

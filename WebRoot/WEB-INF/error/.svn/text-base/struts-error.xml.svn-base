@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "/WEB-INF/dtd/struts-config_1_2.dtd">
+<!--
+	###################################################################################
+	Error component
+	Struts configuration descriptor
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c) 2006-07 Continuing Education , University of Utah. All copyrights reserved.
+	U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	
+	###################################################################################
+-->
+
+<struts-config>
+
+	<data-sources />
+
+	<!--
+		===============================================
+		Form Beans
+		===============================================
+	-->
+	<form-beans />
+
+	<!--
+		===============================================
+		Actions
+		===============================================
+	-->
+	<action-mappings>
+
+		<!--
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Error pages mapping of HTTP error codes
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- Access denied (HTTP code 401) -->
+		<action path="/accessDenied" forward=".errorAccessDenied" />
+
+		<!-- Path not found (HTTP code 404) -->
+		<action path="/pathNotFound" forward=".errorPathNotFound" />
+
+		<!-- System error (HTTP code 500) -->
+		<action path="/system" forward=".errorSystem" />
+
+		<!-- Unsupported operation exception -->
+		<action path="/unsupportedOperation"
+			forward=".errorUnsupportedOperation" />
+
+	</action-mappings>
+
+	<!--
+		===============================================
+		Request processor
+		===============================================
+	-->
+	<!-- Use our custom request processor that extends the tiles RP -->
+	<controller
+		processorClass="net.ruready.web.chain.ExtendedRequestProcessor" />
+
+	<!--
+		===============================================
+		Resource bundles
+		===============================================
+	-->
+	<message-resources parameter="ApplicationResources" null="false" />
+
+	<!--
+		===============================================
+		Plug-ins
+		===============================================
+	-->
+
+	<!-- Tiles plug-in -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/error/tiles-error.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

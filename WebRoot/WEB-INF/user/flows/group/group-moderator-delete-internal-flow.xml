@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+    
+    
+    <input-mapper>
+		<mapping source="groupId" target="requestScope.groupId" required="true"/>
+		<mapping source="userId" target="requestScope.userId" required="true"/>
+	</input-mapper>
+	
+	<start-actions>
+		<set attribute="flowKeyPrefix" value="'user.groupModerators.delete'" scope="flow"/>
+	</start-actions>
+	
+    <start-state idref="initialize"/>
+
+	<action-state id="initialize">
+		<action bean="moderatorRegistration" method="getDeleteFormObject"/>
+		<transition on="success" to="assertNotDeletingOnlyModerator"/>
+		<transition on="error" to="error"/>
+	</action-state>
+	
+	<action-state id="assertNotDeletingOnlyModerator">
+		<action bean="moderatorRegistration" method="assertHasModeratorAfterDeletion"/>
+		<transition on="yes" to="isUserDeletingSelf"/>
+		<transition on="no" to="error"/>
+	</action-state>
+	
+	<action-state id="isUserDeletingSelf">
+		<action bean="moderatorRegistration" method="isUserDeletingSelf"/>
+		<transition on="yes" to="isSelfPrimaryModerator"/>
+		<transition on="no" to="isTargetPrimaryModerator"/>
+	</action-state>
+	
+	<action-state id="isTargetPrimaryModerator">
+		<action bean="moderatorRegistration" method="isModeratorPrimaryModerator"/>
+		<transition on="yes" to="transferForm"/>
+		<transition on="no" to="confirmForm"/>		
+	</action-state>
+	
+	<action-state id="isSelfPrimaryModerator">
+		<action bean="moderatorRegistration" method="isModeratorPrimaryModerator"/>
+		<transition on="yes" to="selfTransferForm"/>
+		<transition on="no" to="selfConfirmForm"/>
+	</action-state>
+	
+	<view-state id="transferForm" view=".deleteModerator.transferForm">
+		<render-actions>
+			<action bean="moderatorRegistration" method="setupForm"/>
+			<action bean="moderatorRegistration" method="getCurrentModerators"/>
+		</render-actions>
+		<transition on="assign" to="confirmForm">
+			<action bean="moderatorRegistration" method="setNewPrimaryModerator"/>
+		</transition>
+		<transition on="cancel" to="cancel"/>
+	</view-state>
+	
+	<view-state id="confirmForm" view=".deleteModerator.confirmForm">
+		<render-actions>
+			<action bean="moderatorRegistration" method="setupForm"/>
+		</render-actions>
+		<transition on="yes" to="deleteModerator"/>
+		<transition on="no" to="cancel"/>
+	</view-state>
+	
+	<action-state id="deleteModerator">
+		<action bean="moderatorRegistration" method="deleteModerator"/>
+		<transition on="success" to="finished"/>
+	</action-state>
+	
+	<view-state id="selfTransferForm" view=".deleteModeratorSelf.transferForm">
+		<render-actions>
+			<action bean="moderatorRegistration" method="setupForm"/>
+			<action bean="moderatorRegistration" method="getCurrentModerators"/>
+		</render-actions>
+		<transition on="assign" to="selfConfirmForm">
+			<action bean="moderatorRegistration" method="setNewPrimaryModerator"/>
+		</transition>
+		<transition on="cancel" to="cancel"/>
+	</view-state>
+	
+	<view-state id="selfConfirmForm" view=".deleteModeratorSelf.confirmForm">
+		<render-actions>
+			<action bean="moderatorRegistration" method="setupForm"/>
+		</render-actions>
+		<transition on="yes" to="deleteSelfAsModerator"/>
+		<transition on="no" to="cancel"/>
+	</view-state>
+	
+	<action-state id="deleteSelfAsModerator">
+		<action bean="moderatorRegistration" method="deleteModerator"/>
+		<transition on="success" to="finishedSelf"/>
+	</action-state>
+	
+	<end-state id="finished"/>
+	<end-state id="finishedSelf"/>
+	<end-state id="error">
+		<entry-actions>
+			<action bean="moderatorRegistration" method="exposeErrors"/>
+		</entry-actions>
+	</end-state>
+	<end-state id="cancel">
+		<entry-actions>
+			<action bean="moderatorRegistration" method="doCancel"/>
+		</entry-actions>
+	</end-state>
+</flow>

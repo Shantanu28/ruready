@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!-- 
+	This test file is supposed to follow the World 1.3 XSD but it has some mistakes, so we 
+	disable XML validation.
+-->
+<world xmlns="http://ruready.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	>
+	<name>Institutional Hierarchy</name>
+	<country xsi:type="federation">
+		<name>United States</name>
+		<phone-code>1</phone-code>
+		<county-string>County</county-string>
+		<state>
+			<name>Alabama</name>
+			<abbreviation>AL</abbreviation>
+			<school>
+				<name>Akron East High School</name>
+				<institution-type>K_12</institution-type>
+				<url>http://www.halek12.org/</url>
+				<address>141 College S</address>
+				<city>Akron</city>
+				<zip-code>35441</zip-code>
+				<county>Hale</county>
+				<district>DISTRICT</district>
+				<phone>(205) 372-3787</phone>
+			</school>
+			<school>
+				<name>Abbeville High School</name>
+				<comment>This is a High School.</comment>
+				<institution-type>K_12</institution-type>
+				<url>http://www.vrml.k12.al.us/ahs/</url>
+				<address>300 Trawick St</address>
+				<address>Second Address Line Goes Here.</address>
+				<address>Third Address Line Goes Here.</address>
+				<city>Abbeville</city>
+				<zip-code>36310</zip-code>
+				<county>Henry</county>
+				<district>My District</district>
+				<phone>(334) 585-2065</phone>
+				<phone>(123) 456-7890</phone>
+				<fax>(321) 123-4567</fax>
+			</school>
+		</state>
+	</country>
+
+	<!-- Activate after schemas have been updated on ruready.net -->
+	<country xsi:type="unified">
+		<name>Israel</name>
+		<phone-code>972</phone-code>
+		<school>
+			<name>College of Judea and Smaria</name>
+			<institution-type>K_12</institution-type>
+			<city>Ariel</city>
+			<phone>1-111-1111</phone>
+		</school>
+	</country>
+</world>

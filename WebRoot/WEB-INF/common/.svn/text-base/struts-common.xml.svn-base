@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<!--
+	###################################################################################
+	Struts default module configuration descriptor
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c) 2006-07 Continuing Education , University of Utah .  All copyrights reserved. U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	###################################################################################
+-->
+
+<struts-config>
+
+	<!-- 	<data-sources /> -->
+
+	<!--
+		===============================================
+		Exception Handlers
+		===============================================
+	-->
+
+	<global-exceptions>
+
+		<!-- A generic exception that was not caught elsewhere -->
+		<!--
+			Don't filter EVERY exception in the default module,it will be caught
+			be the handler, which may again throw a JspException or ServletException
+			in super.execute() if that were the original exception type,
+			and lead to an infinite recursion.
+		-->
+		<!-- 
+			<exception key="error.Exception" scope="request"
+			handler="net.ruready.web.common.exception.ExceptionToBeMailedHandler"
+			type="java.lang.Exception" path="/system.do">
+			<set-property key="module" value="/error" />
+			</exception>
+		-->
+
+		<!-- JSP compilation exceptions -->
+		<exception key="error.JasperException" scope="request"
+			handler="net.ruready.web.common.exception.ExceptionToBeMailedHandler"
+			type="org.apache.jasper.JasperException" path="/system.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- Path not found - DO NOT HANDLE HERE - WILL THROW EXCEPTIONS INSIDE THE EXCEPTION HANDLER -->
+		<!-- 
+			<exception key="error.InvalidPathException" scope="request"
+			handler="net.ruready.web.common.exception.InvalidPathExceptionHandler"
+			type="org.apache.struts.chain.commands.InvalidPathException"
+			path="/pathNotFound.do">
+			<set-property key="module" value="/error" />
+			</exception>
+		-->
+
+		<!-- A business-logic exception that was not caught elsewhere -->
+		<exception key="error.ApplicationException" scope="request"
+			handler="net.ruready.web.common.exception.ExceptionToBeMailedHandler"
+			type="net.ruready.common.exception.ApplicationException"
+			path="/system.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- Unsupported operation -->
+		<exception key="error.UnsupportedOpException" scope="request"
+			handler="net.ruready.web.common.exception.SafeExceptionHandler"
+			type="net.ruready.common.exception.UnsupportedOpException"
+			path="/unsupportedOperation.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+	</global-exceptions>
+
+	<!--
+		===============================================
+		Global forwards (alias for main page, etc.).
+		Needs to be placed in every module's Struts
+		config unless we use XDoclet to merge
+		a global global-forwards.xml file.
+		===============================================
+	-->
+	<global-forwards>
+
+		<!-- Content component home page -->
+		<!-- contextRelative=true doesn't seem to work from a local action. -->
+		<forward name="contentHome" module="/content"
+			path="/open/home.do" redirect="true" />
+
+		<!-- User component home page, which is also the application's front page -->
+		<forward name="userHome" module="/user"
+			path="/secure/FRONT/home.do" redirect="true" />
+
+		<!-- 
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Error pages and pages references by filter actions
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^
+		-->
+
+		<!-- Access denied (HTTP code 401) -->
+		<forward name="errorAccessDenied" module="/error"
+			path="/accessDenied.do" />
+
+		<!-- Path not found (HTTP code 404) -->
+		<forward name="errorPathNotFound" module="/error"
+			path="/pathNotFound.do" />
+
+		<!-- System error (HTTP code 500) -->
+		<forward name="errorSystem" module="/error" path="/system.do" />
+
+		<!-- Unsupported operation exception -->
+		<forward name="errorUnsupportedOperation" module="/error"
+			path="/unsupportedOperation.do" />
+
+		<!-- Authentication gateway when requesting an internal bookmark -->
+		<forward name="authenticationUrl" module="/user"
+			path="/open/FRONT/authentication.do" />
+
+	</global-forwards>
+
+	<!--
+		===============================================
+		Actions
+		===============================================
+	-->
+	<action-mappings>
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Module switching for JSP link access
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- Uncomment the following if you need to use <html:link> to a JSP. See the Struts
+			Reference Manual, Second Edition, James Holmes, page 127. -->
+		<!--
+			<action path="/switchMod"
+			type="org.apache.struts.actions.SwitchAction" />
+		-->
+
+	</action-mappings>
+
+	<!--
+		===============================================
+		Request processor
+		===============================================
+	-->
+	<!-- Use our custom request processor that extends the tiles RP -->
+	<controller
+		processorClass="net.ruready.web.chain.ExtendedRequestProcessor" />
+
+	<!--
+		===============================================
+		Resource bundles
+		===============================================
+	-->
+	<message-resources parameter="ApplicationResources" null="false" />
+
+	<!--
+		===============================================
+		Plug-ins
+		===============================================
+	-->
+
+	<!-- Tiles plug-in -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/common/tiles-common.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+	<!-- Quartz scheduling library plug-in -->
+	<plug-in
+		className="net.ruready.web.common.plugin.SchedulerPlugIn">
+		<set-property property="startOnLoad" value="true" />
+		<set-property property="startupDelay" value="0" />
+	</plug-in>
+
+</struts-config>

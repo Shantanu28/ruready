@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	###################################################################################
+	Test tag library
+	This library includes useful tags to be included in test administration JSPs.
+	
+	Nava L. Livne <i><nlivne@aoce.utah.edu></i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i><olivne@aoce.utah.edu></i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-D
+	
+	Protected by U.S. Provisional Patent U-4003, February 2006
+	###################################################################################
+-->
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	version="2.1">
+
+	<description>Test tag library</description>
+	<display-name>custom</display-name>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.1</jsp-version>
+	<short-name>Test administration component tags</short-name>
+	<uri>http://ruready.net/test</uri>
+
+	<!-- ======================== Prints a formatted score ============================================= -->
+
+	<tag-file>
+		<name>score</name>
+		<path>/WEB-INF/tags/test/score.tag</path>
+	</tag-file>
+
+	<!-- ======================== Prints a formatted table cell with a score =========================== -->
+
+	<tag-file>
+		<name>tdScore</name>
+		<path>/WEB-INF/tags/test/tdScore.tag</path>
+	</tag-file>
+
+</taglib>

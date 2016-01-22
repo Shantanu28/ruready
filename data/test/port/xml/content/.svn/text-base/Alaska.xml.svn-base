@@ -1,0 +1,2921 @@
+<?xml version="1.0"?>
+<!-- 
+	This test file is supposed to follow the World 1.3 XSD but it has some mistakes, so we 
+	disable XML validation.
+-->
+<world xmlns="http://ruready.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ruready.net http://ruready.net/schemas/content/world_1_3_obsolete.xsd">
+	<name>Institutional Hierarchy</name>
+	<country xsi:type="federation">
+		<name>United States</name>
+		<phone-code>1</phone-code>
+		<state>
+			<name>Alaska</name>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.aleutregion.org/adk/</url>
+				<name>Adak School</name>
+				<address>PO Box 2083</address>
+				<city>Adak</city>
+				<zip-code>99546</zip-code>
+				<county>Aleutians West</county>
+				<phone>(907) 592-2249</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.kodiak.k12.ak.us/akhiok/splash.html
+				</url>
+				<name>Akhiok School</name>
+				<address>Main Street</address>
+				<city>Akhiok</city>
+				<zip-code>99615</zip-code>
+				<phone>(907) 836-2223</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yupiit.org/</url>
+				<name>Akiak High School</name>
+				<address>Akiak # 5227</address>
+				<city>Akiak</city>
+				<zip-code>99552</zip-code>
+				<phone>(907) 765-4601</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lkea.org/siteinfo/akiuksch.htm</url>
+				<name>Akiuk Memorial School</name>
+				<address>104 Village Road</address>
+				<city>Kasigluk</city>
+				<zip-code>99609</zip-code>
+				<phone>(907) 477-6829</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/</url>
+				<name>Akula Elitnaurvik School</name>
+				<address>100 Akula Heights</address>
+				<city>Kasigluk</city>
+				<zip-code>99609</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 477-6615</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://ak.localschooldirectory.com/schools_info.php/school_id/1579
+				</url>
+				<name>Akutan School</name>
+				<address>202 Volcano Drive</address>
+				<city>Akutan</city>
+				<zip-code>99553</zip-code>
+				<county>Aleutians East</county>
+				<phone>(907) 698-2205</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nsbsd.org/site/index.cfm/1,22,html</url>
+				<name>Alak High School</name>
+				<address>567 Main St.</address>
+				<city>Wainwright</city>
+				<zip-code>99782</zip-code>
+				<phone>907-763-2541</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.eed.state.ak.us/DOE_Rolodex/schools/Details.cfm?PK=315
+				</url>
+				<name>Alakanak School</name>
+				<address>PO Box 9</address>
+				<city>Alakanuk</city>
+				<zip-code>99554</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 238-3312</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://tok.schoolaccess.net/corr/index.html</url>
+				<name>Alaska Gateway Correspondence/Alternative</name>
+				<address>249 Jon Summar Way</address>
+				<city>Tok</city>
+				<zip-code>99780,</zip-code>
+				<phone>(907) 883-2591</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://acs.yksd.com/</url>
+				<name>Allakaket School</name>
+				<address>General Delivery</address>
+				<city>Allakaket</city>
+				<zip-code>99720</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 968-2205</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://acs.yksd.com/</url>
+				<name>Alyeska Central School</name>
+				<address>3141 Channel Drive #100</address>
+				<city>Juneau</city>
+				<zip-code>99801-7897</zip-code>
+				<phone>(907) 465-2835</phone>
+				<phone>(888) 290-3752</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nwarctic.org/ambler.html</url>
+				<name>Ambler High School</name>
+				<address>PO Box 109</address>
+				<city>Ambler</city>
+				<zip-code>99786</zip-code>
+				<phone>(907) 445-2154</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://denali.ak.schoolwebpages.com/education/dept/dept.php?sectiondetailid=577&amp;sc_id=1120029979
+				</url>
+				<name>Anderson High School</name>
+				<address>Box 3120</address>
+				<city>Anderson</city>
+				<zip-code>99744</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 582-2700</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.smcsd.us/pictsalbm.html</url>
+				<name>Andreafski School</name>
+				<address>PO Box 9</address>
+				<city>St. Mary's</city>
+				<zip-code>99658</zip-code>
+				<phone>907-438-2736</phone>
+				<fax>907-438-2735</fax>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yksd.com/info/schools.html</url>
+				<name>Andrew K. Demoski School</name>
+				<address>PO Box 65029</address>
+				<city>Nulato</city>
+				<zip-code>99765</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 898-2204</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.bssd.org/schools/sites/SMK/stmichael.html
+				</url>
+				<name>Anthony A. Andrews School</name>
+				<address>100 Baker Street</address>
+				<city>St. Michael</city>
+				<zip-code>99659</zip-code>
+				<county>Nome</county>
+				<phone>(907) 923-3041</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.akregionv.org/schools.html</url>
+				<name>Angoon High School</name>
+				<comment>Contact email: rdorsey@chathamsd.org</comment>
+				<address>500 Katanook Way</address>
+				<city>Angoon</city>
+				<zip-code>99820</zip-code>
+				<phone>907-788-3262</phone>
+				<fax>907-788-3212</fax>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kuspuk.org/</url>
+				<name>Aniak High School</name>
+				<address>Aniak #29</address>
+				<city>Aniak</city>
+				<zip-code>99557</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 675-4330</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://elim.bssd.org/</url>
+				<name>Aniguiin High School</name>
+				<address>29 Main Street</address>
+				<city>Elim</city>
+				<zip-code>99739</zip-code>
+				<phone>907-890-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.bssd.org/schools/sites/ELI/elim.htm
+				</url>
+				<name>Aniguiin School</name>
+				<address>P.O. Box 29</address>
+				<city>Elim</city>
+				<zip-code>99739</zip-code>
+				<phone>(907) 890-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://lknea.org/siteinfo/nunapschool.htm</url>
+				<name>Anna Tobeluk Memorial School</name>
+				<address>114 Village Road</address>
+				<city>Nunapitchuk</city>
+				<zip-code>99641</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 527-5325</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.bssd.org/</url>
+				<name>Anthony A. Andrews School</name>
+				<address>100 Baker Street</address>
+				<city>St. Michael</city>
+				<zip-code>99659</zip-code>
+				<county>Nome</county>
+				<phone>(907) 923-3041</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.bssd.org/</url>
+				<name>Apangalook Schools</name>
+				<address>169 Gravel Road</address>
+				<city>Gambell</city>
+				<zip-code>99742</zip-code>
+				<phone>907-985-5515</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.eed.state.ak.us/home.html</url>
+				<name>Aqqaluk School</name>
+				<address>PO Box 165</address>
+				<city>Noorvik</city>
+				<zip-code>99763</zip-code>
+				<county>Northwest Arctic</county>
+				<phone>(907) 636-2178</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://lknea.org/siteinfo/platsch.htm</url>
+				<name>Arviq School</name>
+				<address>116 Village Road</address>
+				<city>Platinum</city>
+				<zip-code>99651</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 979-8111</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asdk12.org/schools/AVAIL/pages/site/index.html
+				</url>
+				<name>Avail School</name>
+				<address>425 'C' Street</address>
+				<city>Anchorage</city>
+				<zip-code>99501</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 742-4930</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nwrel.org/nwedu/09-03/charter.php</url>
+				<name>Ayaprun School</name>
+				<address>112 Village Road</address>
+				<city>Newtok</city>
+				<zip-code>99559</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 237-2505</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.asdk12.org/schools/bartlett/pages/</url>
+				<name>Bartlett High School</name>
+				<address>25-500 N. Muldoon Road</address>
+				<city>Anchorage</city>
+				<zip-code>99506</zip-code>
+				<phone>(907) 742-1800</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nsbsd.org/site/index.cfm/1,51,html</url>
+				<name>Barrow High School</name>
+				<address>1684 Okpik St.</address>
+				<city>Barrow</city>
+				<zip-code>99723</zip-code>
+				<county>North Slope</county>
+				<phone>(907) 852-8950</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yukonflats.net/</url>
+				<name>Beaver 'Cruikshank' School</name>
+				<address>310 River Road</address>
+				<city>Beaver</city>
+				<zip-code>99724</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 628-6313</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.northstar.k12.ak.us/schools/beh/beh.html
+				</url>
+				<name>Ben Eielson Junior/Senior High School</name>
+				<address>5271 Raven's Way</address>
+				<city>Eielson Afb</city>
+				<zip-code>99702</zip-code>
+				<county>Fairbanks North Star</county>
+				<phone>(907) 372-3110</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.matsuk12.us/RunScript.asp?Page=6&amp;p=ASP%5CPg6.asp
+				</url>
+				<name>Beryozava</name>
+				<address>125 W. Evergreen</address>
+				<city>Palmer</city>
+				<zip-code>99645</zip-code>
+				<county>Matanuska-Susitna</county>
+				<phone>(907) 495-2500</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/</url>
+				<name>Bethel Regional High School</name>
+				<address>1006 Ron Edwards Way</address>
+				<city>Bethel</city>
+				<zip-code>99559</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 543-3957</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://brevig.bssd.org/</url>
+				<name>Brevig Mission School</name>
+				<address>General Delivery</address>
+				<city>Brevig Mission</city>
+				<zip-code>99785</zip-code>
+				<phone>(907) 642-4021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.northstar.k12.ak.us/schools/beh/beh.html
+				</url>
+				<name>Ben Eielson Jr/Sr High School</name>
+				<address>675 Raven's Way</address>
+				<city>Eielson AFB</city>
+				<zip-code>99702</zip-code>
+				<phone>(907) 372-4265</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://bristolbayschool.ihigh.com/</url>
+				<name>Bristol Bay High School</name>
+				<address>#2 School Road</address>
+				<city>Naknek</city>
+				<zip-code>99633</zip-code>
+				<county>Bristol Bay</county>
+				<phone>(907) 246-4265</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nwarctic.org/buckland.html</url>
+				<name>Buckland High School</name>
+				<address>P.O. Box 91</address>
+				<city>Buckland</city>
+				<zip-code>99727</zip-code>
+				<phone>(907) 494-2127</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>bhs.matsuk12.us</url>
+				<name>Burchell High School</name>
+				<address>1775 West Parks Highway</address>
+				<city>Wasilla</city>
+				<zip-code>99654</zip-code>
+				<phone>(907) 373-7775</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://denali.ak.schoolwebpages.com/education/dept/dept.php?sectionid=140
+				</url>
+				<name>Cantwell School</name>
+				<address>Box 29</address>
+				<city>Cantwell</city>
+				<zip-code>99729</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 768-2372</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.northstar.k12.ak.us/schools/son/cec/cec.html
+				</url>
+				<name>Career Education Center</name>
+				<address>
+					Fairbanks North Star Borough School District
+				</address>
+				<address>725 26th Ave.</address>
+				<city>Fairbanks</city>
+				<zip-code>99701</zip-code>
+				<phone>(907) 479-4061</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.lksd.org/chefornak/SchoolStaff.html
+				</url>
+				<name>Chaputnguak School</name>
+				<address>PO Box 50</address>
+				<city>Chefornak</city>
+				<zip-code>99561</zip-code>
+				<phone>(907) 867-8700</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://chenegabay.csd.schoolaccess.net/</url>
+				<name>Chenega Bay School</name>
+				<address>Main Street</address>
+				<city>Chenega Bay</city>
+				<zip-code>99574</zip-code>
+				<county>Valdez-Cordova</county>
+				<phone>(907) 573-5123</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.state.ak.us/local/akpages/ADMIN/drb/trs/trs-employers.shtml
+				</url>
+				<name>Chevak School</name>
+				<address>985 Ksd Way</address>
+				<city>Chevak</city>
+				<zip-code>99563</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 858-7712</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.beringsea.com/communities/index.php?community=250
+				</url>
+				<name>Chief Ivan Blunka School</name>
+				<address>P O Box 29</address>
+				<address>New Stuyahok, AK. 99636</address>
+				<county>Dillingham</county>
+				<phone>(907) 693-3144</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/</url>
+				<name>Chief Paul Memorial School</name>
+				<address>PO Box 19</address>
+				<city>Kipnuk</city>
+				<zip-code>99614</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 896-5011</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Chignik Bay School</name>
+				<address>School Road</address>
+				<city>Chignik Bay</city>
+				<zip-code>99564</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 749-2213</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Chignik Lagoon School</name>
+				<address>School Road</address>
+				<city>Chignik Lagoon</city>
+				<zip-code>99565</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 840-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Chignik Lake School</name>
+				<address>School Road</address>
+				<city>Chignik Lake</city>
+				<zip-code>99548</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 845-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.asdk12.org/schools/chugiak/pages/</url>
+				<name>Chugiak High School</name>
+				<address>P.O. Box 770218</address>
+				<address>16525 S. Birchwood</address>
+				<city>Eagle River</city>
+				<zip-code>99567</zip-code>
+				<phone>(907) 742-3050</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.aebsd.org/cdb.school/index.html</url>
+				<name>Cold Bay School</name>
+				<address>401 Airport Way</address>
+				<city>Cold Bay</city>
+				<zip-code>99571</zip-code>
+				<county>Aleutians East</county>
+				<phone>(907) 532-2409</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.chs.matsuk12.us/</url>
+				<name>Colony High School</name>
+				<address>9550 Colony School Drive</address>
+				<city>Palmer</city>
+				<zip-code>99645</zip-code>
+				<county>Matanuska-Susitna</county>
+				<phone>907-746-9500</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://cordova.ccsd.schoolaccess.net/highschool/
+				</url>
+				<name>Cordova High School</name>
+				<address>Box 140</address>
+				<city>Cordova</city>
+				<zip-code>99574-0140</zip-code>
+				<phone>(907) 424-3266</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.ccsd.k12.ak.us/chs/index.html</url>
+				<name>Craig High School</name>
+				<address>P.O. Box 800</address>
+				<city>Craig</city>
+				<zip-code>99921</zip-code>
+				<phone>907-826-2274</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kuspuk.org/</url>
+				<name>Crow Village Sam School</name>
+				<address>Chuathbaluk #29</address>
+				<city>Chuathbaluk</city>
+				<zip-code>99557</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 467-4229</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nwarctic.org/selawik.html</url>
+				<name>Davis-Ramoth School</name>
+				<address>PO Box 29</address>
+				<city>Selawik</city>
+				<zip-code>99770</zip-code>
+				<county>Northwest Arctic</county>
+				<phone>(907) 484-2142</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.iditarodsd.org/Pages/Schools/grayling.html
+				</url>
+				<name>David-Louis Memorial School</name>
+				<address>Box 90</address>
+				<city>Grayling</city>
+				<zip-code>99590</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 453-5135</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nwarctic.org/deering/index.htm</url>
+				<name>Deering School</name>
+				<address>PO Box 36009</address>
+				<city>Deering</city>
+				<zip-code>99736</zip-code>
+				<county>Northwest Arctic</county>
+				<phone>(907) 363-2121</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.dcs.k12.ak.us/</url>
+				<name>Delta Charter Cyber School</name>
+				<address>2610 Isabell Avenue</address>
+				<city>Delta Junction</city>
+				<zip-code>99737</zip-code>
+				<county>Southeast Fairbanks</county>
+				<phone>(907) 895-4460</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.dgsd.k12.ak.us/education/school/school.php?sectiondetailid=22
+				</url>
+				<name>Delta Junction Junior/Senior High School</name>
+				<address>2610 Isabell Avenue</address>
+				<city>Delta Junction</city>
+				<zip-code>99737</zip-code>
+				<county>Southeast Fairbanks</county>
+				<phone>(907) 895-4460</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Dena'Ina School</name>
+				<address>School Road</address>
+				<city>Pedro Bay</city>
+				<zip-code>99647</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 850-2207</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.lksd.org/kongiganak/Kongiganak/Kong/TchngAtKong.htm
+				</url>
+				<name>Dick R Kiunya Memorial School</name>
+				<address>PO Box 5109</address>
+				<city>Kongiganak</city>
+				<zip-code>99559</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 557-5126</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.eed.state.ak.us/DOE_Rolodex/schools/Details.cfm?PK=143
+				</url>
+				<name>Dillingham Middle/High School</name>
+				<address>565 Seward Street</address>
+				<city>Dillingham</city>
+				<zip-code>99576</zip-code>
+				<county>Dillingham</county>
+				<phone>(907) 842-5221</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.asdk12.org/schools/dimond/pages/</url>
+				<name>Dimond High School</name>
+				<address>2909 W 88TH Ave.</address>
+				<city>Anchorage</city>
+				<zip-code>99502.</zip-code>
+				<phone>(907) 742-7000</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://ak.localschooldirectory.com/schools_info.php/school_id/1603
+				</url>
+				<name>Diomede School</name>
+				<address>Main Street</address>
+				<city>Diomede</city>
+				<zip-code>99762</zip-code>
+				<county>Nome</county>
+				<phone>(907) 686-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://tok.schoolaccess.net/</url>
+				<name>Dot Lake School</name>
+				<address>Mp 1361 Ak Hwy</address>
+				<city>Dot Lake</city>
+				<zip-code>99737</zip-code>
+				<county>Southeast Fairbanks</county>
+				<phone>(907) 882-2663</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://tok.schoolaccess.net/</url>
+				<name>Eagle Community School</name>
+				<address>Box 168</address>
+				<city>Eagle</city>
+				<zip-code>99738-0168</zip-code>
+				<phone>(907) 547-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asdk12.org/renewal/HS/eagleriver.asp
+				</url>
+				<name>Eagle River High School</name>
+				<address>8701 Yosemite Drive</address>
+				<city>Eagle River</city>
+				<zip-code>99577</zip-code>
+				<phone>(907) 742-2758</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.asdk12.org/schools/east/pages/</url>
+				<name>East Anchorage High School</name>
+				<address>4025 East Northern Lights Boulevard</address>
+				<city>Anchorage</city>
+				<zip-code>99508</zip-code>
+				<phone>(907) 742-2100</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.asdk12.org/schools/east/pages/</url>
+				<name>East High School</name>
+				<address>4025 E. Northern Lights Blvd</address>
+				<city>Anchorage</city>
+				<zip-code>99508</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 277-3575</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://w3.legis.state.ak.us/students/capart/egegik1/index.htm
+				</url>
+				<name>Egegik School</name>
+				<address>School Road</address>
+				<city>Egegik</city>
+				<zip-code>99579</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 233-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.asdn.org/</url>
+				<name>Emmonak School</name>
+				<address>General Delivery</address>
+				<city>Emmonak</city>
+				<zip-code>99581</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 949-1248</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.hss.state.ak.us/djj/facilities/fyf/default.htm
+				</url>
+				<name>Fairbanks Youth Facility</name>
+				<address>1502 Wilbur Street</address>
+				<city>Fairbanks</city>
+				<zip-code>99701</zip-code>
+				<phone>907 451-2150</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.aebsd.org/kfp.school/forest.html</url>
+				<name>False Pass School</name>
+				<address>300 Valley Road</address>
+				<city>False Pass</city>
+				<zip-code>99583</zip-code>
+				<county>Aleutians East</county>
+				<phone>(907) 548-2224</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yukonflats.net/</url>
+				<name>Far North School</name>
+				<address>49 Far North Street</address>
+				<city>Central</city>
+				<zip-code>99730</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 520-5114</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yukonflats.net/</url>
+				<name>Fort Yukon School</name>
+				<address>335 Main Street</address>
+				<city>Fort Yukon</city>
+				<zip-code>99740</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 662-2352</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.bssd.org/schools/sites/UNK/unalakleet.htm
+				</url>
+				<name>Frank A. Degnan High School</name>
+				<address>PO Box 130</address>
+				<city>Unalakleet</city>
+				<zip-code>99684</zip-code>
+				<phone>(907) 624-3444</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.frontierk12.org/</url>
+				<name>Frontier Charter Schools</name>
+				<address>400 W. Northern Lights Blvd., Suite 9</address>
+				<city>Anchorage</city>
+				<zip-code>99503</zip-code>
+				<county>Fairbanks Nort</county>
+				<phone>(907) 742-1189</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.galenaalaska.org/</url>
+				<name>Galena Junior/Senior High School</name>
+				<address>299 Antoski Avenue</address>
+				<city>Galena</city>
+				<zip-code>99741</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 656-1205</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://gambell.bssd.org/Welcome.html</url>
+				<name>Gambell Schools</name>
+				<address>169 Main Street</address>
+				<city>Gambell</city>
+				<zip-code>99742</zip-code>
+				<county>Nome</county>
+				<phone>(907) 985-5515</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kuspuk.org/</url>
+				<name>George Morgan Junior/Senior High School</name>
+				<address>Kalskag Morgan #29</address>
+				<city>Upper Kalskag</city>
+				<zip-code>99607</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 471-2288</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kuspuk.org/</url>
+				<name>George Willis School</name>
+				<address>Red Devil #29</address>
+				<city>Red Devil</city>
+				<zip-code>99656</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 447-3213</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://valdezcityschools.org/Junior%20High/gjh/index.htm
+				</url>
+				<name>Gilson Junior High School</name>
+				<address>P.O. Box 827</address>
+				<address>357 Robe River Drive</address>
+				<city>Valdez</city>
+				<zip-code>99686</zip-code>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.matsuk12.us/RunScript.asp?page=6&amp;p=ASP%5CPg6.asp
+				</url>
+				<name>Glacier View School</name>
+				<address>Mile 104 Glenn Highway</address>
+				<city>Palmer</city>
+				<zip-code>99645</zip-code>
+				<county>Matanuska-Susitna</county>
+				<phone>(907) 745-5122</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yksd.com/</url>
+				<name>Gladys Dart School</name>
+				<address>PO Box 29</address>
+				<city>Manley Hot Springs</city>
+				<zip-code>99756</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 672-3202</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.gcsk12.net/secondary/</url>
+				<name>Grace Christian School</name>
+				<address>12407 Pintail Street</address>
+				<city>Anchorage</city>
+				<zip-code>99516</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 868-1203</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.chathamsd.org/sites/gustavus/</url>
+				<name>Gustavus School</name>
+				<address>Box 120</address>
+				<address>Glacier Bay National Park</address>
+				<city>Gustavus</city>
+				<zip-code>99826-0120</zip-code>
+				<phone>(907)697-2248</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kuspuk.org/</url>
+				<name>Gusty Michael School</name>
+				<address>Stony #29</address>
+				<city>Stony River</city>
+				<zip-code>99557</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 537-3226</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://glacierbears.hbsd.net/hs/hsshome.html</url>
+				<name>Haines High School</name>
+				<address>Box 1289</address>
+				<city>Haines</city>
+				<zip-code>99827</zip-code>
+				<county>Haines</county>
+				<phone>(907) 766-2411</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.muninetguide.com/school.php?school=6100028736
+				</url>
+				<name>Harold Kaveolook School</name>
+				<address>2001 Barter Ave.</address>
+				<city>Kaktovik</city>
+				<zip-code>99747</zip-code>
+				<county>North Slope</county>
+				<phone>(907) 640-6626</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.dgsd.k12.ak.us/</url>
+				<name>Healy Lake School</name>
+				<address>Healy Lake Village</address>
+				<city>Delta Junction</city>
+				<zip-code>99737</zip-code>
+				<county>Southeast Fairbanks</county>
+				<phone>(907) 876-5020</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.highlandtech.org/</url>
+				<name>Highland Tech High School</name>
+				<address>
+					5530 E. Northern Lights Blvd, Ste. 100
+				</address>
+				<city>Anchorage</city>
+				<zip-code>99504</zip-code>
+				<phone>(907) 742-1700</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://savoonga.bssd.org/</url>
+				<name>Hogarth Kingeekuk Sr. Memorial</name>
+				<address>Po Box 200</address>
+				<city>Savoonga</city>
+				<zip-code>99769</zip-code>
+				<county>Nome</county>
+				<phone>(907) 984-6811</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.kpbsd.k12.ak.us/hhs/Web%20Pages/main/home.html
+				</url>
+				<name>Homer High School</name>
+				<address>600 E. Fairview</address>
+				<city>Homer</city>
+				<zip-code>99603</zip-code>
+				<phone>(907) 235 8186</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>https://www.edline.net/pages/Homer_Flex</url>
+				<name>Homer Flex School</name>
+				<address>397 E. Pioneer</address>
+				<city>Homer</city>
+				<zip-code>99603</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 235-5558</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://hou.mat-su.k12.ak.us/</url>
+				<name>Houston High School</name>
+				<address>Hawk Road</address>
+				<city>Big Lake</city>
+				<zip-code>99652</zip-code>
+				<county>Matanuska-Susitna</county>
+				<phone>(907) 892-9250</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.sisd.org/content/schools/hollis/</url>
+				<name>Hollis School</name>
+				<address>Hollis</address>
+				<city>Hollis</city>
+				<zip-code>99950</zip-code>
+				<county>Pr Of Wales-Outer Ketchikan</county>
+				<phone>(907) 530-7108</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www3.hcs.k12.ak.us/</url>
+				<name>Hoonah Junior/Senior High School</name>
+				<address>366 Garteeni Highway</address>
+				<city>Hoonah</city>
+				<zip-code>99829</zip-code>
+				<county>Skagway-Hoona-Angoon</county>
+				<phone>(907) 945-3613</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.alaskacommercial.com/Cities/HooperBay/Hooper.html
+				</url>
+				<name>Hooper Bay School</name>
+				<address>General Delivery</address>
+				<city>Hooper Bay</city>
+				<zip-code>99604</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 758-4826</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nsbsd.org</url>
+				<name>Hope School</name>
+				<address>PO Box 47</address>
+				<city>Hope</city>
+				<zip-code>99605</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 782-3202</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.hou.mat-su.k12.ak.us/</url>
+				<name>Houston Jr. Sr. School</name>
+				<address>Po Box 521060</address>
+				<city>Big Lake</city>
+				<zip-code>99652</zip-code>
+				<phone>(907) 892-9250</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.northstar.k12.ak.us/schools/hla/main.html
+				</url>
+				<name>Howard Luke Academy</name>
+				<address>601 Loftus Rd.</address>
+				<city>Fairbanks</city>
+				<zip-code>99709</zip-code>
+				<county>Fairbanks North Star</county>
+				<phone>(907) 474-0958</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.sisd.org/content/schools/hv/index.html
+				</url>
+				<name>Howard Valentine School</name>
+				<address>Coffman Cove</address>
+				<city>Coffman Cove</city>
+				<zip-code>99918</zip-code>
+				<county>Pr Of Wales-Outer Ketchikan</county>
+				<phone>(907) 329-2244</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.haidacharters.com/school.html</url>
+				<name>Hydaburg Jr/Sr High School</name>
+				<address>Box 109</address>
+				<city>Hydaburg</city>
+				<zip-code>99922</zip-code>
+				<phone>907-285-3591</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.stewart-hyder.com/community.html</url>
+				<name>Hyder School</name>
+				<address>Po Box 110</address>
+				<city>Hyder</city>
+				<zip-code>99923</zip-code>
+				<phone>(250) 636-2100</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.northstar.k12.ak.us/schools/frontpages/hut/counseling/index.html
+				</url>
+				<name>Hutchison High School</name>
+				<address>3750 Geist Road</address>
+				<city>Fairbanks</city>
+				<zip-code>99709</zip-code>
+				<phone>(907) 479-2261</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.geocities.com/icybayschool/</url>
+				<name>Icy Bay School</name>
+				<address>Box 429</address>
+				<city>Yakutat</city>
+				<zip-code>99689</zip-code>
+				<county>Yakutat</county>
+				<phone>(907) 784-3317</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.batchmates.com/institution/instdetails.asp?instcode=79242
+				</url>
+				<name>Igiugig High School</name>
+				<address>Caribou Court</address>
+				<city>Igiugig</city>
+				<zip-code>99613</zip-code>
+				<phone>(907) 533-3220</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.commerce.state.ak.us/dca/commdb/CIS.cfm?Comm_Boro_name=Mountain%20Village
+				</url>
+				<name>Ignatius Beans School</name>
+				<address>Mountain Village School</address>
+				<city>Mountain Village</city>
+				<zip-code>99632</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 591-2829</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://szshx.shx.iasd.gcisa.net/</url>
+				<name>Innoko River School</name>
+				<address>P.O. Box 49</address>
+				<city>Shageluk</city>
+				<zip-code>99665</zip-code>
+				<phone>(907) 473-8233</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Ivanof Bay School</name>
+				<address>General Delivery</address>
+				<city>Ivanof Bay</city>
+				<zip-code>99502</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 669-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kuspuk.org/</url>
+				<name>Jack Egnaty Sr. School</name>
+				<address>General Delivery</address>
+				<city>Sleetmute</city>
+				<zip-code>99668</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 449-4216</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://teller.bssd.org/</url>
+				<name>James C. Isabell School</name>
+				<address>Main Street</address>
+				<city>Teller</city>
+				<zip-code>99778</zip-code>
+				<county>Nome</county>
+				<phone>(907) 642-3041</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asd.k12.ak.us/schooldetails.asp?ID=650
+				</url>
+				<name>Jesse Lee Home</name>
+				<address>4600 Abbott Road</address>
+				<city>Anchorage</city>
+				<zip-code>99507</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 346-2101</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yksd.com/</url>
+				<name>Jimmy Huntington School</name>
+				<address>PO Box 110</address>
+				<city>Huslia</city>
+				<zip-code>99746</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 829-2205</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asaa.org/schooldirectory/jschools/Joann_A_Alexie_Memorial.html
+				</url>
+				<name>Joann A. Alexie Memorial School</name>
+				<address>PO Box Att</address>
+				<city>Atmautluak</city>
+				<zip-code>99559</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 553-5112</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yukonflats.net/</url>
+				<name>John Fredson School</name>
+				<address>360 Chandalar Drive</address>
+				<city>Venetie</city>
+				<zip-code>99781</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 849-8415</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kuspuk.org/</url>
+				<name>Johnnie John Senior School</name>
+				<address>Creek #29</address>
+				<city>Crooked Creek</city>
+				<zip-code>99575</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 432-2205</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.jsd.k12.ak.us/</url>
+				<name>Juneau District Correspondence</name>
+				<address>811 12th Street</address>
+				<city>Juneau</city>
+				<zip-code>99801</zip-code>
+				<county>Juneau</county>
+				<phone>(907) 586-5782</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.jsd.k12.ak.us/jdhs/index.html</url>
+				<name>Juneau-Douglas High School</name>
+				<address>1639 Glacier Avenue</address>
+				<city>Juneau</city>
+				<zip-code>99801</zip-code>
+				<phone>(907) 523-1500</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					https://www.edline.net/pages/Kenai_Central_High
+				</url>
+				<name>Kenai Central High School</name>
+				<address>9583 Spur Hwy.</address>
+				<city>Kenai</city>
+				<zip-code>99611</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 283-7524</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kpbsd.k12.ak.us/kselo/selohp.html</url>
+				<name>Kachemak Selo School</name>
+				<address>PO Box 15007</address>
+				<city>Fritz Creek</city>
+				<zip-code>99603</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 235-5552</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.aasb.org/QS2/QS2/QS2_Kake.html</url>
+				<name>Kake High School</name>
+				<address>175 Library Place</address>
+				<city>Kake</city>
+				<zip-code>99830</zip-code>
+				<county>Wrangell-Petersburg</county>
+				<phone>(907) 785-3741</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nsbsd.org/site/index.cfm/1,62,html</url>
+				<name>Kali School</name>
+				<address>1029 Qasigiakik St.</address>
+				<city>Point Lay</city>
+				<zip-code>99759</zip-code>
+				<county>North Slope</county>
+				<phone>(907) 833-2311</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://hus.yksd.com/info/contact.html</url>
+				<name>Kaltag School</name>
+				<address>PO Box 30</address>
+				<city>Kaltag</city>
+				<zip-code>99748</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 534-2204</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kodiak.k12.ak.us/index.html</url>
+				<name>Karluk School</name>
+				<address>Main Street</address>
+				<city>Kodiak</city>
+				<zip-code>99615</zip-code>
+				<county>Kodiak Island</county>
+				<phone>(907) 241-2217</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.sisd.org/content/schools/kasaan/index.html
+				</url>
+				<name>Kasaan School</name>
+				<address>Box Kxa</address>
+				<city>Ketchikan</city>
+				<zip-code>99950</zip-code>
+				<county>Ketchikan Gateway</county>
+				<phone>(907) 542-2217</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					https://www.edline.net/pages/Kenai_Alternative_High
+				</url>
+				<name>Kenai Alternative High</name>
+				<address>11247 Frontage Road, #c</address>
+				<city>Kenai</city>
+				<zip-code>99611</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 283-7844</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kpbsd.k12.ak.us/kchs/launch/</url>
+				<name>Kenai Central High School</name>
+				<address>9583 Spur Hwy.</address>
+				<city>Kenai</city>
+				<zip-code>99611</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 283-7524</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://lynnwadleyster.googlepages.com/home</url>
+				<name>Ketchikan High School</name>
+				<address>2610 Fourth Ave.</address>
+				<city>Ketchikan</city>
+				<zip-code>99901</zip-code>
+				<phone>(907) 225-9815</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/kwethluk/index.htm</url>
+				<name>Ket'Achik/Aapalluk Memorial School</name>
+				<address>General Delivery</address>
+				<city>Kwethluk</city>
+				<zip-code>99621</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 757-6014</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kennylakeschool.com/</url>
+				<name>Kenny Lake School</name>
+				<address>Hc 60 Box 224</address>
+				<city>Copper Center</city>
+				<zip-code>99573</zip-code>
+				<county>Valdez-Cordova</county>
+				<phone>(907) 822-3870</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kgbsd.org/khs/khs.htm</url>
+				<name>Ketchikan High School</name>
+				<address>2610 4th Ave.</address>
+				<city>Ketchikan</city>
+				<zip-code>99901</zip-code>
+				<county>Ketchikan Gateway</county>
+				<phone>(907) 225-9815</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nwabor.org/</url>
+				<name>Kiana School</name>
+				<address>PO Box 190</address>
+				<city>Kiana</city>
+				<zip-code>99749</zip-code>
+				<county>Northwest Arctic</county>
+				<phone>(907) 475-2115</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.aebsd.org/kvc.school/index.html</url>
+				<name>King Cove School</name>
+				<address>101 Windy Walkway</address>
+				<city>King Cove</city>
+				<zip-code>99612</zip-code>
+				<county>Aleutians East</county>
+				<phone>(907) 497-2354</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asdk12.org/schooldetails.asp?ID=805
+				</url>
+				<name>King Career Center</name>
+				<address>2650 E Northern Lights Blvd.</address>
+				<city>Anchorage</city>
+				<zip-code>99508</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 278-9631</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.aebsd.org/kvc.school/</url>
+				<name>King Cove Schools</name>
+				<address>101 Windy Walkway</address>
+				<city>King Cove</city>
+				<zip-code>99612</zip-code>
+				<county>Aleutians East</county>
+				<phone>(907) 497-2354</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://waa.bssd.org/site/</url>
+				<name>Kingikmiut School</name>
+				<address>P.O. Box 490</address>
+				<city>Wales</city>
+				<zip-code>99783</zip-code>
+				<phone>(907) 664-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.klawockschool.com</url>
+				<name>Klawock School</name>
+				<address>100 Bayview Blvd</address>
+				<city>Klawock</city>
+				<zip-code>99925</zip-code>
+				<phone>(907) 755-2220</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.chathamsd.org/sites/klukwan/</url>
+				<name>Klukwan School</name>
+				<address>PO Box 1409</address>
+				<city>Haines</city>
+				<zip-code>99827</zip-code>
+				<county>Haines</county>
+				<phone>(907) 767-5551</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kodiakschools.org/khs/index.html</url>
+				<name>Kodiak High School</name>
+				<address>917 Rezanof East</address>
+				<city>Kodiak</city>
+				<zip-code>99615</zip-code>
+				<county>Kodiak Island</county>
+				<phone>(907) 486-9211</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kcseagles.org/</url>
+				<name>Kodiak Christian School</name>
+				<address>P.O. Box 49</address>
+				<address>2320 Mill Bay Road</address>
+				<city>Kodiak</city>
+				<zip-code>99615</zip-code>
+				<phone>(907) 486-4905</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://schools.publicschoolsreport.com/Alaska/Kokhanok/KokhanokSchool.html
+				</url>
+				<name>Kokhanok School</name>
+				<address>School Road</address>
+				<city>Kokhanok</city>
+				<zip-code>99606</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 282-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.swrsd.org/generalInfo/schoolKGK.html
+				</url>
+				<name>Koliganek School</name>
+				<address>PO Box 5052</address>
+				<city>Koliganek</city>
+				<zip-code>99576</zip-code>
+				<county>Dillingham</county>
+				<phone>(907) 596-3444</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.eed.state.ak.us/DOE_Rolodex/QInternet_1.cfm
+				</url>
+				<name>Kotlik School</name>
+				<address>PO Box 20129</address>
+				<city>Kotlik</city>
+				<zip-code>99620</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 899-4415</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.schooldigger.com/go/AK/schools/0002000013/school.aspx
+				</url>
+				<name>Koyuk Malemute School</name>
+				<address>09 Main Street</address>
+				<city>Koyuk</city>
+				<zip-code>99753</zip-code>
+				<county>Nome</county>
+				<phone>(907) 963-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://lknea.org/siteinfo/quinsch.htm</url>
+				<name>Kuinerrarmiut Elitnaurviat</name>
+				<address>General Delivery</address>
+				<city>Quinhagak</city>
+				<zip-code>99655</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 556-8628</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/kwethluk/</url>
+				<name>Kwethluk Community School</name>
+				<address>106 River Road</address>
+				<city>Kwethiuk</city>
+				<zip-code>99621</zip-code>
+				<phone>(907) 757-6014</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/</url>
+				<name>Kwigillingok School</name>
+				<address>General Delivery</address>
+				<city>Kwigillingok</city>
+				<zip-code>99622</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 588-8629</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Lake And Peninsula Correspondence</name>
+				<address>Jensen Drive</address>
+				<city>King Salmon</city>
+				<zip-code>99613</zip-code>
+				<county>Bristol Bay</county>
+				<phone>(907) 246-4280</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.iditarodsd.org/</url>
+				<name>Minchumina Community School</name>
+				<address>101 Lakeview</address>
+				<city>Lake Minchumina</city>
+				<zip-code>99757</zip-code>
+				<phone>907-674-3214</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://kodiakstudents.koc.alaska.edu/vision/multimedia/larsenbay/default.html
+				</url>
+				<name>Larsen Bay School</name>
+				<address>Main Street</address>
+				<city>Larsen Bay</city>
+				<zip-code>99624</zip-code>
+				<county>Kodiak Island</county>
+				<phone>(907) 847-2252</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.northstar.k12.ak.us/schools/lth/index.html
+				</url>
+				<name>Lathrop High School</name>
+				<address>901 Airport Way</address>
+				<city>Fairbanks</city>
+				<zip-code>99701</zip-code>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Levelock School</name>
+				<address>School Road</address>
+				<city>Levelock</city>
+				<zip-code>99625</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 287-3060</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://lknea.org/siteinfo/tuntsch.htm</url>
+				<name>Lewis Angapak Memorial School</name>
+				<address>General Delivery</address>
+				<city>Tuntutuliak</city>
+				<zip-code>99680</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 256-2415</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.iditarodsd.org/</url>
+				<name>Lime Village School</name>
+				<address>Box Lvd</address>
+				<city>Lime Village-Mcgrath</city>
+				<zip-code>99627</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 526-5112</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://lknea.org/siteinfo/tuntsch.htm</url>
+				<name>Lewis Angapak Memorial School</name>
+				<address>General Delivery</address>
+				<city>Tuntutuliak</city>
+				<zip-code>99680</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 256-2415</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.homes101.net/alaska-schools/tanana-city-school-district-d3406/maudrey-j-sommer-school-s55148/
+				</url>
+				<name>Maudrey J Sommer School</name>
+				<address>89 Front Street</address>
+				<city>Tanana</city>
+				<zip-code>99777</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 366-7207</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://dlg.swrsd.org/do/doHomePage.shtml</url>
+				<name>Manokotak School</name>
+				<address>PO Box 30</address>
+				<city>Manokotak</city>
+				<zip-code>99628</zip-code>
+				<county>Dillingham</county>
+				<phone>(907) 289-1013</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>https://vcf.schoolaccess.net/</url>
+				<name>Marshall School</name>
+				<address>Fortuna Ledge PO Box 89</address>
+				<city>Marshall</city>
+				<zip-code>99585</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 679-6112</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://golovin.bssd.org/</url>
+				<name>Martin L. Olson School</name>
+				<address>40 Main Street</address>
+				<city>Golovin</city>
+				<zip-code>99762</zip-code>
+				<county>Nome</county>
+				<phone>(907) 779-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.iditarodsd.org/mcg/</url>
+				<name>McGrath School</name>
+				<address>Box 290</address>
+				<city>McGrath</city>
+				<zip-code>99627</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 524-3388</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asdk12.org/schooldetails.asp?ID=618
+				</url>
+				<name>McKinley Heights</name>
+				<address>Hc 85, Box 9549</address>
+				<city>Eagle River</city>
+				<zip-code>99577</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 694-3336</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.hss.state.ak.us/djj/facilities/myc/default.htm
+				</url>
+				<name>McLaughlin Youth Center</name>
+				<address>2600 Providence Drive</address>
+				<city>Anchorage</city>
+				<zip-code>99508</zip-code>
+				<phone>(907) 261-4399</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&amp;DistrictID=0200625&amp;SchoolType=1&amp;SchoolType=2&amp;SchoolType=3&amp;SchoolType=4&amp;SpecificSchlTypes=all&amp;IncGrade=-1&amp;LoGrade=-1&amp;HiGrade=-1&amp;ID=020062500300
+				</url>
+				<name>McQueen School</name>
+				<address>General Delivery</address>
+				<city>Kivalina</city>
+				<zip-code>99750</zip-code>
+				<county>Northwest Arctic</county>
+				<phone>(907) 645-2125</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nsbsd.org/site/index.cfm/1,64,html</url>
+				<name>Meade River School</name>
+				<address>4001 Kippi St.</address>
+				<city>Atqasuk</city>
+				<zip-code>99791</zip-code>
+				<county>North Slope</county>
+				<phone>(907) 633-6315</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://tok.schoolaccess.net/</url>
+				<name>Mentasta Lake School</name>
+				<address>6 Mile Main Village Road</address>
+				<city>Mentasta Lake</city>
+				<zip-code>99780</zip-code>
+				<county>Valdez-Cordova</county>
+				<phone>(907) 291-2327</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.schooldigger.com/go/AK/schools/0048500205/school.aspx
+				</url>
+				<name>Meshik School</name>
+				<address>School Road</address>
+				<city>Port Heiden</city>
+				<zip-code>99549</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 837-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://aisd.k12.ak.us/</url>
+				<name>Metlakatla High School</name>
+				<address>4th &amp; Milton Street</address>
+				<city>Metlakatla</city>
+				<zip-code>99926</zip-code>
+				<county>Pr Of Wales-Outer Ketchikan</county>
+				<phone>(907) 886-6000</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://hus.yksd.com/info/contact.html</url>
+				<name>Merreline A Kangas School</name>
+				<address>Box 68110</address>
+				<city>Ruby</city>
+				<zip-code>99768</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 468-4465</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://hus.yksd.com/info/contact.html</url>
+				<name>Minto School</name>
+				<address>PO Box 81</address>
+				<city>Minto</city>
+				<zip-code>99758</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 798-7212</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.mehs.educ.state.ak.us/</url>
+				<name>Mt. Edgecumbe High School</name>
+				<address>1330 Seward Avenue</address>
+				<city>Sitka</city>
+				<zip-code>99835</zip-code>
+				<phone>(907) 966-3200</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.catholic-schools.org/</url>
+				<name>Monroe Catholic High School</name>
+				<address>615 Monroe Street</address>
+				<city>Fairbanks</city>
+				<zip-code>99701</zip-code>
+				<county>Fairbanks Nort</county>
+				<phone>(907) 452-2044</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>https://www.edline.net/pages/Nanwalek_School</url>
+				<name>Nanwalek School</name>
+				<address>PO Box 8007</address>
+				<city>Nanwalek</city>
+				<zip-code>99603</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 281-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nwarctic.org/noatak.html</url>
+				<name>Napaaqtugmiut School</name>
+				<address>PO Box 49</address>
+				<city>Noatak</city>
+				<zip-code>99761</zip-code>
+				<county>Northwest Arctic</county>
+				<phone>(907) 485-2153</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.sisd.org/content/schools/naukati/index.html
+				</url>
+				<name>Naukati School</name>
+				<city>Ketchikan</city>
+				<zip-code>99950</zip-code>
+				<county>Ketchikan Gateway</county>
+				<phone>(907) 629-4121</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/toksook/index.html</url>
+				<name>Nelson Island Area Schools</name>
+				<address>General Delivery</address>
+				<city>Toksook Bay</city>
+				<zip-code>99637</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 427-7815</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.aebsd.org/</url>
+				<name>Nelson Lagoon School</name>
+				<address>154 Bering Way</address>
+				<city>Nelson Lagoon</city>
+				<zip-code>99571</zip-code>
+				<county>Aleutians East</county>
+				<phone>(907) 989-2225</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.arctic.net/%7Enewhalen/school/NewhalenSchool.html
+				</url>
+				<name>Newhalen School</name>
+				<address>School Road</address>
+				<city>Iliamna</city>
+				<zip-code>99606</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 571-1211</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nenana.gcisa.net/</url>
+				<name>Nenana City Public School</name>
+				<address>2nd &amp; C Street</address>
+				<city>Nenana</city>
+				<zip-code>99760</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 832-5464</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/nightmute/index.html</url>
+				<name>Nightmute School</name>
+				<address>General Delivery</address>
+				<city>Nightmute</city>
+				<zip-code>99690</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 647-6313</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kpbsd.k12.ak.us/NikMH/</url>
+				<name>Nikiski Middle-High School</name>
+				<address>PO Box 7112</address>
+				<city>Nikiski</city>
+				<zip-code>99611</zip-code>
+				<phone>(907) 776-3456</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					https://www.edline.net/pages/Nikolaevsk_School
+				</url>
+				<name>Nikolaevsk Elementary/High School</name>
+				<address>Box 5129 Cpo</address>
+				<city>Anchor Point</city>
+				<zip-code>99556</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 235-8972</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.alaskacoast.state.ak.us/Explore/AWCRSA/nikolski.html
+				</url>
+				<name>Nikolski School</name>
+				<address>General Delivery</address>
+				<city>Nikolski</city>
+				<zip-code>99638</zip-code>
+				<county>Aleutians West</county>
+				<phone>(907) 576-2200</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>https://www.edline.net/pages/Ninilchik_School</url>
+				<name>Ninilchik School</name>
+				<address>Box 39010</address>
+				<city>Ninilchik</city>
+				<zip-code>99639</zip-code>
+				<phone>(907) 567-3301</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nomeschools.com/</url>
+				<name>Nome Correspondence</name>
+				<address>P.O. Box 131</address>
+				<city>Nome</city>
+				<zip-code>99762</zip-code>
+				<county>Nome</county>
+				<phone>(907) 443-2231</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.educationindex.com/usa/alaska/nome/nome-beltz-jr-sr-high-56770/
+				</url>
+				<name>Nome Beltz Jr/Sr High School</name>
+				<address>Box 131</address>
+				<city>Nome</city>
+				<zip-code>99762</zip-code>
+				<phone>(907) 443-5201</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://nondalton.lpsd.schoolaccess.net/school_web_pages/non_school/introduction%20and%20links.htm
+				</url>
+				<name>Nondalton School</name>
+				<address>100 School Road</address>
+				<city>Nondalton</city>
+				<zip-code>99640</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 294-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www3.northstar.k12.ak.us/schools/nph/nphshome.htm
+				</url>
+				<name>North Pole High School</name>
+				<address>601 Nphs Blvd</address>
+				<city>North Pole</city>
+				<zip-code>99705</zip-code>
+				<county>Fairbanks North Star</county>
+				<phone>(907) 488-3761</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://asdk12.org/</url>
+				<name>North Star Hostital</name>
+				<address>1650 So. Bragaw</address>
+				<city>Anchorage</city>
+				<zip-code>99508</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 272-6206</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nsbsd.org/site/index.cfm/1,67,html</url>
+				<name>Nuiqsut Trapper School</name>
+				<address>3310 3rd Ave.</address>
+				<city>Nuiqsut</city>
+				<zip-code>99789</zip-code>
+				<county>North Slope</county>
+				<phone>(907) 480-6712</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.nsbsd.org/site/index.cfm/1,65,html</url>
+				<name>Nunamiut School</name>
+				<address>114 Illinois St</address>
+				<city>Anaktuvuk Pass</city>
+				<zip-code>99721</zip-code>
+				<county>North Slope</county>
+				<phone>(907) 661-3226</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/</url>
+				<name>Nuniwaarmiut School</name>
+				<address>General Delivery</address>
+				<city>Mekoryuk</city>
+				<zip-code>99630</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 827-8415</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kodiak.k12.ak.us/tec/tpover.html</url>
+				<name>Old Harbor School</name>
+				<address>Main Street</address>
+				<city>Old Harbor</city>
+				<zip-code>99643</zip-code>
+				<county>Kodiak Island</county>
+				<phone>(907) 286-2213</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kodiak.k12.ak.us/ouz/default.htm</url>
+				<name>Ouzinkie School</name>
+				<address>Main Street</address>
+				<city>Ouzinkie</city>
+				<zip-code>99644</zip-code>
+				<county>Kodiak Island</county>
+				<phone>(907) 680-2204</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.craigschools.com/</url>
+				<name>PACE Statewide Correspondence School</name>
+				<address>Craig City School District</address>
+				<address>P.O. Box 800</address>
+				<city>Craig</city>
+				<zip-code>99921</zip-code>
+				<phone>(907) 826-3274</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.ssd.k12.ak.us/PHS/pages/mainpage.html
+				</url>
+				<name>Pacific High School</name>
+				<address>509 Lincoln Street</address>
+				<city>Sitka</city>
+				<zip-code>99835</zip-code>
+				<phone>(907) 747-7732</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://phs.matsuk12.us/</url>
+				<name>Palmer High School</name>
+				<address>1170 W Arctic Ave.</address>
+				<city>Palmer</city>
+				<zip-code>99645</zip-code>
+				<county>Matanuska-Susitna</county>
+				<phone>(907) 745-3241</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/tununak/index.html</url>
+				<name>Paul T. Albert Memorial School</name>
+				<address>PO Box 49</address>
+				<city>Tununak</city>
+				<zip-code>99681</zip-code>
+				<phone>(907) 652-6827</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://schools.publicschoolsreport.com/Alaska/Pelican/PelicanSchool.html
+				</url>
+				<name>Pelican School</name>
+				<address>Box 90</address>
+				<city>Pelican</city>
+				<zip-code>99832</zip-code>
+				<county>Skagway-Hoona-Angoon</county>
+				<phone>(907) 735-2236</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Perryville School</name>
+				<address>School Road</address>
+				<city>Perryville</city>
+				<zip-code>99648</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 853-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Pilot Point School</name>
+				<address>School Road</address>
+				<city>Pilot Point</city>
+				<zip-code>99649</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 797-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.epodunk.com/cgi-bin/genInfo.php?locIndex=27987
+				</url>
+				<name>Pilot Station School</name>
+				<address>PO Box 5090</address>
+				<city>Pilot Station</city>
+				<zip-code>99650</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 549-3212</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.commerce.state.ak.us/dca/commdb/CF_CIS.htm
+				</url>
+				<name>Pitkas Point School</name>
+				<address>PO Box 161</address>
+				<city>St. Mary's</city>
+				<zip-code>99658</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 438-2571</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.psgsd.k12.ak.us/PSGSDHome.html</url>
+				<name>Petersburg High School</name>
+				<address>P.O. Box 289</address>
+				<city>Petersburg</city>
+				<zip-code>99833</zip-code>
+				<phone>907-722-3861</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asdk12.org/schooldetails.asp?ID=450
+				</url>
+				<name>Polaris K_12</name>
+				<address>6200 Ashwood Street</address>
+				<city>Anchorage</city>
+				<zip-code>99507</zip-code>
+				<phone>(907) 742-8700</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.sisd.org/content/schools/pa/index.html
+				</url>
+				<name>Port Alexander School</name>
+				<address>Port Alexander</address>
+				<city>Port Alexander</city>
+				<zip-code>99836</zip-code>
+				<county>Sitka</county>
+				<phone>(907) 568-2205</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kpbsd.k12.ak.us/ptgraham/</url>
+				<name>Port Graham School</name>
+				<address>Box 5550</address>
+				<city>Port Graham</city>
+				<zip-code>99603</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 284-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.kodiak.k12.ak.us/plions/splash.html
+				</url>
+				<name>Port Lions School</name>
+				<address>Main Street</address>
+				<city>Port Lions</city>
+				<zip-code>99550</zip-code>
+				<county>Kodiak Island</county>
+				<phone>(907) 454-2237</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.sisd.org/content/schools/pp/index.html
+				</url>
+				<name>Port Protection School</name>
+				<address>Port Protection</address>
+				<city>Ketchikan</city>
+				<zip-code>99950</zip-code>
+				<county>Ketchikan Gateway</county>
+				<phone>(907) 489-2228</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.asd.k12.ak.us/</url>
+				<name>Providence Heights School</name>
+				<address>2900 Providence Drive</address>
+				<city>Anchorage</city>
+				<zip-code>99508</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 269-7208</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://quinhagak.lksd.schoolaccess.net/</url>
+				<name>Qugcuun Memorial High School</name>
+				<address>Box 6199</address>
+				<city>Oscarville</city>
+				<zip-code>99695</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 737-7214</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.ravenschool.com/</url>
+				<name>Raven Correspondence School</name>
+				<address>PO Box 70462</address>
+				<city>Fairbanks</city>
+				<zip-code>99707</zip-code>
+				<phone>(907) 457-4062</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.kpbsd.k12.ak.us/schoolinfo/map.htm#
+				</url>
+				<name>Razdolna School</name>
+				<address>Box 15098-Fcb</address>
+				<city>Homer</city>
+				<zip-code>99603</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 235-6870</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.kgbsd.org/</url>
+				<name>Revilla Junior/Senior High School</name>
+				<address>3131 Baranof Ave.</address>
+				<city>Ketchikan</city>
+				<zip-code>99901</zip-code>
+				<county>Ketchikan Gateway</county>
+				<phone>(907) 225-6681</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/</url>
+				<name>Rocky Mountain School</name>
+				<address>Po Box 153</address>
+				<city>Goodnews Bay</city>
+				<zip-code>99589-0049</zip-code>
+				<phone>(907) 967-8213</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.loweryukon.org/RussianMission/</url>
+				<name>Russian Mission School</name>
+				<address>PO Box 90</address>
+				<city>Russian Mission</city>
+				<zip-code>99657</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 584-5615</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.smcsd.us/</url>
+				<name>Saint Mary's City Schools</name>
+				<address>PO Box 9</address>
+				<city>Saint Mary's</city>
+				<zip-code>99658</zip-code>
+				<phone>(907) 438-2736</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.ksdpradio.org/places/civic/school.htm
+				</url>
+				<name>Sand Point School</name>
+				<address>123 Red Cove Road</address>
+				<city>Sand Point</city>
+				<zip-code>99661</zip-code>
+				<county>Aleutians East</county>
+				<phone>(907) 383-2393</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asd.k12.ak.us/schooldetails.asp?ID=835
+				</url>
+				<name>S.A.V.E. High School</name>
+				<address>410 East 56th</address>
+				<city>Anchorage</city>
+				<zip-code>99518</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 742-1250</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.ankn.uaf.edu/NPE/CulturalAtlases/Yupiaq/Marshall/scammonbay/
+				</url>
+				<name>Scammon Bay School</name>
+				<address>General Delivery</address>
+				<city>Scammon Bay</city>
+				<zip-code>99662</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 558-5312</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.seeuonline.org/</url>
+				<name>SeeUonline</name>
+				<address>PO Box 4897</address>
+				<city>Palmer</city>
+				<zip-code>99645</zip-code>
+				<phone>(907) 745-1486</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://selawik.nwarctic.org/</url>
+				<name>Selawik School</name>
+				<address>PO Box 29</address>
+				<city>Selawik</city>
+				<zip-code>99770</zip-code>
+				<county>Northwest Arctic</county>
+				<phone>(907) 484-2142</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www2.asd.k12.ak.us/new/default.htm</url>
+				<name>Service High School</name>
+				<address>5577 Abbott Rd.</address>
+				<city>Anchorage</city>
+				<zip-code>99507</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 742-8100</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>https://www.edline.net/Notification.page</url>
+				<name>Seward High School</name>
+				<address>Box 1049</address>
+				<city>Seward</city>
+				<zip-code>99664</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 224-3351</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.beringsea.com/communities/index.php?community=326
+				</url>
+				<name>Shaktoolik School</name>
+				<address>40 Main Street</address>
+				<city>Shaktoolik</city>
+				<zip-code>99771</zip-code>
+				<county>Nome</county>
+				<phone>(907) 955-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.loweryukon.org/NunamIqua/</url>
+				<name>Sheldon Point School</name>
+				<address>PO Box 32</address>
+				<city>Sheldon Point</city>
+				<zip-code>99666</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 498-4112</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.bssd.org/schools/sites/SHH/shishmaref.htm
+				</url>
+				<name>Shishmaref School</name>
+				<address>Seaview Lane</address>
+				<city>Shishmaref</city>
+				<zip-code>99772</zip-code>
+				<county>Nome</county>
+				<phone>(907) 649-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.beringsea.com/communities/index.php?community=336
+				</url>
+				<name>Shungnak School</name>
+				<address>#4 W. River Road</address>
+				<city>Shungnak</city>
+				<zip-code>99773</zip-code>
+				<county>Northwest Arctic</county>
+				<phone>(907) 437-2151</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://shs.ssd.k12.ak.us/</url>
+				<name>Sitka High School</name>
+				<address>1000 Lake Street</address>
+				<city>Sitka</city>
+				<zip-code>99835</zip-code>
+				<county>Sitka</county>
+				<phone>(907) 747-3263</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.beringsea.com/communities/index.php?community=339
+				</url>
+				<name>Skagway City School</name>
+				<address>1563 Main Street</address>
+				<city>Skagway</city>
+				<zip-code>99840</zip-code>
+				<county>Skagway-Hoona-Angoon</county>
+				<phone>(907) 983-2960</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>https://www.edline.net/pages/Skyview_High</url>
+				<name>Skyview High</name>
+				<address>46188 Sterling Highway</address>
+				<city>Soldotna</city>
+				<zip-code>99669</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 262-7675</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.crsd.k12.ak.us/</url>
+				<name>Slana School</name>
+				<address>Box 870</address>
+				<city>Slana</city>
+				<zip-code>99586</zip-code>
+				<county>Valdez-Cordova</county>
+				<phone>(907) 822-5868</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>https://www.edline.net/pages/Soldotna_High</url>
+				<name>Soldotna High</name>
+				<address>425 W. Marydale Ave.</address>
+				<city>Soldotna</city>
+				<zip-code>99669</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 262-7411</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.correct.state.ak.us/corrections/institutions/sccc/history.htm
+				</url>
+				<name>Spring Creek Correctional Center</name>
+				<address>C/O PO Box 1049</address>
+				<city>Seward</city>
+				<zip-code>99664</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 224-3351</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asdk12.org/staff/kniefel_scott/pages/springaasg/index.htm
+				</url>
+				<name>South Anchorage High School</name>
+				<address>13400 Elmore Road</address>
+				<city>Anchorage</city>
+				<zip-code>99516</zip-code>
+				<phone>(907) 742-6367</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.pribilofs.k12.ak.us/</url>
+				<name>St George Island School</name>
+				<address>#1 Elementary</address>
+				<city>St George</city>
+				<zip-code>99591</zip-code>
+				<county>Aleutians West</county>
+				<phone>(907) 859-2229</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.smcsd.us/</url>
+				<name>St Mary's School</name>
+				<address>1 Dixon Circle</address>
+				<city>Saint Mary's</city>
+				<zip-code>99658</zip-code>
+				<county>Wade Hampton</county>
+				<phone>(907) 438-2411</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.pribilofs.k12.ak.us/</url>
+				<name>St Paul Island School</name>
+				<address>930 Tolstoi</address>
+				<city>St. Paul</city>
+				<zip-code>99660</zip-code>
+				<county>Aleutians West</county>
+				<phone>(907) 546-2221</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asdk12.org/schools/steller/pages/web-content/index.html
+				</url>
+				<name>Steller Secondary School</name>
+				<address>2508 Blueberry Lane</address>
+				<city>Anchorage</city>
+				<zip-code>99503</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 742-4950</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yukonflats.net/</url>
+				<name>Stevens Village School</name>
+				<address>355 Bridge Street</address>
+				<city>Stevens Village</city>
+				<zip-code>99774</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 478-7116</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.seldovia.com/nav_school.htm</url>
+				<name>Susan B English School</name>
+				<address>Box 171</address>
+				<city>Seldovia</city>
+				<zip-code>99663</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 234-7616</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.svs.matsuk12.us/</url>
+				<name>Susitna Valley Jr/Sr High School</name>
+				<address>42728 S. Parks Hwy</address>
+				<city>Talkeetna</city>
+				<zip-code>99676</zip-code>
+				<phone>(907) 733-2241</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lpsd.com/</url>
+				<name>Tanalian School</name>
+				<address>School Road</address>
+				<city>Port Alsworth</city>
+				<zip-code>99653</zip-code>
+				<county>Lake And Peninsula</county>
+				<phone>(907) 781-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.northstar.k12.ak.us/schools/tan/tanana.html
+				</url>
+				<name>Tanana Middle School</name>
+				<address>600 Trainor Gate Road</address>
+				<city>Fairbanks</city>
+				<zip-code>99701</zip-code>
+				<county>Fairbanks North Star</county>
+				<phone>(907) 452-8145</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://tct.schoolaccess.net/</url>
+				<name>Takotna School</name>
+				<address>Box 90</address>
+				<city>Takotna</city>
+				<zip-code>99675</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 298-2115</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.iditarodsd.org/ourschools.htm</url>
+				<name>Takotna Training Center Charte</name>
+				<address>General Delivery</address>
+				<address>Mile 412 Iditarod Trail</address>
+				<city>Takotna</city>
+				<zip-code>99675</zip-code>
+				<phone>907-298-2215</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.chugachschools.com/csd_schools/tatitlek.html
+				</url>
+				<name>Tatitlek Community School</name>
+				<address>Main Street</address>
+				<city>Tatitlek</city>
+				<zip-code>99677</zip-code>
+				<county>Valdez-Cordova</county>
+				<phone>(907) 325-2252</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>https://www.edline.net/pages/Tebughna_School</url>
+				<name>Tebughna School</name>
+				<address>PO Box 82010</address>
+				<city>Tyonek</city>
+				<zip-code>99682</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 583-2291</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.skagwaychamber.org/community.html</url>
+				<name>Tenakee Springs School</name>
+				<address>Tenakee Springs #62</address>
+				<city>Tenakee Springs</city>
+				<zip-code>99820</zip-code>
+				<county>Skagway-Hoona-Angoon</county>
+				<phone>(907) 736-2204</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://tok.schoolaccess.net/</url>
+				<name>Tetlin School</name>
+				<address>100 Main Street</address>
+				<city>Tetlin</city>
+				<zip-code>99779</zip-code>
+				<county>Southeast Fairbanks</county>
+				<phone>(907) 324-2104</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.sisd.org/content/schools/tb/index.html
+				</url>
+				<name>Thorne Bay School</name>
+				<address>1010 Sandy Beach Road</address>
+				<city>Thorne Bay</city>
+				<zip-code>99919</zip-code>
+				<county>Prince of Wales-Outer Ketchikan</county>
+				<phone>(907) 828-3921</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.tikigaq.com/inupiaq_people/tikigaq_school.shtml
+				</url>
+				<name>Tikigaq School</name>
+				<address>1837 Tikigiq Ave.</address>
+				<city>Point Hope</city>
+				<zip-code>99766</zip-code>
+				<county>North Slope</county>
+				<phone>(907) 368-2662</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://lknea.org/siteinfo/nunapschool.htm</url>
+				<name>Tobeluk Memorial School</name>
+				<address>114 Village Road</address>
+				<city>Nunapitchuk</city>
+				<zip-code>99641</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 527-5325</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.iditarodsd.org/ourschools.htm</url>
+				<name>Top Of The Kuskokwim School</name>
+				<address>PO Box 9190</address>
+				<city>Nikolai</city>
+				<zip-code>99691</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 293-2427</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.bbna.com/EarlyLearning/Togiak/</url>
+				<name>Togiak School</name>
+				<address>PO Box 500</address>
+				<city>Togiak</city>
+				<zip-code>99678</zip-code>
+				<county>Dillingham</county>
+				<phone>(907) 493-5829</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://tok.schoolaccess.net/tokschool/index.html%20
+				</url>
+				<name>Tok High School</name>
+				<address>P.O. Box 249</address>
+				<city>Tok</city>
+				<zip-code>99780</zip-code>
+				<phone>(907) 883-5161</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.nwrel.org/request/2002aug/trivalley.html
+				</url>
+				<name>Tri-Valley School</name>
+				<address>400 Suntrana Street</address>
+				<city>Healy</city>
+				<zip-code>99743</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 683-2267</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.beringsea.com/communities/index.php?community=121
+				</url>
+				<name>Tsuk Taih School</name>
+				<address>#1 Marten Hill Drive</address>
+				<city>Chalkyitsik</city>
+				<zip-code>99788</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 848-8113</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.bssd.org/</url>
+				<name>Unalakleet School</name>
+				<address>Main Street</address>
+				<city>Unalakleet</city>
+				<zip-code>99684</zip-code>
+				<county>Nome</county>
+				<phone>(907) 624-3444</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.ucsd.net/ucs_home/general_Information/contacts/contacts.htm
+				</url>
+				<name>Unalaska School</name>
+				<address>Fifth and Broadway</address>
+				<address>P.O. Box 570</address>
+				<city>Unalaska</city>
+				<zip-code>99685</zip-code>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://valdezcityschools.org/High%20School/high-sch.html
+				</url>
+				<name>Valdez High School</name>
+				<address>319 Robe River Drive</address>
+				<city>Valdez</city>
+				<zip-code>99686</zip-code>
+				<county>Valdez-Cordova</county>
+				<phone>(907) 835-4767</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.matsuk12.us</url>
+				<name>Valley Pathways</name>
+				<address>12351 E Palmer / Wasilla Hwy</address>
+				<city>Palmer</city>
+				<zip-code>99645</zip-code>
+				<county>Matanuska-Susitna</county>
+				<phone>(907) 745-2158</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					https://www.edline.net/pages/Voznesenka_School
+				</url>
+				<name>Voznesenka School</name>
+				<address>Box 15336</address>
+				<city>Fritz Creek</city>
+				<zip-code>99603</zip-code>
+				<county>Kenai Peninsula</county>
+				<phone>(907) 235-8549</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://waa.bssd.org/site/</url>
+				<name>Wales Kingikmiut School</name>
+				<address>P.O. Box 490</address>
+				<city>Wales</city>
+				<zip-code>99783</zip-code>
+				<phone>(907) 664-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://ort.schoolaccess.net/</url>
+				<name>Walter Northway School</name>
+				<address>Mile 7 Village Road</address>
+				<city>Northway</city>
+				<zip-code>99764</zip-code>
+				<county>Southeast Fairbanks</county>
+				<phone>(907) 778-2287</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.whs.matsuk12.us/</url>
+				<name>Wasilla High School</name>
+				<address>701 Bogard Rd.</address>
+				<city>Wasilla</city>
+				<zip-code>99654</zip-code>
+				<county>Matanuska-Susitna</county>
+				<phone>(907) 376-5341</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.asdk12.org/schools/west/pages/</url>
+				<name>West Anchorage High School</name>
+				<address>1700 Hillcrest Drive</address>
+				<city>Anchorage</city>
+				<zip-code>99517</zip-code>
+				<phone>(907) 742-2500</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.northstar.k12.ak.us/schools/wvh/</url>
+				<name>West Valley High School</name>
+				<address>3800 Giest Road</address>
+				<city>Fairbanks</city>
+				<zip-code>99709</zip-code>
+				<county>Fairbanks North Star</county>
+				<phone>(907) 479-4221</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.asdk12.org/schooldetails.asp?ID=625
+				</url>
+				<name>Whaley School</name>
+				<address>2220 Nichols St.</address>
+				<city>Anchorage</city>
+				<zip-code>99508</zip-code>
+				<county>Anchorage</county>
+				<phone>(907) 263-9201</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.sisd.k12.ak.us/</url>
+				<name>Whale Pass School</name>
+				<address>P.O. Box 19569</address>
+				<city>Thorne Bay</city>
+				<zip-code>99919</zip-code>
+				<phone>(907) 828-8254</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.bssd.org/%7ewmo/</url>
+				<name>White Mountain School</name>
+				<address>55 Main Street</address>
+				<city>White Mountain</city>
+				<zip-code>99784</zip-code>
+				<county>Nome</county>
+				<phone>(907) 638-3021</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.chugachschools.com/csd_schools/whittier.html
+				</url>
+				<name>Whittier Community School</name>
+				<address>Portage Street</address>
+				<city>Whittier</city>
+				<zip-code>99693</zip-code>
+				<county>Valdez-Cordova</county>
+				<phone>(907) 472-2575</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.lksd.org/</url>
+				<name>William N. Miller Memorial School</name>
+				<address>General Delivery</address>
+				<city>Napakiak</city>
+				<zip-code>99634</zip-code>
+				<county>Bethel</county>
+				<phone>(907) 589-2420</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://www.nwrel.org/nwedu/spring01/alaska.html
+				</url>
+				<name>Wiseman Charter School</name>
+				<address>General Delivery</address>
+				<city>Wiseman Village</city>
+				<zip-code>99790</zip-code>
+				<county>Yukon-Koyukuk</county>
+				<phone>(907) 678-2001</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.wrangellschools.org/</url>
+				<name>Wrangell High School</name>
+				<address>PO Box 651</address>
+				<city>312 Reid Street Wrangell</city>
+				<zip-code>99929</zip-code>
+				<phone>907-874-3395</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.aleutregion.org/</url>
+				<name>Yakov E. Netsvetov School</name>
+				<address>PO Box 47050</address>
+				<city>Atka</city>
+				<zip-code>99547</zip-code>
+				<county>Aleutians West</county>
+				<phone>(907) 839-2210</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>
+					http://yakutatschools.org/hsyak/seniorhigh.html
+				</url>
+				<name>Yakutat School</name>
+				<address>429 Forest Highway</address>
+				<city>Yakutat</city>
+				<zip-code>99689</zip-code>
+				<county>Yakutat</county>
+				<phone>(907) 784-3317</phone>
+			</school>
+			<school>
+				<institution-type>K_12</institution-type>
+				<url>http://www.yaakoosge.com/</url>
+				<name>YaakoosgDaakahdi</name>
+				<address>811 West 12th St.</address>
+				<address>Juneau</address>
+				<phone>(907) 586-5742</phone>
+			</school>
+		</state>
+	</country>
+</world>

@@ -1,0 +1,73 @@
+8
+
+dir
+70
+https://rudev.sci.utah.edu/svn/ruready/app/ru1.5/ru2/WebRoot/WEB-INF/demo
+https://rudev.sci.utah.edu/svn/ruready
+
+
+
+2009-06-13T16:10:49.404916Z
+2
+oren
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0982ac0d-1d7e-4f6a-b8c2-e86608e68db5
+
+tiles
+dir
+
+tiles-demo.xml
+file
+
+
+
+
+2011-04-10T17:50:40.000000Z
+21a4c3465c3dfe87c2520668679cd629
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+struts-demo.xml
+file
+
+
+
+
+2011-04-10T17:50:40.000000Z
+0ce9610537cf8de812096de788b0d990
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+jsp
+dir
+
+.struts-demo.mex
+file
+
+
+
+
+2011-04-10T17:50:40.000000Z
+0caa7fd11446c38e3fabf741959ed257
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+

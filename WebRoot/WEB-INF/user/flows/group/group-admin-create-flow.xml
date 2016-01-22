@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+    
+    <start-actions>
+    	<set attribute="flowKeyPrefix" value="'user.adminGroups.create'" scope="flow"/>
+    </start-actions>
+    
+	<start-state idref="initialize" />
+	
+	<action-state id="initialize">
+		<action bean="groupRegistration" method="getNewAdminFormObject"/>
+		<transition on="success" to="entryForm"/>
+	</action-state>
+
+	<view-state id="entryForm" view=".adminGroup.create.entryForm">
+		<render-actions>
+			<action bean="groupRegistration" method="setupForm" />
+		</render-actions>
+		<transition on="submit" to="moderatorSelectForm">
+			<action bean="groupRegistration" method="bindAndValidate">
+				<attribute name="validatorMethod" value="validateCreateGroupForm"/>
+			</action>
+			<action bean="groupRegistration" method="setGroupProperties"/>
+		</transition>
+		<transition on="cancel" to="cancel"/>
+	</view-state>
+	
+	<view-state id="moderatorSelectForm" view=".adminGroup.create.moderatorSelectForm">
+		<render-actions>
+			<action bean="groupRegistration" method="setupForm" />
+			<action bean="groupRegistration" method="performUserSearch" />
+		</render-actions>
+		<transition on="submit" to="moderatorSelectForm">
+			<action bean="groupRegistration" method="bindAndValidate"/>
+			<action bean="groupRegistration" method="setFirstPage"/>
+		</transition>
+		
+		<transition on="firstPage" to="moderatorSelectForm">
+			<action bean="groupRegistration" method="setFirstPage"/>
+		</transition>
+		<transition on="prevPage" to="moderatorSelectForm">
+			<action bean="groupRegistration" method="setPreviousPage"/>
+		</transition>
+		<transition on="nextPage" to="moderatorSelectForm">
+			<action bean="groupRegistration" method="setNextPage"/>
+		</transition>
+		<transition on="lastPage" to="moderatorSelectForm">
+			<action bean="groupRegistration" method="setLastPage"/>
+		</transition>
+		
+		<transition on="assign" to="saveGroup">
+			<action bean="groupRegistration" method="setUser"/>
+		</transition>
+		<transition on="cancel" to="cancel"/>
+	</view-state>
+	
+	<action-state id="saveGroup">
+		<action bean="groupRegistration" method="saveGroup"/>
+		<transition on="success" to="finished"/>
+		<transition on="error" to="entryForm">
+			<action bean="groupRegistration" method="addConstraintErrorMessage"/>
+		</transition>
+	</action-state>
+	
+	<end-state id="finished"/>
+	<end-state id="cancel">
+		<entry-actions>
+			<action bean="groupRegistration" method="doCancel"/>
+		</entry-actions>
+	</end-state>
+</flow>

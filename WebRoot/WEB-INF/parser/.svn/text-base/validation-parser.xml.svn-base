@@ -1,0 +1,333 @@
+<!DOCTYPE form-validation PUBLIC
+"-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+"http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<!--
+	###################################################################################
+	Parser component
+	Struts Validator Framework - Validation rules
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c) 2006-07 Continuing Education , University of Utah .  All copyrights reserved. U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	
+	###################################################################################
+-->
+
+<!-- TODO: add vulgarity checks to all applicable fields -->
+
+<form-validation>
+	<!--
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		Default resource bundle (language)
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	-->
+	<formset>
+
+		<!--
+			===============================================
+			Parser demo form
+			===============================================
+		-->
+		<form name="/open/demo">
+
+			<!-- Reference string -->
+			<field property="referenceString" depends="required">
+				<msg name="required" key="error.field.null" />
+
+				<arg position="0" name="required"
+					key="parser.demo.form.referenceString.label" />
+			</field>
+
+			<!-- Response string -->
+			<field property="responseString" depends="required">
+				<msg name="required" key="error.field.null" />
+
+				<arg position="0" name="required"
+					key="parser.demo.form.responseString.label" />
+			</field>
+
+			<!--
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				Parser control options
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			-->
+
+			<!-- # significant digits for numerical comparison -->
+			<field property="digits"
+				depends="required,integer,intRange">
+				<msg name="required" key="error.field.null" />
+				<msg name="integer" key="error.field.integer" />
+				<msg name="intRange" key="error.field.range" />
+
+				<arg position="0" name="required"
+					key="parser.demo.form.digits.label" />
+
+				<arg position="0" name="integer"
+					key="parser.demo.form.digits.label" />
+
+				<arg position="0" name="intRange"
+					key="parser.demo.form.digits.label" />
+				<arg position="1" name="intRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="intRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>15</var-value>
+				</var>
+			</field>
+
+			<!-- Arithmetic mode -->
+			<field property="arithmeticMode" depends="required">
+				<msg name="required" key="error.field.null" />
+
+				<arg position="0" name="required"
+					key="parser.demo.form.arithmeticMode.label" />
+			</field>
+
+			<!-- Marker type -->
+			<field property="analysisID" depends="required">
+				<msg name="required" key="error.field.null" />
+
+				<arg position="0" name="required"
+					key="parser.demo.form.analysisID.label" />
+			</field>
+			
+			<!--
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				Edit distance cost parameters
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			-->
+
+			<!-- Cost of inserting a node: hard-coded so no longer validated -->
+			<!-- 
+			<field property="costMap(INSERT_DELETE)"
+				depends="required,double,doubleRange">
+				<msg name="required" key="error.field.null" />
+				<msg name="double" key="error.field.double" />
+				<msg name="doubleRange" key="error.field.range" />
+
+				<arg position="0" name="required"
+					key="parser.demo.options.costMap.INSERT_DELETE.validator.label" />
+
+				<arg position="0" name="double"
+					key="parser.demo.options.costMap.INSERT_DELETE.validator.label" />
+
+				<arg position="0" name="doubleRange"
+					key="parser.demo.options.costMap.INSERT_DELETE.validator.label" />
+				<arg position="1" name="doubleRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="doubleRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+		 	-->
+		 	
+			<!-- Cost of deleting a node -->
+			<!-- 
+			<field property="costMap(DELETE)"
+				depends="required,double,doubleRange">
+				<msg name="required" key="error.field.null" />
+				<msg name="double" key="error.field.double" />
+				<msg name="doubleRange" key="error.field.range" />
+
+				<arg position="0" name="required"
+					key="parser.demo.options.costMap.DELETE.validator.label" />
+
+				<arg position="0" name="double"
+					key="parser.demo.options.costMap.DELETE.validator.label" />
+
+				<arg position="0" name="doubleRange"
+					key="parser.demo.options.costMap.DELETE.validator.label" />
+				<arg position="1" name="doubleRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="doubleRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			 -->
+			 
+			<!-- Cost of a wrong value -->
+			<field property="costMap(UNEQUAL_SAME_TYPE)"
+				depends="required,double,doubleRange">
+				<msg name="required" key="error.field.null" />
+				<msg name="double" key="error.field.double" />
+				<msg name="doubleRange" key="error.field.range" />
+
+				<arg position="0" name="required"
+					key="parser.demo.options.costMap.UNEQUAL_SAME_TYPE.validator.label" />
+
+				<arg position="0" name="double"
+					key="parser.demo.options.costMap.UNEQUAL_SAME_TYPE.validator.label" />
+
+				<arg position="0" name="doubleRange"
+					key="parser.demo.options.costMap.UNEQUAL_SAME_TYPE.validator.label" />
+				<arg position="1" name="doubleRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="doubleRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+
+			<!-- Cost of an wrong operation -->
+			<field property="costMap(UNEQUAL_SAME_TYPE_OPERATION)"
+				depends="required,double,doubleRange">
+				<msg name="required" key="error.field.null" />
+				<msg name="double" key="error.field.double" />
+				<msg name="doubleRange" key="error.field.range" />
+
+				<arg position="0" name="required"
+					key="parser.demo.options.costMap.UNEQUAL_SAME_TYPE_OPERATION.validator.label" />
+
+				<arg position="0" name="double"
+					key="parser.demo.options.costMap.UNEQUAL_SAME_TYPE_OPERATION.validator.label" />
+
+				<arg position="0" name="doubleRange"
+					key="parser.demo.options.costMap.UNEQUAL_SAME_TYPE_OPERATION.validator.label" />
+				<arg position="1" name="doubleRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="doubleRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+
+			<!-- Cost of an unrecognized node -->
+			<field property="costMap(UNEQUAL_DIFFERENT_TYPE)"
+				depends="required,double,doubleRange">
+				<msg name="required" key="error.field.null" />
+				<msg name="double" key="error.field.double" />
+				<msg name="doubleRange" key="error.field.range" />
+
+				<arg position="0" name="required"
+					key="parser.demo.options.costMap.UNEQUAL_DIFFERENT_TYPE.validator.label" />
+
+				<arg position="0" name="double"
+					key="parser.demo.options.costMap.UNEQUAL_DIFFERENT_TYPE.validator.label" />
+
+				<arg position="0" name="doubleRange"
+					key="parser.demo.options.costMap.UNEQUAL_DIFFERENT_TYPE.validator.label" />
+				<arg position="1" name="doubleRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="doubleRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+
+			<!-- Cost of an unrecognized operation -->
+			<field property="costMap(UNEQUAL_DIFFERENT_TYPE_OPERATION)"
+				depends="required,double,doubleRange">
+				<msg name="required" key="error.field.null" />
+				<msg name="double" key="error.field.double" />
+				<msg name="doubleRange" key="error.field.range" />
+
+				<arg position="0" name="required"
+					key="parser.demo.options.costMap.UNEQUAL_DIFFERENT_TYPE_OPERATION.validator.label" />
+
+				<arg position="0" name="double"
+					key="parser.demo.options.costMap.UNEQUAL_DIFFERENT_TYPE_OPERATION.validator.label" />
+
+				<arg position="0" name="doubleRange"
+					key="parser.demo.options.costMap.UNEQUAL_DIFFERENT_TYPE_OPERATION.validator.label" />
+				<arg position="1" name="doubleRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="doubleRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+
+			<!-- Cost of relabeling a fictitious token into non-fictitious -->
+			<field property="costMap(UNEQUAL_FICTITIOUS)"
+				depends="required,double,doubleRange">
+				<msg name="required" key="error.field.null" />
+				<msg name="double" key="error.field.double" />
+				<msg name="doubleRange" key="error.field.range" />
+
+				<arg position="0" name="required"
+					key="parser.demo.options.costMap.UNEQUAL_FICTITIOUS.validator.label" />
+
+				<arg position="0" name="double"
+					key="parser.demo.options.costMap.UNEQUAL_FICTITIOUS.validator.label" />
+
+				<arg position="0" name="doubleRange"
+					key="parser.demo.options.costMap.UNEQUAL_FICTITIOUS.validator.label" />
+				<arg position="1" name="doubleRange" key="${var:min}"
+					resource="false" />
+				<arg position="2" name="doubleRange" key="${var:max}"
+					resource="false" />
+
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+
+		</form>
+
+	</formset>
+
+</form-validation>

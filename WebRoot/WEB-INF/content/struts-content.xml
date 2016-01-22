@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<!--
+	###################################################################################
+	Content component:
+	Struts configuration descriptor
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c) 2006-07 Continuing Education , University of Utah.
+	All copyrights reserved. U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	###################################################################################
+	
+	NOTE: 
+	Define the SSL constraints around any given action by placing 
+	either 'open' or 'secure' into the uri. See other notes in this file and 
+	web.xml for details on total uri path formulation to define SSL configs and
+	user ATZ constraints. 
+	
+	@todo Greg, create a one-pager describing these, place in javadocs.
+-->
+
+<struts-config>
+
+	<!-- 	<data-sources /> -->
+
+	<!--
+		===============================================
+		Form Beans
+		===============================================
+	-->
+	<form-beans>
+
+		<!-- Contains a single item's properties -->
+		<form-bean name="editItemForm"
+			type="net.ruready.web.content.item.form.EditItemForm" />
+
+		<!-- Contains a single item's properties and its children's properties -->
+		<form-bean name="editItemFullForm"
+			type="net.ruready.web.content.item.form.EditItemFullForm" />
+
+		<!-- Contains two items' properties for an item transfer "Norton-Commander"-like view -->
+		<form-bean name="transferItemForm"
+			type="net.ruready.web.content.item.form.TransferItemForm" />
+
+		<!-- Search item form. Contains search fields -->
+		<form-bean name="searchItemForm"
+			type="net.ruready.web.content.item.form.SearchItemForm" />
+
+		<!-- Custom Question form -->
+		<form-bean name="editQuestionFullForm"
+			type="net.ruready.web.content.question.form.EditQuestionFullForm" />
+
+		<!-- Forms for pages that display question result sets -->
+
+		<!-- Sub-topic view page -->
+		<form-bean name="browseQuestionForm"
+			type="net.ruready.web.content.question.form.BrowseQuestionForm" />
+
+		<!-- Search question page, main form -->
+		<form-bean name="searchQuestionForm"
+			type="net.ruready.web.content.question.form.SearchQuestionForm" />
+
+	</form-beans>
+
+	<!--
+		===============================================
+		Exception Handlers
+		===============================================
+	-->
+
+	<global-exceptions>
+
+		<!-- A generic exception that was not caught elsewhere -->
+		<exception key="error.Exception" scope="request"
+			handler="net.ruready.web.common.exception.ExceptionToBeMailedHandler"
+			type="java.lang.Exception" path="/system.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- Path not found -->
+		<exception key="error.InvalidPathException" scope="request"
+			handler="net.ruready.web.common.exception.InvalidPathExceptionHandler"
+			type="org.apache.struts.chain.commands.InvalidPathException"
+			path="/unsupportedOperation.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- Unsupported operation -->
+		<exception key="error.UnsupportedOpException" scope="request"
+			handler="net.ruready.web.common.exception.SafeExceptionHandler"
+			type="net.ruready.common.exception.UnsupportedOpException"
+			path="/unsupportedOperation.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- Invalid item type -->
+		<exception key="error.InvalidItemTypeException" scope="request"
+			handler="net.ruready.web.common.exception.SafeExceptionHandler"
+			type="net.ruready.business.content.main.exception.InvalidItemTypeException"
+			path=".error">
+		</exception>
+
+		<!-- Record not found -->
+		<exception key="error.RecordNotFoundException" scope="request"
+			handler="net.ruready.web.common.exception.RecordNotFoundExceptionHandler"
+			type="net.ruready.common.eis.exception.RecordNotFoundException"
+			path=".error">
+		</exception>
+
+	</global-exceptions>
+
+	<!--
+		===============================================
+		Global forwards (alias for main page, etc.).
+		Needs to be placed in every module's Struts
+		config unless we use XDoclet to merge
+		a global global-forwards.xml file.
+		===============================================
+	-->
+	<global-forwards>
+
+		<!-- User component home page, which is also the application's front page -->
+		<forward name="userHome" module="/user"
+			path="/secure/FRONT/home.do" redirect="true" />
+
+		<!-- 
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Error pages and pages references by filter actions
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^
+		-->
+
+		<!-- Access denied (HTTP code 401) -->
+		<forward name="errorAccessDenied" module="/error"
+			path="/accessDenied.do" />
+
+		<!-- Path not found (HTTP code 404) -->
+		<forward name="errorPathNotFound" module="/error"
+			path="/pathNotFound.do" />
+
+		<!-- System error (HTTP code 500) -->
+		<forward name="errorSystem" module="/error" path="/system.do" />
+
+		<!-- Unsupported operation exception -->
+		<forward name="errorUnsupportedOperation" module="/error"
+			path="/unsupportedOperation.do" />
+
+		<!-- Authentication gateway when requesting an internal bookmark -->
+		<forward name="authenticationUrl" module="/user"
+			path="/open/FRONT/authentication.do" />
+
+	</global-forwards>
+
+	<!--
+		===============================================
+		Actions
+		===============================================
+	-->
+	<action-mappings>
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Module switching for JSP link access
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- Uncomment the following if you need to use <html:link> to a JSP. See the Struts
+			Reference Manual, Second Edition, James Holmes, page 127. -->
+		<!--
+			<action path="/switchMod"
+			type="org.apache.struts.actions.SwitchAction" />
+		-->
+
+		<!--
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Convenient aliases 
+			* tiles defs <-> global forwards
+			* tiles defs that we want to append request
+			params to
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- CMS home page -->
+		<action path="/open/home"
+			forward="/open/explore/viewFull.do?itemType=ROOT" />
+
+		<!-- CMS home page -->
+		<action path="/open/searchQuestionView"
+			forward=".searchQuestion" />
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Explorer view
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- 
+			Forward to the main view JSP with a tree div on the left
+			and a content division on the right 
+		-->
+		<action path="/open/explore/viewFull" forward=".viewFull" />
+
+		<!-- (AJAX) Handles ExtJS item tree node loading event. A read-only action. -->
+		<action path="/ajax/explore/tree"
+			type="net.ruready.web.content.item.action.TreeAction">
+		</action>
+
+		<!-- View item tree nodes in a left div element -->
+		<action path="/open/explore/viewContent" input="/error/system.do"
+			type="net.ruready.web.content.item.action.ViewItemAction">
+			<!-- This JSP will populate the content div element in item-tree.jsp -->
+			<forward name="view" path=".viewContent" />
+		</action>
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			View item revision history
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- View an item's revision history -->
+		<action path="/open/viewRevisions" input="/error/system.do"
+			scope="request"
+			type="net.ruready.web.content.item.action.ViewRevisionsAction"
+			validate="false">
+			<forward name="viewRevisions.view" path=".viewRevisions" />
+		</action>
+
+		<!--
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Item & Children editing
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+		<!--
+			Each item type for which a custom edit page is needed must have
+			a separate action path, to allow custom validations. The path should
+			be /editItemFull/ItemClassIDType. The default edit page path must be
+			/editItemFull/default
+		-->
+
+		<!-- Item children editing actions (default page + validation) -->
+		<action path="/open/editItemFull/default"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- City custom editing -->
+		<action path="/open/editItemFull/CITY"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- Country custom editing -->
+		<action path="/open/editItemFull/COUNTRY"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- Course custom editing -->
+		<action path="/open/editItemFull/COURSE"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- Federation custom editing -->
+		<action path="/open/editItemFull/FEDERATION"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- School custom editing -->
+		<action path="/open/editItemFull/SCHOOL"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- Subject custom editing -->
+		<action path="/open/editItemFull/SUBJECT"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- State custom editing -->
+		<action path="/open/editItemFull/STATE"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- Document custom editing -->
+		<action path="/open/editItemFull/DOCUMENT"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- Tag custom editing -->
+		<action path="/open/editItemFull/TAG"
+			attribute="editItemFullForm" input=".editItemFull"
+			name="editItemFullForm" scope="request"
+			type="net.ruready.web.content.item.action.EditItemFullAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Transfer-item view (allows Copy/Move with a
+			"Norton-Commander" double view)
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- Item transfer actions -->
+		<action path="/open/transferItem" attribute="transferItemForm"
+			input=".transferItem" name="transferItemForm" scope="request"
+			type="net.ruready.web.content.item.action.TransferItemAction">
+			<exception key="error.MinorApplicationException"
+				type="net.ruready.common.MinorApplicationException"
+				path=".transferItem" />
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".transferItem" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.content.item.exception.RecordExistsExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".transferItem" />
+			<forward name="transfer" path=".transferItem" />
+			<forward name="root" path="/open/home.do" />
+		</action>
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Search actions
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- Find generic items -->
+		<action path="/open/searchItem" attribute="searchItemForm"
+			input=".searchItem" name="searchItemForm" scope="request"
+			type="net.ruready.web.content.item.action.SearchItemAction">
+			<forward name="view" path=".searchItem" />
+		</action>
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Trash Can actions
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+		<action path="/open/deleteItem" attribute="transferItemForm"
+			input="/error/system.do" name="transferItemForm" scope="request"
+			type="net.ruready.web.content.item.action.DeleteItemAction"
+			validate="false">
+			<forward name="view" path=".viewFull" />
+		</action>
+
+		<!--
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Question sub-component functions
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!--
+			Question custom editing: 
+			EditQuestionAction extends EditItemFullAction, and implements some custom
+			action methods that always redirect back to the calling page. 
+		-->
+		<action path="/open/editItemFull/QUESTION"
+			attribute="editQuestionFullForm" input=".editItemFull"
+			name="editQuestionFullForm" scope="request"
+			type="net.ruready.web.content.question.action.EditQuestionAction">
+			
+			<exception key="error.StaleRecordException"
+				handler="net.ruready.web.content.item.exception.StaleRecordExceptionHandler"
+				type="net.ruready.common.eis.exception.StaleRecordException"
+				path=".editItemFull" />
+			<exception key="error.RecordExistsException.editItem"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordExistsException"
+				path=".editItemFull" />
+			<exception key="error.RecordAccessException"
+				handler="net.ruready.web.common.exception.SafeExceptionHandler"
+				type="net.ruready.common.eis.exception.RecordAccessException"
+				path=".editItemFull" />
+				
+
+			<forward name="view" path=".viewFull" />
+			<forward name="edit" path=".editItemFull" />
+
+			<!-- question specific forwards -->
+			<forward name="displayMultipleChoice"
+				path=".displayMultipleChoice" />
+			<forward name="displayOpenEnded" path=".displayOpenEnded" />
+
+			<!-- Go back to the parent item's view page. Must be a redirect due to display tags. -->
+			<forward name="search" path="/open/searchQuestion.do"
+				redirect="true" />
+
+			<!-- Redirect back to the parent item's view page. Must be a redirect due to display tags. -->
+			<forward name="parentView" path="/open/explore/viewFull.do"
+				redirect="true" />
+		</action>
+
+		<!--
+			Question custom editing "sub-action": update the number of multiple choice. 
+			Has custom validation rules.
+		-->
+		<action path="/open/editItemFull/QUESTION/updateNumberOfChoices"
+			attribute="editQuestionFullForm" input=".editItemFull"
+			name="editQuestionFullForm" scope="request"
+			type="net.ruready.web.content.question.action.EditQuestionAction">
+
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!--
+			Question custom editing "sub-action": add a new topic. 
+			Has custom validation rules.
+		-->
+		<action path="/open/editItemFull/QUESTION/addTopic"
+			attribute="editQuestionFullForm" input=".editItemFull"
+			name="editQuestionFullForm" scope="request"
+			type="net.ruready.web.content.question.action.EditQuestionAction">
+
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!--
+			Question custom editing "sub-action": add a new sub-topic. 
+			Has custom validation rules.
+		-->
+		<action path="/open/editItemFull/QUESTION/addSubTopic"
+			attribute="editQuestionFullForm" input=".editItemFull"
+			name="editQuestionFullForm" scope="request"
+			type="net.ruready.web.content.question.action.EditQuestionAction">
+
+			<forward name="edit" path=".editItemFull" />
+		</action>
+
+		<!--
+			View interest page: displays the list of sub-interests. Is used almost like
+			a "help dialog box" in Windows.
+		-->
+		<action path="/open/viewInterest" input="/error/system.do"
+			type="net.ruready.web.content.question.action.ViewInterestAction">
+			<forward name="success" path=".subInterest" />
+		</action>
+
+		<!-- Question browsing (a special case of a search) and question actions in a topic view page -->
+		<action path="/open/browseQuestion" input="/error/system.do"
+			name="browseQuestionForm" scope="session"
+			type="net.ruready.web.content.question.action.BrowseQuestionAction">
+			<forward name="success" path="/open/explore/viewFull.do" />
+		</action>
+
+		<!-- Custom question search and question actions therein -->
+		<action path="/open/searchQuestion"
+			input="/open/searchQuestionView.do" name="searchQuestionForm"
+			scope="session"
+			type="net.ruready.web.content.question.action.SearchQuestionAction">
+			<forward name="success" path="/open/searchQuestionView.do" />
+		</action>
+
+		<!--
+			==============================================================
+			AJAX actions that populate dynamic form elements:
+			==============================================================
+			* Drop-down menus and menu groups.
+			* ExtJS grids.
+		-->
+		<action path="/ajax/populateQuestionRealmMenuGroup"
+			type="net.ruready.web.content.question.action.PopulateQuestionRealmMenuGroupAction">
+		</action>
+
+		<action path="/ajax/populateSubTopicMenuGroup"
+			type="net.ruready.web.content.question.action.PopulateSubTopicMenuGroupAction">
+		</action>
+
+		<action path="/ajax/populateBrowseTable"
+			type="net.ruready.web.content.question.action.PopulateBrowseTableAction">
+		</action>
+
+		<!-- Handles ExtJS tag grid events. A read/write action (note URL pattern). -->
+		<action path="/open/tagGrid"
+			type="net.ruready.web.content.tag.action.TagGridAction">
+		</action>
+
+		<!-- 
+			<action path="/ajax/populateQuestionChildrenMenu"
+			scope="request"
+			type="net.ruready.web.content.question.action.PopulateQuestionChildrenMenuAction">
+			</action>
+		-->
+
+	</action-mappings>
+
+	<!--
+		===============================================
+		Request processor
+		===============================================
+	-->
+	<!-- Use our custom request processor that extends the tiles RP -->
+	<controller
+		processorClass="net.ruready.web.chain.ExtendedRequestProcessor" />
+
+	<!--
+		===============================================
+		Resource bundles
+		===============================================
+	-->
+	<message-resources parameter="ApplicationResources" null="false" />
+
+	<!--
+		===============================================
+		Plug-ins
+		===============================================
+	-->
+
+	<!-- The validator plug-in -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/common/validation-rules.xml,/WEB-INF/content/validation-rules-content.xml,/WEB-INF/content/validation-content.xml" />
+	</plug-in>
+
+	<!-- Tiles plug-in -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/content/tiles-content.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

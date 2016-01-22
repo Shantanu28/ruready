@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+
+	<start-state idref="createTranscript"/>
+	
+	<action-state id="createTranscript">
+		<action bean="viewTranscript" method="createCourseTranscript"/>
+		<transition on="success" to="finished"/>
+		<transition on="error" to="error"/>
+	</action-state>
+	
+	<end-state id="finished" view="flowRedirect:view-transcript-flow?transcriptId=${conversationScope.viewBean.transcript.id}"/>
+	<end-state id="error" view="externalRedirect:/user/open/ALL/main.do"/>
+</flow>

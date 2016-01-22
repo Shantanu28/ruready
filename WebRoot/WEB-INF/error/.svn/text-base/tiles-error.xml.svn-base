@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+	"http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+<!--
+	Note: recently updated the DOCTYPE element above to match a more recent Tiles version.
+	@see http://www.jguru.com/forums/view.jsp?EID=1216177
+-->
+
+<!--
+	###################################################################################
+	Error pages module
+	Tiles layout definitions
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c) 2006-07 Continuing Education , University of Utah. All copyrights reserved.
+	U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	###################################################################################
+-->
+
+<tiles-definitions>
+	<!--
+		==========================================
+		Base layout of all components
+		==========================================
+	-->
+
+	<!-- Base layout of all pages -->
+	<!--
+		Note 1: the "title" and "header" fields are keys used by <bean:message>, not literal strings.
+	-->
+	<definition name=".baseDef"
+		path="/WEB-INF/common/tiles/template.jsp">
+		<put name="title" value="A key into Application.resources" />
+		<put name="header" value="app.header" />
+		<put name="logoClass" value="logo_ruready" />
+		<put name="toolbar" value="/WEB-INF/common/tiles/toolbar.jsp" />
+		<put name="content" value="/WEB-INF/common/tiles/content.jsp" />
+		<put name="links" value="/WEB-INF/common/tiles/links.jsp" />
+		<put name="footer" value="/WEB-INF/common/tiles/footer.jsp" />
+	</definition>
+
+	<!-- Base layout of all error component pages -->
+	<definition name=".errorBaseDef" extends=".baseDef"></definition>
+
+	<!--
+		==========================================
+		Error Module
+		==========================================
+	-->
+
+	<!-- System error page -->
+	<definition name=".errorSystem" extends=".errorBaseDef">
+		<put name="title" value="error.systemError.title" />
+		<put name="content" value="/WEB-INF/error/jsp/system.jsp" />
+	</definition>
+
+	<!-- Access denied (user not authenticated/doesn't have privileges) -->
+	<definition name=".errorAccessDenied" extends=".errorBaseDef">
+		<put name="title" value="error.accessDenied.title" />
+		<put name="content" value="/WEB-INF/error/jsp/accessDenied.jsp" />
+	</definition>
+
+	<!-- Path (URL) not found -->
+	<definition name=".errorPathNotFound" extends=".errorBaseDef">
+		<put name="title" value="error.pathNotFound.title" />
+		<put name="content" value="/WEB-INF/error/jsp/pathNotFound.jsp" />
+	</definition>
+
+	<!-- Unsupported operation exception -->
+	<definition name=".errorUnsupportedOperation"
+		extends=".errorBaseDef">
+		<put name="title" value="error.unsupportedOperation.title" />
+		<put name="content"
+			value="/WEB-INF/error/jsp/unsupportedOperation.jsp" />
+	</definition>
+
+</tiles-definitions>

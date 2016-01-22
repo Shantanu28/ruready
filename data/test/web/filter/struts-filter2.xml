@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	###################################################################################
+	A simple test file for the FilterPacakageParser - filter-class tag test.
+	###################################################################################
+-->
+
+<web-app>
+	<filter>
+		<filter-name>filter1</filter-name>
+		<filter-class>
+			test.ruready.web.chain.filter.Filter1
+		</filter-class>
+	</filter>
+</web-app>

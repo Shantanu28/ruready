@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script src="/ru2/include/ext/yui-utilities.js" type="text/javascript"></script>
+		<script src="/ru2/include/ext/ext-yui-adapter.js" type="text/javascript"></script>
+		<script src="/ru2/include/ext/ext-all-debug.js" type="text/javascript"></script>
+		<script src="testReader.js" type="text/javascript"></script>
+
+		<link href="/ru2/include/ext/css/ext-all.css" media="screen" rel="Stylesheet"
+			type="text/css" />
+	</head>
+
+	<body>
+		<h1>ExtJS XML Reader Test</h1>
+	</body>
+</html>

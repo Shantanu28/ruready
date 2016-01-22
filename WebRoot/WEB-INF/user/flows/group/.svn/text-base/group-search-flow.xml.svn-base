@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+                          
+	<start-actions>
+		<set attribute="flowKeyPrefix" value="'user.adminGroups.view'" scope="flow"/>
+	</start-actions>
+	
+	<start-state idref="entryForm" />
+
+	<view-state id="entryForm" view=".adminGroup.search.entryForm">
+		<render-actions>
+			<action bean="groupSearch" method="setupForm"/>
+			<action bean="groupSearch" method="performSearch"/>
+		</render-actions>
+		<transition on="submit" to="entryForm">
+			<action bean="groupSearch" method="bindAndValidate"/>
+			<action bean="groupSearch" method="setFirstPage"/>
+		</transition>
+		
+		<transition on="firstPage" to="entryForm">
+			<action bean="groupSearch" method="setFirstPage"/>
+		</transition>
+		<transition on="prevPage" to="entryForm">
+			<action bean="groupSearch" method="setPreviousPage"/>
+		</transition>
+		<transition on="nextPage" to="entryForm">
+			<action bean="groupSearch" method="setNextPage"/>
+		</transition>
+		<transition on="lastPage" to="entryForm">
+			<action bean="groupSearch" method="setLastPage"/>
+		</transition>
+		
+		<transition on="create" to="createGroup"/>
+		<transition on="edit" to="editGroup"/>
+		<transition on="delete" to="deleteGroup"/>
+		<transition on="moderators" to="viewModerators">
+			<set attribute="groupId" value="requestParameters.groupId" scope="flash"/>
+		</transition>
+		<transition on="members" to="viewMembers">
+			<set attribute="groupId" value="requestParameters.groupId" scope="flash"/>
+		</transition>
+		
+		<transition on="cancel" to="cancel"/>
+	</view-state>
+	
+	<subflow-state id="createGroup" flow="group-admin-create-flow">
+		<transition on="*" to="entryForm"/>
+	</subflow-state>
+	
+	<subflow-state id="editGroup" flow="group-edit-internal-flow">
+		<attribute-mapper>
+			<input-mapper>
+				<mapping source="requestParameters.groupId" target="groupId" from="string" to="long"/>
+			</input-mapper>
+		</attribute-mapper>
+		<transition on="*" to="entryForm"/>
+	</subflow-state>
+	
+	<subflow-state id="deleteGroup" flow="group-delete-internal-flow">
+		<attribute-mapper>
+			<input-mapper>
+				<mapping source="requestParameters.groupId" target="groupId" from="string" to="long"/>
+			</input-mapper>
+		</attribute-mapper>
+		<transition on="*" to="entryForm"/>
+	</subflow-state>
+	
+	<view-state id="viewModerators" view=".adminGroup.moderators.view">
+		<render-actions>
+			<action bean="moderatorView" method="getModerators"/>
+		</render-actions>
+		<transition on="add" to="addModerator"/>
+		<transition on="delete" to="deleteModerator"/>
+		<transition on="back" to="entryForm"/>
+	</view-state>
+	
+	<subflow-state id="addModerator" flow="group-moderator-add-internal-flow">
+		<entry-actions>
+			<set attribute="lastGroupId" value="requestParameters.groupId" scope="flow"/>
+		</entry-actions>
+		<attribute-mapper>
+			<input-mapper>
+				<mapping source="requestParameters.groupId" target="groupId" from="string" to="long"/>
+			</input-mapper>
+		</attribute-mapper>
+		<transition on="*" to="viewModerators"/>
+		<exit-actions>
+			<set attribute="groupId" value="flowScope.lastGroupId" scope="flash"/>
+			<set attribute="lastGroupId" value="null" scope="flow"/>
+		</exit-actions>
+	</subflow-state>
+	
+	<subflow-state id="deleteModerator" flow="group-moderator-delete-internal-flow">
+		<entry-actions>
+			<set attribute="lastGroupId" value="requestParameters.groupId" scope="flow"/>
+		</entry-actions>
+		<attribute-mapper>
+			<input-mapper>
+				<mapping source="requestParameters.groupId" target="groupId" from="string" to="long"/>
+				<mapping source="requestParameters.userId" target="userId" from="string" to="long"/>
+			</input-mapper>
+		</attribute-mapper>
+		<transition on="*" to="viewModerators"/>
+		<exit-actions>
+			<set attribute="groupId" value="flowScope.lastGroupId" scope="flash"/>
+			<set attribute="lastGroupId" value="null" scope="flow"/>
+		</exit-actions>
+	</subflow-state>
+	
+	<view-state id="viewMembers" view=".adminGroup.members.view">
+		<render-actions>
+			<action bean="moderatorView" method="getMembers"/>
+		</render-actions>
+		<transition on="add" to="addMember"/>
+		<transition on="back" to="entryForm"/>
+	</view-state>
+	
+	<subflow-state id="addMember" flow="group-admin-subscribe-flow">
+		<entry-actions>
+			<set attribute="lastGroupId" value="requestParameters.groupId" scope="flow"/>
+		</entry-actions>
+		<attribute-mapper>
+			<input-mapper>
+				<mapping source="requestParameters.groupId" target="groupId" from="string" to="long"/>
+			</input-mapper>
+		</attribute-mapper>
+		<transition on="*" to="viewMembers"/>
+		<exit-actions>
+			<set attribute="groupId" value="flowScope.lastGroupId" scope="flash"/>
+			<set attribute="lastGroupId" value="null" scope="flow"/>
+		</exit-actions>
+	</subflow-state>
+	
+	<end-state id="finished" view="externalRedirect:/user/open/ALL/main.do"/>
+	<end-state id="cancel" view="externalRedirect:/user/open/ALL/main.do"/>
+</flow>

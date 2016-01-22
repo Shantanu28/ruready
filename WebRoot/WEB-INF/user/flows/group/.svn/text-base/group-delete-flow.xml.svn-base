@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+    
+    <!--  requires input: requestParameters.groupId -->
+	<start-state idref="deleteFlow"/>
+	
+	<subflow-state id="deleteFlow" flow="group-delete-internal-flow">
+		<attribute-mapper>
+			<input-mapper>
+				<mapping source="requestParameters.groupId" target="groupId" from="string" to="long"/>
+			</input-mapper>
+		</attribute-mapper>
+		<transition on="finished" to="finished"/>
+		<transition on="cancel" to="cancel"/>
+		<transition on="error" to="error"/>
+	</subflow-state>
+	
+	<end-state id="finished" view="externalRedirect:/user/open/TEACHER/groups/view.do"/>
+	<end-state id="cancel" view="externalRedirect:/user/open/TEACHER/groups/view.do"/>
+	<end-state id="error" view="externalRedirect:/user/open/TEACHER/groups/view.do"/>
+</flow>

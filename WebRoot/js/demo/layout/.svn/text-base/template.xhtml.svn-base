@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>An Example of a Template</title>
+		<link rel="stylesheet" type="text/css" href="/ru2/css/ruready.css" />
+	</head>
+	<body>
+		<div id="page">
+			<div id="header">
+				<div id="logo">
+					<img src="/ru2/images/common/ruready_logo_small.png" />
+				</div>
+				<div id="title">
+					<h1>
+						RUReady.net
+					</h1>
+				</div>
+				<div id="links">
+					<a href="#">Home</a> &nbsp;&#9830;&nbsp;
+					<a href="#">About</a> &nbsp;&#9830;&nbsp;
+					<a href="#">Contact Us</a> &nbsp;&#9830;&nbsp;
+					<a href="#">Feedback</a> &nbsp;&#9830;&nbsp;
+					<a href="#">ParseIT Demo</a>
+				</div>
+			</div>
+			<div id="toolbar">
+				Toolbar
+			</div>
+			<div id="content">
+				This is my content.
+			</div>
+			<div id="footer">
+				Footer area.
+				<br />
+				<a href="#">Sponsors</a> &nbsp;&#9830;&nbsp;
+				<a href="#">Disclaimer</a>
+			</div>
+		</div>
+	</body>
+</html>

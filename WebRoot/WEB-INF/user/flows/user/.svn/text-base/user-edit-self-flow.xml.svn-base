@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+                      
+	<start-actions>
+		<set attribute="flowKeyPrefix" value="'user.manageSelf.edit'" scope="flow"/>    	
+    </start-actions>
+    
+	<start-state idref="initialize" />
+
+	<action-state id="initialize">
+		<action bean="manageUser" method="getUserSelfFormObject"/>
+		<transition on="success" to="determineEntryFormType"/>
+		<transition on="error" to="error"/>
+	</action-state>
+	
+	<action-state id="determineEntryFormType">
+		<action bean="manageUser" method="determineEntryFormType"/>
+		<transition on="specify" to="entryForm"/>
+		<transition on="anonymous" to="anonymousEntryForm"/>
+	</action-state>
+	
+	<view-state id="entryForm" view=".manageSelfEdit.entryForm">
+		<render-actions>
+			<action bean="manageUser" method="setupForm"/>
+		</render-actions>
+		<transition on="submit" to="updateUser">
+			<action bean="manageUser" method="bindAndValidate">
+				<attribute name="validatorMethod" value="validateSelfUserEntryForm"/>
+			</action>
+		</transition>
+		<transition on="cancel" to="cancel"/>
+	</view-state>
+	
+	<view-state id="anonymousEntryForm" view=".manageSelfEdit.anonymousEntryForm">
+		<render-actions>
+			<action bean="manageUser" method="setupForm"/>
+		</render-actions>
+		<transition on="submit" to="updateUser">
+			<action bean="manageUser" method="bindAndValidate">
+				<attribute name="validatorMethod" value="validateSelfAnonymousUserEntryForm"/>
+			</action>
+		</transition>
+		<transition on="cancel" to="cancel"/>
+	</view-state>
+	
+	<action-state id="updateUser">
+		<action bean="manageUser" method="updateUser"/>
+		<transition on="success" to="finished"/>
+		<transition on="duplicateEmail" to="determineEntryFormType"/>
+		<transition on="error" to="error"/>
+		<transition on-exception="org.hibernate.StaleObjectStateException" to="conflictDialog"/>
+	</action-state>
+	
+	<view-state id="conflictDialog" view=".manageSelfEdit.conflictDialog">
+		<render-actions>
+			<action bean="manageUser" method="addEditConflictErrorMessages"/>
+		</render-actions>
+		<transition on="yes" to="initialize">
+			<set attribute="userId" value="${flowScope.currentFormObject.user.id}" scope="request"/>
+		</transition>
+		<transition on="no" to="cancel"/>
+	</view-state>
+	
+	<end-state id="finished" view="externalRedirect:/user/open/ALL/main.do"/>
+	<end-state id="cancel" view="externalRedirect:/user/open/ALL/main.do">
+		<entry-actions>
+			<action bean="manageUser" method="doCancel"/>
+		</entry-actions>
+	</end-state>
+	<end-state id="error" view="externalRedirect:/user/open/ALL/main.do">
+		<entry-actions>
+			<action bean="manageUser" method="exposeErrors"/>
+		</entry-actions>
+	</end-state>
+</flow>

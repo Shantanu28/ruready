@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<!--
+	###################################################################################
+	User component:
+	Struts configuration descriptor
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c)  2006-07 Continuing Education , University of Utah. 
+	All copyrights reserved. U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	###################################################################################
+-->
+
+<struts-config>
+	<!--
+		===============================================
+		Form Beans
+		===============================================
+	-->
+	<form-beans>
+
+		<!-- Login (authentication) form -->
+		<form-bean name="loginForm"
+			type="net.ruready.web.user.form.LoginForm" />
+
+		<!-- Contains user properties for user editing actions -->
+		<form-bean name="editUserForm"
+			type="net.ruready.web.user.form.EditUserForm" />
+
+		<form-bean name="webflowActionForm"
+			type="org.springframework.web.struts.SpringBindingActionForm" />
+	</form-beans>
+
+	<!--
+		===============================================
+		Exception Handlers
+		===============================================
+	-->
+
+	<global-exceptions>
+
+		<!-- A generic exception that was not caught elsewhere -->
+		<!--
+			<exception key="error.Exception" scope="request"
+			handler="net.ruready.web.common.exception.ExceptionToBeMailedHandler"
+			type="java.lang.Exception" path="/system.do">
+			<set-property key="module" value="/error" />
+			</exception>
+		-->
+
+		<!-- JSP compilation exceptions -->
+		<exception key="error.JasperException" scope="request"
+			handler="net.ruready.web.common.exception.ExceptionToBeMailedHandler"
+			type="org.apache.jasper.JasperException" path="/system.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- Path not found -->
+		<exception key="error.InvalidPathException" scope="request"
+			handler="net.ruready.web.common.exception.InvalidPathExceptionHandler"
+			type="org.apache.struts.chain.commands.InvalidPathException"
+			path="/pathNotFound.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- A business-logic exception that was not caught elsewhere -->
+		<exception key="error.ApplicationException" scope="request"
+			handler="net.ruready.web.common.exception.ExceptionToBeMailedHandler"
+			type="net.ruready.common.exception.ApplicationException"
+			path="/system.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- Unsupported operation -->
+		<exception key="error.UnsupportedOpException" scope="request"
+			handler="net.ruready.web.common.exception.SafeExceptionHandler"
+			type="net.ruready.common.exception.UnsupportedOpException"
+			path="/unsupportedOperation.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+	</global-exceptions>
+
+	<!--
+		===============================================
+		Global forwards (alias for main page, etc.).
+		Needs to be placed in every module's Struts
+		config unless we use XDoclet to merge
+		a global global-forwards.xml file.
+		===============================================
+		
+		
+	-->
+	<global-forwards>
+
+		<!-- Content component home page -->
+		<forward name="contentHome" module="/content"
+			path="/open/home.do" redirect="true" />
+
+		<!-- User component home page, which is also the application's front page -->
+		<forward name="userHome" module="/user"
+			path="/secure/FRONT/home.do" redirect="true" />
+
+		<!-- User main page. Which page is shown depends on the user's roles -->
+		<forward name="userMain" module="/user" path="/open/ALL/main.do"
+			redirect="true" />
+
+		<!-- 
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Error pages and pages references by filter actions
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^
+		-->
+
+		<!-- Access denied (HTTP code 401) -->
+		<forward name="errorAccessDenied" module="/error"
+			path="/accessDenied.do" />
+
+		<!-- Path not found (HTTP code 404) -->
+		<forward name="errorPathNotFound" module="/error"
+			path="/pathNotFound.do" />
+
+		<!-- System error (HTTP code 500) -->
+		<forward name="errorSystem" module="/error" path="/system.do" />
+
+		<!-- Unsupported operation exception -->
+		<forward name="errorUnsupportedOperation" module="/error"
+			path="/unsupportedOperation.do" />
+
+		<!-- Authentication gateway when requesting an internal bookmark -->
+		<forward name="authenticationUrl" module="/user"
+			path="/open/FRONT/authentication.do" />
+
+	</global-forwards>
+
+	<!--
+		===============================================
+		Actions
+		===============================================
+	-->
+	<!-- <action-mappings
+		type="org.apache.struts.config.SecureActionConfig">  -->
+	<action-mappings>
+
+		<!--
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			Utilities
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		-->
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Module switching for JSP link access
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- Uncomment the following if you need to use <html:link> to a JSP. See the Struts
+			Reference Manual, Second Edition, James Holmes, page 127. -->
+		<!-- 
+			<action path="/switchMod"
+			type="org.apache.struts.actions.SwitchAction" />
+		-->
+
+		<!--
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			Pages that don't require authentication
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		-->
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Links to front pages
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			See tiles defs xml for details on these foward definitions.
+			
+			Level of indirection is created here, these actions define security 
+			parameters, while the tiles definitions in tiles-user.xml
+			referenced here with the forward directive refers to the 
+			absolute path of the JSP in question.
+		-->
+
+		<action path="/secure/FRONT/home" forward=".frontHome" />
+		<action path="/open/FRONT/authentication"
+			forward=".frontAuthentication" />
+		<action path="/open/FRONT/about" forward=".frontAbout" />
+		<action path="/open/FRONT/sponsors" forward=".frontSponsors" />
+
+		<!--
+			Seems obsolete, replaced by the direct forward to .studentUpdateUser
+			in the updateUser action.
+		-->
+		<!--
+			<action path="/secure/STUDENT/updateUser/edit"
+			forward=".studentUpdateUser">
+			<set-property property="secure" value="true" /> <== COMMENT THIS LINE WHEN YOU UNCOMMENT THIS SECTION!
+			</action>
+		-->
+
+		<!--
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			User creation (registration)
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+		<!--  enroll/student or enroll/teacher -->
+		<action path="/secure/FRONT/enroll/*"
+			forward="/secure/FRONT/enrollAction.do?_flowId=user-{1}-create-flow" />
+
+		<action path="/secure/FRONT/enrollAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction" />
+
+		<action path="/secure/FRONT/schoolSearch"
+			type="net.ruready.web.user.action.SchoolLookupAction" />
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Process authentication (login)
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<action path="/secure/FRONT/login" attribute="loginForm"
+			input="/secure/FRONT/home.do" name="loginForm" scope="request"
+			type="net.ruready.web.user.action.LoginAction">
+			<!-- <set-property property="secure" value="true" /> -->
+			<exception key="error.AuthenticationException.LOGIN_FAILED"
+				handler="net.ruready.web.user.exception.AuthenticationExceptionHandler"
+				type="net.ruready.business.user.exception.AuthenticationException"
+				path="/secure/FRONT/home.do" />
+			<forward name="success" path="/open/ALL/main.do"
+				redirect="true" />
+			<forward name="failure" path="/secure/FRONT/home.do"
+				redirect="true" />
+		</action>
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Password reminder
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<action path="/open/FRONT/forgotPassword" attribute="loginForm"
+			input=".frontForgotPassword" name="loginForm" scope="request"
+			type="net.ruready.web.user.action.ForgotPasswordAction">
+
+			<!-- <set-property property="secure" value="false" /> -->
+
+			<exception key="error.EmailException"
+				handler="net.ruready.web.user.exception.EmailExceptionHandler"
+				type="net.ruready.common.exception.EmailException"
+				path=".frontForgotPassword" />
+
+			<forward name="success" path=".frontForgotPasswordDone" />
+			<forward name="failure" path=".frontForgotPassword" />
+		</action>
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Main page setup, view and actions
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!--
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			Pages accessible to all roles
+			(but require authentication)
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		-->
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Logout action
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+		<!--
+			Note: does not require a user, e.g. when you login, logout, click
+			the back button, and logout again.
+		-->
+		<action path="/open/ALL/logout"
+			type="net.ruready.web.user.action.LogoutAction" />
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Setup and forward to main page
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<action path="/open/ALL/main" input="/error/system.do"
+			scope="request" type="net.ruready.web.user.action.MainAction"
+			validate="false">
+			<!-- <set-property property="secure" value="false" /> -->
+			<forward name="studentMain"
+				path="/open/STUDENT/getTranscriptsInfo.do" />
+			<forward name="teacherMain" path=".teacherMain" />
+			<forward name="adminMain" path=".adminMain" />
+		</action>
+
+		<!-- 
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			Change the user's default perspective
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		-->
+
+		<!-- Change the user's default perspective -->
+		<action path="/open/ALL/setDefaultPerspective"
+			type="net.ruready.web.user.action.SetDefaultPerspectiveAction"
+			validate="false">
+			<!-- <set-property property="secure" value="false" /> -->
+		</action>
+
+		<!--
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			STUDENT-role pages
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		-->
+
+		<action path="/open/STUDENT/getTranscriptsInfo"
+			type="net.ruready.web.ta.action.CourseLinksAction">
+			<forward name="success" path=".studentMain" />
+		</action>
+
+		<action path="/secure/STUDENT/updateUser"
+			forward="/secure/STUDENT/user/updateAction.do?_flowId=user-edit-self-flow" />
+
+		<action path="/secure/STUDENT/user/updateAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction" />
+
+		<action path="/open/STUDENT/schools/view"
+			type="net.ruready.web.user.action.SchoolMembershipsViewAction"
+			parameter="viewStudentSchoolMemberships">
+			<forward name="success"
+				path=".studentViewSchoolMemberships" />
+		</action>
+
+		<!-- add, delete -->
+		<action path="/open/STUDENT/schools/*"
+			forward="/open/STUDENT/schools/schoolAction.do?_flowId=school-student-{1}-flow" />
+
+		<action path="/open/STUDENT/schools/schoolAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction" />
+
+		<action path="/open/STUDENT/groups/view"
+			type="net.ruready.web.user.action.GroupsViewAction"
+			parameter="viewMemberships">
+			<forward name="success" path=".studentViewGroups" />
+		</action>
+
+		<action path="/open/STUDENT/groups/subscribe"
+			forward="/open/STUDENT/groups/subscribeAction.do?_flowId=group-subscribe-flow" />
+
+		<action path="/open/STUDENT/groups/unsubscribe"
+			forward="/open/STUDENT/groups/subscribeAction.do?_flowId=group-unsubscribe-flow" />
+
+		<action path="/open/STUDENT/groups/subscribeAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction" />
+
+		<!--
+			AJAX actions that populate drop-down menus. Not screened
+			by ANY filters nor using any forms because
+			(1) They are supposed to be fast.
+			(2) Potential problems when the same user is accessed twice
+			in the preceding filters during simultaneous asynchronous calls to these methods.
+			(3) They inherit the protcol used by the calling page. For instance,
+			if we are in a secure update user information page, they automatically become secure too.
+			(4) They are complicated enough already.
+		-->
+		<action path="/ajax/populateChildrenMenu" scope="request"
+			type="net.ruready.web.user.action.PopulateChildrenMenuAction">
+			<!-- <set-property property="secure" value="true" /> -->
+		</action>
+
+		<!--
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			TEACHER-role pages
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		-->
+
+		<action path="/open/TEACHER/schools/view"
+			type="net.ruready.web.user.action.SchoolMembershipsViewAction"
+			parameter="viewTeacherSchoolMemberships">
+			<forward name="success"
+				path=".teacherViewSchoolMemberships" />
+		</action>
+
+		<!-- add, delete -->
+		<action path="/open/TEACHER/schools/*"
+			forward="/open/TEACHER/schools/schoolAction.do?_flowId=school-teacher-{1}-flow" />
+
+		<action path="/open/TEACHER/schools/schoolAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction" />
+
+		<!-- MODERATED GROUPS -->
+
+		<!-- create, edit, delete -->
+		<action path="/open/TEACHER/groups/*"
+			forward="/open/TEACHER/groups/groupAction.do?_flowId=group-{1}-flow" />
+
+		<action path="/open/TEACHER/groups/groupAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction" />
+
+		<action path="/open/TEACHER/groups/view"
+			type="net.ruready.web.user.action.GroupsViewAction"
+			parameter="viewModeratedGroups">
+			<forward name="success" path=".teacherViewGroups" />
+		</action>
+
+		<!-- MEMBERS -->
+
+		<!-- view -->
+		<action path="/open/TEACHER/members/view"
+			type="net.ruready.web.user.action.ModeratorsViewAction"
+			parameter="viewMembers">
+			<forward name="success" path=".teacherViewMembers" />
+			<forward name="error" path="/open/TEACHER/groups/view.do"
+				redirect="true" />
+		</action>
+
+		<!-- MODERATORS -->
+
+		<!-- add, delete -->
+		<action path="/open/TEACHER/moderators/*"
+			forward="/open/TEACHER/moderators/moderatorAction.do?_flowId=group-moderator-{1}-flow" />
+
+		<action path="/open/TEACHER/moderators/moderatorAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction" />
+
+		<!-- view -->
+		<action path="/open/TEACHER/moderators/view"
+			type="net.ruready.web.user.action.ModeratorsViewAction"
+			parameter="viewModerators">
+			<forward name="success" path=".teacherViewModerators" />
+			<forward name="error" path="/open/TEACHER/groups/view.do"
+				redirect="true" />
+		</action>
+
+		<!--
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			ADMIN-role pages
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		-->
+
+		<action path="/open/ADMIN/randomUsers"
+			type="net.ruready.web.user.action.RandomAccountsAction">
+			<forward name="success" path="/open/ALL/main.do"
+				redirect="true" />
+		</action>
+
+		<action path="/open/ADMIN/createUser"
+			forward="/open/ADMIN/createUserAction.do?_flowId=user-create-flow" />
+
+		<action path="/open/ADMIN/createUserAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction">
+			<exception key="error.WebFlowTimeoutException"
+				type="org.springframework.webflow.executor.support.FlowExecutorArgumentExtractionException"
+				path="/open/ADMIN/createUser.do" />
+		</action>
+
+		<action path="/open/ADMIN/searchUser"
+			forward="/open/ADMIN/searchUserAction.do?_flowId=user-search-flow" />
+
+		<action path="/open/ADMIN/searchUserAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction">
+			<exception key="error.WebFlowTimeoutException"
+				type="org.springframework.webflow.executor.support.FlowExecutorArgumentExtractionException"
+				path="/open/ADMIN/searchUser.do" />
+		</action>
+
+
+		<action path="/open/ADMIN/schools/pending/view"
+			type="net.ruready.web.user.action.SchoolMembershipsViewAction"
+			parameter="viewAllPendingTeacherSchoolMemberships">
+			<forward name="success" path=".adminViewPendingMemberships" />
+		</action>
+
+		<action path="/open/ADMIN/schools/pending/review"
+			forward="/open/ADMIN/schools/pending/reviewAction.do?_flowId=school-teacher-review-flow" />
+
+		<action path="/open/ADMIN/schools/pending/reviewAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction" />
+
+		<action path="/open/ADMIN/group/search"
+			forward="/open/ADMIN/group/GroupAction.do?_flowId=group-search-flow" />
+		<action path="/open/ADMIN/group/GroupAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction">
+			<exception key="error.WebFlowTimeoutException"
+				type="org.springframework.webflow.executor.support.FlowExecutorArgumentExtractionException"
+				path="/open/ADMIN/group/search" />
+		</action>
+
+		<action path="/open/ADMIN/school/search"
+			forward="/open/ADMIN/school/SchoolAction.do?_flowId=school-search-flow" />
+		<action path="/open/ADMIN/school/SchoolAction"
+			name="webflowActionForm" scope="request"
+			type="org.springframework.webflow.executor.struts.FlowAction">
+			<exception key="error.WebFlowTimeoutException"
+				type="org.springframework.webflow.executor.support.FlowExecutorArgumentExtractionException"
+				path="/open/ADMIN/school/search" />
+		</action>
+
+		<!--
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			SYSTEM-role pages
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		-->
+
+
+
+	</action-mappings>
+
+	<!--
+		===============================================
+		Request processor
+		===============================================
+	-->
+	<!-- Use our custom request processor that extends the tiles RP -->
+	<controller
+		processorClass="net.ruready.web.chain.ExtendedRequestProcessor" />
+
+	<!--
+		===============================================
+		Resource bundles
+		===============================================
+	-->
+	<message-resources parameter="ApplicationResources" null="false" />
+
+	<!--
+		===============================================
+		Plug-ins
+		===============================================
+	-->
+
+	<!-- The validator plug-in -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/common/validation-rules.xml,/WEB-INF/user/validation-user.xml" />
+	</plug-in>
+
+	<!-- Tiles plug-in -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/user/tiles-user.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+	<!-- SSLEXT plug-in -->
+	<!-- 
+		<plug-in className="org.apache.struts.action.SecurePlugIn">
+		<set-property property="httpPort" value="8080" />
+		<set-property property="httpsPort" value="8443" />
+		<set-property property="enable" value="true" />
+		<set-property property="addSession" value="true" />
+		</plug-in>
+	-->
+
+</struts-config>

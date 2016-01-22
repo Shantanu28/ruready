@@ -1,0 +1,205 @@
+8
+
+dir
+70
+https://rudev.sci.utah.edu/svn/ruready/app/ru1.5/ru2
+https://rudev.sci.utah.edu/svn/ruready
+
+
+
+2009-06-13T16:10:49.404916Z
+2
+oren
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0982ac0d-1d7e-4f6a-b8c2-e86608e68db5
+
+config_windows
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+09cdbdd383f27cea60f45d9fa96e7f0f
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+.myhibernatedata
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+af43500be10d69e211c78b147cc32823
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+WebRoot
+dir
+
+.mystrutsdata
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+6edb1cc302fb282b7c6d8b952c45e56d
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+config_hibernate
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+707c699cb1f8cf33e02e8422215d0400
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+src
+dir
+
+.springBeans
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+df2619762674ab480423a5a15c526773
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+build.properties
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+f0db68ae5c464adbcf2a3c6986a1439b
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+build.xml
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+735432a2996163d042a94e9d163a3404
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+reports
+dir
+
+sql
+dir
+
+config_dev
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+c8d0977baed1654bafc5ca14fa1c9abb
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+.mymetadata
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+129bb9c5873c7b83dc7048cf2a23338d
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+config
+dir
+
+.springWebflow
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+0aca586e8d053ef88a03c662bb68311f
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+javadoc.xml
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+79f707f1faf36161ed833ec0f0791354
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+
+.myeclipse
+dir
+
+data
+dir
+
+.myumldata
+file
+
+
+
+
+2011-04-10T17:50:46.000000Z
+62d43890f5a696bcbccb74740869e08a
+2009-06-13T16:10:49.404916Z
+2
+oren
+has-props
+

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<!--
+	###################################################################################
+	Test Administration component:
+	Struts configuration descriptor
+	
+	Nava L. Livne <i>&lt;nlivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	University of Utah, Salt Lake City, UT 84112
+	
+	Oren E. Livne <i>&lt;olivne@aoce.utah.edu&gt;</i>
+	Academic Outreach and Continuing Education (AOCE)
+	1901 East South Campus Dr., Room 2197-E
+	
+	(c)  2006-07 Continuing Education , University of Utah. 
+	All copyrights reserved. U.S. Patent Pending DOCKET NO. 00846 25702.PROV
+	###################################################################################
+-->
+
+<struts-config>
+	<form-beans>		
+		<form-bean name="webflowActionForm" type="org.springframework.web.struts.SpringBindingActionForm"/>
+	</form-beans>
+
+	<global-exceptions>
+
+		<!-- JSP compilation exceptions -->
+		<exception key="error.JasperException" scope="request"
+			handler="net.ruready.web.common.exception.ExceptionToBeMailedHandler"
+			type="org.apache.jasper.JasperException" path="/system.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- Path not found -->
+		<exception key="error.InvalidPathException" scope="request"
+			handler="net.ruready.web.common.exception.InvalidPathExceptionHandler"
+			type="org.apache.struts.chain.commands.InvalidPathException"
+			path="/pathNotFound.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- A business-logic exception that was not caught elsewhere -->
+		<exception key="error.ApplicationException" scope="request"
+			handler="net.ruready.web.common.exception.ExceptionToBeMailedHandler"
+			type="net.ruready.common.exception.ApplicationException"
+			path="/system.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+		<!-- Unsupported operation -->
+		<exception key="error.UnsupportedOpException"
+			scope="request"
+			handler="net.ruready.web.common.exception.SafeExceptionHandler"
+			type="net.ruready.common.exception.UnsupportedOpException"
+			path="/unsupportedOperation.do">
+			<set-property key="module" value="/error" />
+		</exception>
+
+	</global-exceptions>
+	
+	<global-forwards>
+		
+		<!-- 
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Error pages and pages references by filter actions
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^
+		-->
+
+		<!-- Access denied (HTTP code 401) -->
+		<forward name="errorAccessDenied" module="/error"
+			path="/accessDenied.do" />
+
+		<!-- Path not found (HTTP code 404) -->
+		<forward name="errorPathNotFound" module="/error"
+			path="/pathNotFound.do" />
+
+		<!-- System error (HTTP code 500) -->
+		<forward name="errorSystem" module="/error" path="/system.do" />
+
+		<!-- Unsupported operation exception -->
+		<forward name="errorUnsupportedOperation" module="/error"
+			path="/unsupportedOperation.do" />
+
+		<!-- Authentication gateway when requesting an internal bookmark -->
+		<forward name="authenticationUrl" module="/user"
+			path="/open/FRONT/authentication.do" />
+
+	</global-forwards>
+
+	<action-mappings>
+		
+		<action path="/open/STUDENT/transcript/start/course"
+				forward="/open/STUDENT/processAction.do?_flowId=start-course-flow"/>
+		
+		<action path="/open/STUDENT/transcript/start/group"
+				forward="/open/STUDENT/processAction.do?_flowId=view-transcript-flow"/>
+		
+		<action path="/open/STUDENT/transcript/readOnly"
+				forward="/open/STUDENT/processAction.do?_flowId=view-transcript-flow"/>
+				
+		<action path="/open/STUDENT/transcript/continue"
+				forward="/open/STUDENT/processAction.do?_flowId=view-transcript-flow"/>
+			
+		<action path="/open/STUDENT/expectationAssessment/take"
+				forward="/open/STUDENT/processAction.do?_flowId=expectation-assessment-flow"/>
+				
+		<!-- General struts action mapping for all web flow entry points -->
+		<action path="/open/STUDENT/processAction"
+				name="webflowActionForm" scope="request" 
+				type="org.springframework.webflow.executor.struts.FlowAction"/>
+
+	</action-mappings>
+
+	<!-- Use our custom request processor that extends the tiles RP -->
+	<controller	processorClass="net.ruready.web.chain.ExtendedRequestProcessor"/>
+	
+	<message-resources parameter="ApplicationResources" null="false" />
+
+	<!-- The validator plug-in -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/common/validation-rules.xml,/WEB-INF/ta/validation-ta.xml" />
+	</plug-in>
+	
+	<!-- Tiles plug-in -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/ta/tiles-ta.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

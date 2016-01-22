@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/searchQuestion.do" location="0,184" dimension="410,100" />
+  <StrutsActivity path="/editQuestion.do" location="533,184" dimension="391,100" />
+  <StrutsActivity path="home;6" location="127,0" dimension="155,84" />
+  <StrutsActivity path="errorAccessDenied;6" location="50,350" dimension="166,87" />
+  <StrutsActivity path="errorPathNotFound;6" location="350,350" dimension="172,87" />
+  <StrutsActivity path="errorSystem;6" location="650,350" dimension="129,87" />
+  <StrutsActivity path="errorUnsupportedOperation;6" location="950,350" dimension="223,87" />
+  <StrutsActivity path="authenticationUrl;6" location="50,650" dimension="243,87" />
+  <StrutsActivity path=".searchQuestion" location="154,494" dimension="126,52" />
+  <StrutsActivity path=".displayMultipleChoice" location="397,494" dimension="159,52" />
+  <StrutsActivity path=".editQuestion" location="674,494" dimension="109,52" />
+  <StrutsActivity path=".displayOpenEnded" location="883,494" dimension="142,52" />
+  <StrutsActivity path=".subInterest" location="1125,494" dimension="102,52" />
+  <StrutsActivity path="/accessDenied.do" location="650,750" dimension="154,87" />
+  <StrutsActivity path="/pathNotFound.do" location="950,750" dimension="161,87" />
+  <StrutsActivity path="/system.do" location="50,850" dimension="116,87" />
+  <StrutsActivity path="/unsupportedOperation.do" location="350,850" dimension="211,87" />
+  <StrutsActivity path="/open/FRONT/authentication.do" location="650,950" dimension="243,87" />
+  <StrutsTransition id="errorPathNotFound;6,null,/pathNotFound.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editQuestion.do,editQuestion.subInterest,.subInterest,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="896,284" />
+      <AbsolutePoint location="896,314" />
+      <AbsolutePoint location="1176,314" />
+      <AbsolutePoint location="1176,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorUnsupportedOperation;6,null,/unsupportedOperation.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorSystem;6,null,/system.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/searchQuestion.do,searchQuestion.delete,.searchQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="230,284" />
+      <AbsolutePoint location="230,314" />
+      <AbsolutePoint location="217,314" />
+      <AbsolutePoint location="217,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/searchQuestion.do,searchQuestion.reset,.searchQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="179,284" />
+      <AbsolutePoint location="179,314" />
+      <AbsolutePoint location="203,314" />
+      <AbsolutePoint location="203,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editQuestion.do,editQuestion.displayOpenEnded,.displayOpenEnded,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="840,284" />
+      <AbsolutePoint location="840,344" />
+      <AbsolutePoint location="954,344" />
+      <AbsolutePoint location="954,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="authenticationUrl;6,null,/open/FRONT/authentication.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/searchQuestion.do,cancel,.searchQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="333,284" />
+      <AbsolutePoint location="333,374" />
+      <AbsolutePoint location="245,374" />
+      <AbsolutePoint location="245,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/searchQuestion.do,searchQuestion.search,.searchQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="76,284" />
+      <AbsolutePoint location="76,374" />
+      <AbsolutePoint location="175,374" />
+      <AbsolutePoint location="175,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editQuestion.do,editQuestion.add,.editQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="728,284" />
+      <AbsolutePoint location="728,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/searchQuestion.do,searchQuestion.disable,.searchQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="128,284" />
+      <AbsolutePoint location="128,344" />
+      <AbsolutePoint location="189,344" />
+      <AbsolutePoint location="189,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id=".editQuestion,null,/editQuestion.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="765,494" />
+      <AbsolutePoint location="765,314" />
+      <AbsolutePoint location="784,314" />
+      <AbsolutePoint location="784,284" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/searchQuestion.do,searchQuestion.clone,.searchQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="25,284" />
+      <AbsolutePoint location="25,404" />
+      <AbsolutePoint location="161,404" />
+      <AbsolutePoint location="161,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/searchQuestion.do,success,.searchQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="281,284" />
+      <AbsolutePoint location="281,344" />
+      <AbsolutePoint location="231,344" />
+      <AbsolutePoint location="231,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id=".searchQuestion,null,/searchQuestion.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="259,494" />
+      <AbsolutePoint location="259,404" />
+      <AbsolutePoint location="384,404" />
+      <AbsolutePoint location="384,284" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="home;6,null,/searchQuestion.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="205,84" />
+      <AbsolutePoint location="205,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editQuestion.do,editQuestion.complete,.searchQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="561,284" />
+      <AbsolutePoint location="561,434" />
+      <AbsolutePoint location="273,434" />
+      <AbsolutePoint location="273,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editQuestion.do,editQuestion.edit,.editQuestion,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="673,284" />
+      <AbsolutePoint location="673,314" />
+      <AbsolutePoint location="692,314" />
+      <AbsolutePoint location="692,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorAccessDenied;6,null,/accessDenied.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editQuestion.do,editQuestion.displayMultipleChoice,.displayMultipleChoice,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="617,284" />
+      <AbsolutePoint location="617,464" />
+      <AbsolutePoint location="477,464" />
+      <AbsolutePoint location="477,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
