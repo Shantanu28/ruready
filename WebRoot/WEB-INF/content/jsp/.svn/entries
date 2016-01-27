@@ -1,216 +1,0 @@
-8
-
-dir
-70
-https://rudev.sci.utah.edu/svn/ruready/app/ru1.5/ru2/WebRoot/WEB-INF/content/jsp
-https://rudev.sci.utah.edu/svn/ruready
-
-
-
-2009-06-13T16:10:49.404916Z
-2
-oren
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-0982ac0d-1d7e-4f6a-b8c2-e86608e68db5
-
-searchItem.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-7b788be6792730967ac464f0de7db83e
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-STATE
-dir
-
-FEDERATION
-dir
-
-editItemFull.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-eab67106b3e537730bd873d38af357c5
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-editItemFull.head.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-218504a1d069a923bdc7da569960e1d6
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-ROOT
-dir
-
-EXPECTATION
-dir
-
-default
-dir
-
-DEFAULT_TRASH
-dir
-
-editChildren.MAIN_ITEM_ORDER.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-3050f559d8a64d61ca6b1ddf5778820c
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-SUB_TOPIC
-dir
-
-SCHOOL
-dir
-
-transferItem.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-8e3dbff1b45714220b1701a1fd6cbb66
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-SUBJECT
-dir
-
-COURSE
-dir
-
-viewContent.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-b7e17439231f007fa7860aed7f10839d
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-COUNTRY
-dir
-
-editChildren.SERIAL_NO.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-08865d4798a4ecbec14ccedd0d45e2f0
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-QUESTION
-dir
-
-viewItemFull.head.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-6207cb757268a3f48391848f59463220
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-viewRevisions.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-29cc9ddffb260bc8899832184b15df7a
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-CITY
-dir
-
-editChildren.NAME.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-3050f559d8a64d61ca6b1ddf5778820c
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-itemTree.jsp
-file
-
-
-
-
-2011-04-10T17:50:43.000000Z
-48cbc8cacff868810d644b33c80f598c
-2009-06-13T16:10:49.404916Z
-2
-oren
-has-props
-
-TAG
-dir
-
-DOCUMENT
-dir
-
