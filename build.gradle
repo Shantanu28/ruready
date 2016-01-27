@@ -1,0 +1,106 @@
+buildscript {
+    ext {
+        springBootVersion = '1.2.5.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+
+jar {
+    baseName = 'ruready'
+    version = '0.0.1-SNAPSHOT'
+}
+war {
+	baseName = 'ruready'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+	maven { url "http://repo.spring.io/snapshot" }
+	maven { url "http://repo.spring.io/milestone" }
+}
+
+
+dependencies {
+    compile('org.springframework:spring-support:2.0.6')
+    compile('org.codehaus.groovy:groovy-all:2.3.6')
+    compile('javax.mail:mail:1.4.5')
+    compile("org.springframework.boot:spring-boot-starter-web:1.2.5.RELEASE")
+    compile('org.springframework.boot:spring-boot-starter-tomcat:1.2.5.RELEASE')
+	compile('org.apache.tomcat.embed:tomcat-embed-jasper')
+    compile 'org.springframework.boot:spring-boot-starter-security:1.2.5.RELEASE'
+    compile('com.fasterxml.jackson.core:jackson-databind:2.4.2')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.cloud:spring-cloud-starter-feign')
+    compile('com.netflix.feign:feign-jackson:8.1.0')
+    compile('com.netflix.feign:feign-gson:8.1.0')
+    compile('commons-io:commons-io:2.4')
+    compile('org.apache.commons:commons-collections4:4.0')
+//    compile group: 'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: '0.7'
+
+    compile('mysql:mysql-connector-java:5.1.35')
+    compile('org.projectlombok:lombok:1.16.6')
+    compile('com.google.guava:guava:11.0.2')
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testRuntime('javax.mail:mail:1.4.5')
+    testRuntime('org.projectlombok:lombok:1.16.6')
+    testRuntime('mysql:mysql-connector-java:5.1.35')
+    testRuntime('org.apache.commons:commons-collections4:4.0')
+    testRuntime('com.google.guava:guava:11.0.2')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-starter-parent:1.0.1.RELEASE"
+    }
+}
+
+task jarCopy(dependsOn: "build") {
+    def zipFile = file("${buildDir}/libs/${jar.baseName}-${jar.version}.jar")
+    doLast {
+        copy {
+            from zipTree(zipFile)
+            into file("${buildDir}/unpacked/jar")
+            exclude "lib/*.jar"
+        }
+        copy {
+            from zipTree(zipFile)
+            into file("${buildDir}/unpacked")
+            include "lib/*.jar"
+        }
+    }
+}
+
+task minBuild(type: Zip, dependsOn: 'jarCopy') {
+    from file("${buildDir}/unpacked/jar")
+    baseName jar.baseName + '-' + jar.version + '-nolib'
+    version = jar.version
+    entryCompression = ZipEntryCompression.STORED
+    extension = 'jar'
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+
+
+
+
+
