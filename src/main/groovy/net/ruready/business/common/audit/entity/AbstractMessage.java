@@ -51,7 +51,7 @@ import org.hibernate.annotations.TypeDefs;
 {
 	@TypeDef(name = "utcTimestamp", typeClass = UtcTimestamp.class)
 })
-@Entity
+//@Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @MappedSuperclass
 public abstract class AbstractMessage implements Message, Commentable

@@ -41,9 +41,10 @@ repositories {
 
 dependencies {
 	compile name: 'json-lib-2.1-jdk15'
-	compile name: 'rucommon-2.8.0-src'
-	compile name: 'ruparser-2.6.0-src'
+//	compile name: 'rucommon-2.8.0-src'
+//	compile name: 'ruparser-2.6.0-src'
 	compile('commons-chain:commons-chain:1.1')
+	compile('junit:junit:4.4')
 	compile('com.commsen.stopwatch.api:stopwatch:0.3')
 	compile('com.google.guava:guava:11.0.2')
 	compile('commons-beanutils:commons-beanutils:1.7.0')
@@ -79,6 +80,7 @@ dependencies {
     compile('com.google.guava:guava:11.0.2')
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile('junit:junit:4.4')
     testRuntime('javax.mail:mail:1.4.5')
     testRuntime('org.projectlombok:lombok:1.16.6')
     testRuntime('mysql:mysql-connector-java:5.1.35')
