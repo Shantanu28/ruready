@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd ">
  
-    <context:component-scan base-package="net.ruready" />
+    <context:component-scan base-package="net.ruready,test.ruready" />
  
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
@@ -22,22 +22,22 @@
 	 
     <mvc:annotation-driven />
         
-    <beans:bean id="messageSource"
+    <bean id="messageSource"
                 class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <beans:property name="basename" value="classpath:messages" />
-        <beans:property name="defaultEncoding" value="UTF-8" />
-    </beans:bean>
+        <property name="basename" value="classpath:messages" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
  
-    <beans:bean id="localeResolver"
+    <bean id="localeResolver"
         class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-        <beans:property name="defaultLocale" value="en" />
-    </beans:bean>
+        <property name="defaultLocale" value="en" />
+    </bean>
  
     <mvc:interceptors>
-        <beans:bean
+        <bean
             class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-            <beans:property name="paramName" value="locale" />
-        </beans:bean>
+            <property name="paramName" value="locale" />
+        </bean>
     </mvc:interceptors>        
  
 </beans>
