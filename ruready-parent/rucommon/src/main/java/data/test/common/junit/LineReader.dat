@@ -1,0 +1,24 @@
+//======================================================================
+// Arithmetic Matching Regression Tests - Data File
+//======================================================================
+// The allowed variables in all expressions are
+// "x", "y", "z".
+// Each test is two-line group:
+// Line 1: input expression
+// Line 2: boolean (true iff expression is fully matched)
+//======================================================================
+
+//==================== Tests that fail =================================
+
+$ stopOnError = true
+
+//==================== Basic operations ================================
+
+data line 1 (input)
+data line 2 (output)
+
+data line 3 (input)
+// Comment
+data line 4 (output)
+
+#==================== Variables =======================================
